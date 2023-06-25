@@ -10,5 +10,19 @@ export default createGlobalStyle`
 
     body {
         background-color: ${({ theme }) => theme.COLORS.DARK_400};
+        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    button, a {
+        cursor: pointer;
+        transition: filter 0.2s;
+    }
+
+    button:hover, a:hover {
+        filter: brightness(0.9);
     }
 `;
