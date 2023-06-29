@@ -7,7 +7,7 @@ export function Details(){
     <Container>
       <h1>Hello Word!</h1>
 
-      <Button title="Cadastrar"/>
+      <Button title="pedir" />
     </Container>
   )
 }
