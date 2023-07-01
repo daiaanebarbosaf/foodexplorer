@@ -13,7 +13,7 @@ export const Container = styled.header`
     justify-content: center;
 
     > img {
-        width: 30%;
+        width: 20rem;
     }
 `;
 
