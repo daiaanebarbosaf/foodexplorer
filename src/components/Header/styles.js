@@ -9,11 +9,22 @@ export const Container = styled.header`
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
     display: flex;
-    
-    justify-content: center;
+    align-items: center;
+   
 
+    justify-items: center;
+
+    
+    
     > img {
         width: 20rem;
+        
+    }
+
+    #hiddenMenu {
+        height: 1.5rem;
+        margin-left: 2rem;
+        margin-right: -20rem;
     }
 `;
 
