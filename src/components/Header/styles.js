@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+
+
 export const Container = styled.header`
     grid-area: header;
 
@@ -10,21 +12,24 @@ export const Container = styled.header`
 
     display: flex;
     align-items: center;
-   
-
-    justify-items: center;
-
-    
-    
+     
     > img {
         width: 20rem;
-        
+        cursor: pointer;
     }
 
-    #hiddenMenu {
+    #hiddenMenu, #closeMenu {
         height: 1.5rem;
         margin-left: 2rem;
         margin-right: -20rem;
+
+        
+
     }
+
+    .hide {
+        display: none;
+    }
+
 `;
 
