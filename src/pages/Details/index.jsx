@@ -7,7 +7,6 @@ export function Details(){
   return(
     <Container>
       <Header />
-      <h1>Hello Word!</h1>
 
       <Button title="pedir" />
     </Container>
