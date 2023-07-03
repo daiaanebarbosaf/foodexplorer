@@ -38,8 +38,8 @@ export function Header(){
     return(
         <Container>
             <MenuExpand onClick={expandMenu}>
-                <img className="ride" id="buttonHidden" src={buttonHidden} alt="Imagem do menu escondido" />
-                <img className="ride" id="logoAdmin" src={logoAdmin} alt="Logo da Food Explorer" />
+                <img className="" id="buttonHidden" src={buttonHidden} alt="Imagem do menu escondido" />
+                <img className="" id="logoAdmin" src={logoAdmin} alt="Logo da Food Explorer" />
             </MenuExpand>
             
             <MenuClose onClick={closeMenu}>
