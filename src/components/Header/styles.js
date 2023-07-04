@@ -12,6 +12,7 @@ export const Container = styled.header`
 
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     > img {
         cursor: pointer;
@@ -22,6 +23,8 @@ export const Container = styled.header`
         height: 1.5rem;
         margin-left: 2rem;
         margin-right: -20rem;
+
+        cursor: pointer;
     }
 
     .hide {
@@ -30,12 +33,33 @@ export const Container = styled.header`
 
 `;
 
+export const Menu = styled.div`
+    display: flex;
+
+    > h1 {
+
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+
+    > p {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 100;
+    }
+
+    > h1, p {
+        margin-left: 2rem;
+    }
+`;
+
 export const MenuExpand = styled.div`
 
     #buttonHidden, #buttonClose {
         height: 1.5rem;
         margin-left: 2rem;
         margin-right: -20rem;
+
+        cursor: pointer;
     }
 
 `;
@@ -46,13 +70,7 @@ export const MenuClose = styled.div`
     
      #buttonClose {
         margin-right: -17rem;
-    }
-
-    > h1 {
-        margin-left: 2rem;
-
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
+        cursor: pointer;
     }
 `;
 
