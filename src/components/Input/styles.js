@@ -8,14 +8,13 @@ export const Container = styled.div`
     background-color: ${({ theme }) => theme.COLORS.DARK_900};
     color: ${({ theme }) => theme.COLORS.LIGHT_500};
 
-    margin-bottom: 8px;
     border-radius: 5px;
 
     > input {
-       height: 56px;
+       height: 2rem;
        width: 100%;
 
-       padding: 12px;
+       padding: 1rem;
 
        color: ${({ theme }) => theme.COLORS.LIGHT_100};
        background: transparent;
@@ -27,9 +26,9 @@ export const Container = styled.div`
        &placeholder {
             color: ${({ theme }) => theme.COLORS.LIGHT_500};
        }
+    }
 
-       > svg {
-         margin-left: 16px;
-       }
+    > svg {
+         margin-left: 1rem;
     }
 `;
