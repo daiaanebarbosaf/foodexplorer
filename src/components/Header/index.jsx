@@ -1,4 +1,5 @@
 import { Container, Menu, MenuExpand, MenuClose } from './styles';
+import { FiSearch } from 'react-icons/fi';
 
 import logoAdmin from '../../assets/logo-admin.svg';
 import buttonHidden from '../../assets/hidden-menu.svg';
@@ -50,7 +51,7 @@ export function Header(){
                 </MenuClose>
 
                 <h1 className="hide" id="menuText">Menu</h1>
-                <Input placeholder="Busque por pratos ou ingredientes" />
+                <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch}/>
                 <p>Sair</p>
             </Menu>
         </Container>
