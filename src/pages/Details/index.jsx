@@ -8,7 +8,7 @@ export function Details(){
     <Container>
       <Header />
 
-      <Button title="pedir" />
+      
     </Container>
   )
 }
