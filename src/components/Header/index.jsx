@@ -40,7 +40,7 @@ export function Header(){
 
     return(
         <Container>
-            <Menu>
+
                 <MenuExpand onClick={expandMenu}>
                     <img className="" id="buttonHidden" src={buttonHidden} alt="Imagem do menu escondido" />
                     <img className="" id="logoAdmin" src={logoAdmin} alt="Logo da Food Explorer" />
@@ -48,12 +48,13 @@ export function Header(){
                 
                 <MenuClose onClick={closeMenu}>
                     <img className="hide" id="buttonClose" src={buttonClose} alt="Imagem de um X para fechar o menu" />
+                    <h1 className="hide" id="menuText">Menu</h1>
                 </MenuClose>
-
-                <h1 className="hide" id="menuText">Menu</h1>
-                <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch}/>
-                <p>Sair</p>
-            </Menu>
+                <Menu onClick={closeMenu}>
+                    <Input placeholder="Busque por pratos ou ingredientes" icon={FiSearch}/>
+                    <p>Sair</p>
+                </Menu>
+        
         </Container>
     );
 }
