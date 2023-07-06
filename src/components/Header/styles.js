@@ -35,20 +35,23 @@ export const Container = styled.header`
 
 export const Menu = styled.div`
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
-    > h1 {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    
 
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
-    }
+    margin-top: 15rem;
+    margin-left: -5rem;
+
+    gap: 1rem;
 
     > p {
         font-family: 'Poppins', sans-serif;
         font-weight: 100;
-    }
-
-    > h1, p {
-        margin-left: 2rem;
+        margin-bottom: 0.5rem;
     }
 `;
 
@@ -65,12 +68,26 @@ export const MenuExpand = styled.div`
 `;
 
 export const MenuClose = styled.div`
-    display: flex;
-    align-items: center;
     
      #buttonClose {
         margin-right: -17rem;
         cursor: pointer;
+    }
+
+    > h1 {
+
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        
+    }
+
+    > p {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 100;
+    }
+
+    > h1, p {
+        margin-left: 2rem;
     }
 `;
 
