@@ -48,9 +48,11 @@ export const Menu = styled.div`
 
     gap: 1rem;
 
-    > p {
+    #buttonExit {
+        color: ${({ theme }) => theme.COLORS.LIGHT_300};
         font-family: 'Poppins', sans-serif;
         font-weight: 100;
+
         margin-bottom: 0.5rem;
     }
 `;
@@ -81,12 +83,7 @@ export const MenuClose = styled.div`
         
     }
 
-    > p {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 100;
-    }
-
-    > h1, p {
+    > h1 {
         margin-left: 2rem;
     }
 `;
