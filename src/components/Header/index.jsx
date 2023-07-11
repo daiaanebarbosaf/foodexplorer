@@ -16,7 +16,7 @@ export function Header(){
         var adminLogo = document.getElementById('logoAdmin');
         var textMenu = document.getElementById('menuText');
         var searchPlate = document.getElementById('searchPlate');
-        var buttonExit = document.getElementById('buttonExit');       
+        var buttonExit = document.getElementById('buttonExit');      
 
         menuExpand.classList.add('hide');
         adminLogo.classList.add('hide');
@@ -61,7 +61,12 @@ export function Header(){
                     <h1 className="hide" id="menuText">Menu</h1>
                 </MenuClose>
                 <Menu onClick={expandMenu}>
-                    <Input className="hide" id="searchPlate" placeholder="Busque por pratos ou ingredientes" icon={FiSearch}/>
+                    <Input 
+                        className="hide"
+                        icon={FiSearch} 
+                        id="searchPlate" 
+                        placeholder="Busque por pratos ou ingredientes" 
+                    />
                     <a className="hide" id="buttonExit" href="#">Sair</a>
                 </Menu>
         
