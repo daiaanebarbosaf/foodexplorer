@@ -51,6 +51,7 @@ export const Menu = styled.div`
 
     gap: 1rem;
 
+    
 
     #buttonExit {
         color: ${({ theme }) => theme.COLORS.LIGHT_300};
