@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-
-
 export const Container = styled.header`
     grid-area: header;
 
@@ -31,6 +29,10 @@ export const Container = styled.header`
         display: none;
     }
 
+    .opacity {
+        opacity: 0;
+    }
+
 `;
 
 export const Menu = styled.div`
@@ -47,6 +49,12 @@ export const Menu = styled.div`
     margin-left: -5rem;
 
     gap: 1rem;
+
+    #searchPlate {
+        > svg {
+            display: none;
+        }
+    }
 
     #buttonExit {
         color: ${({ theme }) => theme.COLORS.LIGHT_300};
@@ -70,9 +78,12 @@ export const MenuExpand = styled.div`
 `;
 
 export const MenuClose = styled.div`
+
+    display: flex;
+    align-items: center;
     
      #buttonClose {
-        margin-right: -17rem;
+        margin-right: -18rem;
         cursor: pointer;
     }
 
