@@ -27,6 +27,7 @@ export const Container = styled.header`
 
     .hide {
         display: none;
+        visibility: none;
     }
 
     .opacity {
@@ -40,9 +41,9 @@ export const Menu = styled.div`
     flex-direction: column;
     justify-content: flex-start;
 
-    border-bottom-width: 1px;
+    border-bottom-width: 0.1rem;
     border-bottom-style: solid;
-    border-bottom-color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    border-bottom-color: ${({ theme }) => theme.COLORS.LIGHT_500};
     
 
     margin-top: 15rem;
@@ -50,11 +51,6 @@ export const Menu = styled.div`
 
     gap: 1rem;
 
-    #searchPlate {
-        > svg {
-            display: none;
-        }
-    }
 
     #buttonExit {
         color: ${({ theme }) => theme.COLORS.LIGHT_300};
