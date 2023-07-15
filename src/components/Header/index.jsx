@@ -12,37 +12,32 @@ export function Header(){
     function expandMenu(){
         
         var menuExpand = document.getElementById('buttonHidden');
-        var menuClose = document.getElementById('buttonClose');
         var adminLogo = document.getElementById('logoAdmin');
-        var textMenu = document.getElementById('menuText');
-        var searchPlate = document.getElementById('searchPlate');
-        var buttonExit = document.getElementById('buttonExit');      
+
+        var menu = document.getElementById('menu');
+        var menuClose = document.getElementById('menuClose');
+              
 
         menuExpand.classList.add('hide');
         adminLogo.classList.add('hide');
 
         menuClose.classList.remove('hide');
-        textMenu.classList.remove('hide');
-        searchPlate.classList.remove('hide');
-        buttonExit.classList.remove('hide');
+        menu.classList.remove('hide');
        
     }
 
     function closeMenu(){
 
         var menuExpand = document.getElementById('buttonHidden');
-        var menuClose = document.getElementById('buttonClose');
         var adminLogo = document.getElementById('logoAdmin');
-        var textMenu = document.getElementById('menuText');
-        var searchPlate = document.getElementById('searchPlate');
-        var buttonExit = document.getElementById('buttonExit');
+
+        var menuClose = document.getElementById('menuClose');
+        var menu = document.getElementById('menu');   
         
  
-        
         menuClose.classList.add('hide');
-        textMenu.classList.add('hide');
-        searchPlate.classList.add('hide');
-        buttonExit.classList.add('hide');
+        menu.classList.add('hide');
+
 
         menuExpand.classList.remove('hide');
         adminLogo.classList.remove('hide');
@@ -56,18 +51,17 @@ export function Header(){
                     <img className="" id="logoAdmin" src={logoAdmin} alt="Logo da Food Explorer" />
                 </MenuExpand>
                 
-                <MenuClose onClick={closeMenu}>
-                    <img className="hide" id="buttonClose" src={buttonClose} alt="Imagem de um X para fechar o menu" />
-                    <h1 className="hide" id="menuText">Menu</h1>
+                <MenuClose id="menuClose" onClick={closeMenu} className="hide">
+                    <img  id="buttonClose" src={buttonClose} alt="Imagem de um X para fechar o menu" />
+                    <h1  id="menuText">Menu</h1>
                 </MenuClose>
-                <Menu onClick={expandMenu}>
-                    <Input 
-                        className="hide"
+                <Menu id="menu" onClick={expandMenu} className="hide">
+                    <Input
                         icon={FiSearch} 
                         id="searchPlate" 
                         placeholder="Busque por pratos ou ingredientes" 
                     />
-                    <a className="hide" id="buttonExit" href="#">Sair</a>
+                    <a id="buttonExit" href="#">Sair</a>
                 </Menu>
         
         </Container>
