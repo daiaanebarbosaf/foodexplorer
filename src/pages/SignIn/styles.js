@@ -16,12 +16,21 @@ export const Form = styled.form`
 
     > img {
         cursor: pointer;
-        width: clamp(15vw, 10em, 30vw);
+        width: clamp(15vw, 20em, 130vw);
         margin-bottom: 4.5625rem;
     }
 
     > p {
-        font-size: ;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_400};
+
+        margin-bottom: 0.5rem;
     }
 
+    .inputSignIn {
+        margin-top: 1rem;
+    }
 `;
