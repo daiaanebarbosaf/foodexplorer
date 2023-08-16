@@ -19,7 +19,7 @@ export function SignIn(){
                     placeholder="Exemplo: exemplo@exemplo.com.br ou ingredientes" 
                     icon={FiMail}
                 />
-                <p>Senha</p>
+                <p className="inputSignIn">Senha</p>
                 <Input
                     type="password"
                     placeholder="No mínimo 6 caracteres" 
