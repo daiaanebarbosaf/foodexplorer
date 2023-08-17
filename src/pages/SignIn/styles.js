@@ -27,10 +27,15 @@ export const Form = styled.form`
 
         color: ${({ theme }) => theme.COLORS.LIGHT_400};
 
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem;
     }
 
-    .inputSignIn {
+    .inputSignInP {
         margin-top: 1rem;
+    }
+
+    #inputSignIn::placeholder {
+        font-size: 0.7rem;
+        color: ${({ theme }) => theme.COLORS.LIGHT_500};
     }
 `;
