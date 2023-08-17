@@ -1,5 +1,4 @@
 import { Container, Form } from './styles';
-import { FiMail, FiLock } from 'react-icons/fi';
 import logo from '../../assets/logo.svg';
 
 import { Input } from '../../components/Input';
@@ -11,7 +10,9 @@ export function SignIn(){
         <Container>
 
             <Form>
-                <img src={logo} alt="Logo da Food Explorer" />
+                <header>
+                    <img src={logo} alt="Logo da Food Explorer" />
+                </header>
 
                 <p>Email</p>
                 <Input
@@ -28,6 +29,13 @@ export function SignIn(){
                 />
 
                 <Button title="Entrar"/>
+
+                <footer>
+                    <a href="#">
+                        Criar uma conta                    
+                    </a>
+                </footer>
+
             </Form>
         </Container>
     );
