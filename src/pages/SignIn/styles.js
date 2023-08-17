@@ -14,10 +14,16 @@ export const Form = styled.form`
     flex-direction: column;
     justify-content: center;
 
-    > img {
-        cursor: pointer;
-        width: clamp(15vw, 20em, 130vw);
-        margin-bottom: 4.5625rem;
+    > header {
+        display: flex;
+        justify-content: center;
+
+        > img {
+            cursor: pointer;
+            width: clamp(15vw, 20em, 130vw);
+            margin-bottom: 3.5625rem;
+        }
+
     }
 
     > p {
@@ -38,4 +44,18 @@ export const Form = styled.form`
         font-size: 0.7rem;
         color: ${({ theme }) => theme.COLORS.LIGHT_500};
     }
+
+    > footer {
+        display: flex;
+        justify-content: center;
+
+        > a {
+
+            margin-top: 1.5rem;
+            color: ${({ theme }) => theme.COLORS.LIGHT_100};
+
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+    } 
 `;
