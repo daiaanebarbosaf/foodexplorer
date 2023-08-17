@@ -15,15 +15,16 @@ export function SignIn(){
 
                 <p>Email</p>
                 <Input
+                    id="inputSignIn"
                     type="text"
-                    placeholder="Exemplo: exemplo@exemplo.com.br ou ingredientes" 
-                    icon={FiMail}
+                    placeholder="Exemplo: exemplo@exemplo.com.br" 
                 />
-                <p className="inputSignIn">Senha</p>
+                <p className="inputSignInP">Senha</p>
                 <Input
+                    id="inputSignIn"
                     type="password"
                     placeholder="No mínimo 6 caracteres" 
-                    icon={FiLock}
+                   
                 />
 
                 <Button title="Entrar"/>
