@@ -28,7 +28,7 @@ export const Form = styled.form`
 
     > p {
         font-family: 'Roboto', sans-serif;
-        font-size: 1rem;
+        font-size: 0.8rem;
         font-weight: 400;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_400};
