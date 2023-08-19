@@ -63,6 +63,7 @@ export function Header(){
                             placeholder="Busque por pratos ou ingredientes" 
                         />
                         <a id="buttonExit" href="#">Sair</a>
+                        <a id="buttonNewDishes" href="#">Novo prato</a>
                     </div>
                 </Menu>
         
