@@ -56,12 +56,14 @@ export function Header(){
                     <h1  id="menuText">Menu</h1>
                 </MenuClose>
                 <Menu id="menu" onClick={expandMenu} className="hide">
-                    <Input
-                        icon={FiSearch} 
-                        id="searchPlate" 
-                        placeholder="Busque por pratos ou ingredientes" 
-                    />
-                    <a id="buttonExit" href="#">Sair</a>
+                    <div id="optionsMenu">
+                        <Input
+                            icon={FiSearch} 
+                            id="searchPlate" 
+                            placeholder="Busque por pratos ou ingredientes" 
+                        />
+                        <a id="buttonExit" href="#">Sair</a>
+                    </div>
                 </Menu>
         
         </Container>
