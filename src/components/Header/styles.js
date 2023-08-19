@@ -35,18 +35,22 @@ export const Menu = styled.div`
 
     #optionsMenu {
 
+        margin-top: 2rem;
         margin-left: -7rem;
 
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
 
         justify-content: space-between;
 
         gap: 1rem;
+
+        > a {
+            border-bottom-width: 0.1rem;
+            border-bottom-style: solid;
+            border-bottom-color: ${({ theme }) => theme.COLORS.LIGHT_500};
+        }
         
-        border-bottom-width: 0.1rem;
-        border-bottom-style: solid;
-        border-bottom-color: ${({ theme }) => theme.COLORS.LIGHT_500};
     }
     
     margin-top: 15rem;
@@ -55,10 +59,11 @@ export const Menu = styled.div`
         height: 1.5rem;
     }
 
-    #buttonExit {
+    #buttonExit, #buttonNewDishes {
         color: ${({ theme }) => theme.COLORS.LIGHT_300};
         font-family: 'Poppins', sans-serif;
         font-weight: 100;
+        font-size: clamp(2vw, 1.8em, 10vw);
 
         margin-bottom: 0.5rem;
     }
@@ -105,7 +110,7 @@ export const MenuClose = styled.div`
 
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
-        font-size: clamp(2vw, 2em, 10vw);;
+        font-size: clamp(2vw, 2em, 10vw);
         
     }
 
