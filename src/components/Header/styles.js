@@ -10,19 +10,13 @@ export const Container = styled.header`
 
     display: flex;
     align-items: center;
+    justify-content: center;
+
     cursor: pointer;
 
-    > img {
-        cursor: pointer;
-        width: clamp(5vw, 10em, 30vw);
-    }
-
-    #buttonHidden, #buttonClose {
+    #buttonClose {
         height: 1.5rem;
-        margin-left: 2rem;
-        margin-right: -20rem;
 
-        cursor: pointer;
     }
 
     .hide {
@@ -47,12 +41,6 @@ export const Menu = styled.div`
     
 
     margin-top: 15rem;
-    margin-left: -5rem;
-
-    gap: 1rem;
-
-    
-
     #buttonExit {
         color: ${({ theme }) => theme.COLORS.LIGHT_300};
         font-family: 'Poppins', sans-serif;
@@ -63,13 +51,22 @@ export const Menu = styled.div`
 `;
 
 export const MenuExpand = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    #buttonHidden, #buttonClose {
+
+    #logoAdmin, #buttonHidden {
         height: 1.5rem;
-        margin-left: 2rem;
-        margin-right: -20rem;
+        
+    }
 
-        cursor: pointer;
+    #buttonHidden {
+        width: clamp(5vw, 2em, 30vw);
+    }
+
+    #logoAdmin {
+        width: clamp(15vw, 150em, 80vw);
     }
 
 `;
