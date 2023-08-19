@@ -14,11 +14,6 @@ export const Container = styled.header`
 
     cursor: pointer;
 
-    #buttonClose {
-        height: 1.5rem;
-
-    }
-
     .hide {
         display: none;
         visibility: none;
@@ -31,16 +26,35 @@ export const Container = styled.header`
 `;
 
 export const Menu = styled.div`
+    padding: 0 2rem;
+
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
 
-    border-bottom-width: 0.1rem;
-    border-bottom-style: solid;
-    border-bottom-color: ${({ theme }) => theme.COLORS.LIGHT_500};
+
+    #optionsMenu {
+
+        margin-left: -7rem;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: space-between;
+
+        gap: 1rem;
+        
+        border-bottom-width: 0.1rem;
+        border-bottom-style: solid;
+        border-bottom-color: ${({ theme }) => theme.COLORS.LIGHT_500};
+    }
     
-
     margin-top: 15rem;
+
+    #buttonClose {
+        height: 1.5rem;
+    }
+
     #buttonExit {
         color: ${({ theme }) => theme.COLORS.LIGHT_300};
         font-family: 'Poppins', sans-serif;
@@ -55,10 +69,8 @@ export const MenuExpand = styled.div`
     justify-content: center;
     align-items: center;
 
-
     #logoAdmin, #buttonHidden {
         height: 1.5rem;
-        
     }
 
     #buttonHidden {
@@ -74,23 +86,29 @@ export const MenuExpand = styled.div`
 export const MenuClose = styled.div`
 
     display: flex;
+    flex-direction: row;
     align-items: center;
-    
+    justify-content: space-around;
+
+    margin-left: 2rem;
+
+    gap: 1rem;
+
      #buttonClose {
-        margin-right: -18rem;
-        cursor: pointer;
-    }
-
-    > h1 {
-
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
+        height: 1.5rem;
+        width: clamp(5vw, 2em, 30vw);
         
     }
 
     > h1 {
-        margin-left: 2rem;
+        
+
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: clamp(2vw, 2em, 10vw);;
+        
     }
+
 `;
 
 
