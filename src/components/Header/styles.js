@@ -6,6 +6,8 @@ export const Container = styled.header`
     height: 6rem;
     width: 100%;
 
+    padding: 0 2rem;
+
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
     display: flex;
@@ -26,7 +28,6 @@ export const Container = styled.header`
 `;
 
 export const Menu = styled.div`
-    padding: 0 2rem;
 
     display: flex;
     justify-content: center;
@@ -36,12 +37,12 @@ export const Menu = styled.div`
     #optionsMenu {
 
         margin-top: 2rem;
-        margin-left: -7rem;
+        margin-left: -5rem;
 
         display: flex;
         flex-direction: column;
 
-        justify-content: space-between;
+        justify-content: flex-start;
 
         gap: 1rem;
 
@@ -67,6 +68,8 @@ export const Menu = styled.div`
 
         margin-bottom: 0.5rem;
     }
+    
+
 `;
 
 export const MenuExpand = styled.div`
@@ -95,8 +98,6 @@ export const MenuClose = styled.div`
     align-items: center;
     justify-content: space-around;
 
-    margin-left: 2rem;
-
     gap: 1rem;
 
      #buttonClose {
@@ -107,7 +108,6 @@ export const MenuClose = styled.div`
 
     > h1 {
         
-
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
         font-size: clamp(2vw, 2em, 10vw);
