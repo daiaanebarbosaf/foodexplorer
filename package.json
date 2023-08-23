@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "expo-linear-gradient": "~12.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-native-linear-gradient": "^2.7.3",
+    "react-native-web-linear-gradient": "^1.1.2",
     "styled-components": "^6.0.0-rc.3"
   },
   "devDependencies": {
@@ -24,6 +26,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "webpack": "^5.88.2"
   }
 }
