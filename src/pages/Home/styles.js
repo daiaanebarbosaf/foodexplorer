@@ -33,3 +33,24 @@ export const Banner = styled.div`
     }
 
 `;
+
+export const BannerText = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 0 1rem;
+
+    > h1 {
+        font-family: 'Poppins', sans-serif;
+        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+        font-weight: 600;
+        font-size: clamp(0.8vw, 1em, 30vw);
+    }
+
+    > p {
+        
+    }
+    
+`;
