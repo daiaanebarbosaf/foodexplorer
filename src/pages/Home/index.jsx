@@ -1,4 +1,4 @@
-import { Container, Banner } from './styles';
+import { Container, Banner, BannerText } from './styles';
 
 import unparalleledFlavors from '../../assets/unparalleled-flavors.png';
 
@@ -11,8 +11,12 @@ export function Home(){
 
             <Banner className="gradient-container">
                 <img src={unparalleledFlavors} alt="Quitutes ao ar" />
-                <h1>Sabores inigualáveis</h1>
-                <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
+
+                <BannerText>
+                    <h1>Sabores inigualáveis</h1>
+                    <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
+                </BannerText>
+                
             </Banner>
 
         </Container>
