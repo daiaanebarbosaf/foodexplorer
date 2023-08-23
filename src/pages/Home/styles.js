@@ -8,7 +8,6 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     
-    gap: 2rem;
 
     padding: 0 2rem;
 
@@ -22,6 +21,8 @@ export const Banner = styled.div`
 
     width: 90%;
     height: 120px;
+
+    margin-top: 2rem;
 
     > img {
         width: 150px;
@@ -40,17 +41,20 @@ export const BannerText = styled.div`
 
     justify-content: center;
 
-    padding: 0 1rem;
+    margin-right: 2rem;
+
+    font-family: 'Poppins', sans-serif;
+    color: ${({ theme }) => theme.COLORS.LIGHT_300};
 
     > h1 {
-        font-family: 'Poppins', sans-serif;
-        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+
         font-weight: 600;
-        font-size: clamp(0.8vw, 1em, 30vw);
+        font-size: clamp(0.8vw, 1.3em, 30vw);
     }
 
     > p {
-        
+        font-weight: 400;
+        font-size: 0.6rem;
     }
     
 `;
