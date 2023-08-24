@@ -9,8 +9,6 @@ export const Container = styled.div`
     justify-content: center;
     
 
-    padding: 0 2rem;
-
 `;
 
 export const Banner = styled.div`
@@ -19,18 +17,18 @@ export const Banner = styled.div`
 
     background: linear-gradient(to bottom, #091E26, #00131C);
 
-    width: 90%;
-    height: 120px;
+    width: 85%;
+    height: 110px;
 
     margin-top: 2rem;
-
+    
     > img {
-        width: 150px;
-        height: 120px;
+        width: 160px;
+        height: 130px;
 
         position: relative;
         left: -25px;
-        bottom: -4px;
+        bottom: 15px;
     }
 
 `;
@@ -47,7 +45,6 @@ export const BannerText = styled.div`
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
 
     > h1 {
-
         font-weight: 600;
         font-size: clamp(0.8vw, 1.3em, 30vw);
     }
