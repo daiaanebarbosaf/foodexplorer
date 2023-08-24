@@ -21,6 +21,7 @@ export const Banner = styled.div`
     height: 110px;
 
     margin-top: 2rem;
+    margin-bottom: 2rem;
     
     > img {
         width: 160px;
@@ -54,4 +55,10 @@ export const BannerText = styled.div`
         font-size: 0.6rem;
     }
     
+`;
+
+
+export const Section = styled.div`
+
+    margin-bottom: 2rem;
 `;
