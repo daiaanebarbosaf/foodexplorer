@@ -1,8 +1,12 @@
-import { Container, Banner, BannerText } from './styles';
+import { Container, Banner, BannerText, Section } from './styles';
 
 import unparalleledFlavors from '../../assets/unparalleled-flavors.png';
 
+import { GoPencil } from 'react-icons/go';
+
+
 import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
 
 export function Home(){
     return(
@@ -18,6 +22,18 @@ export function Home(){
                 </BannerText>
                 
             </Banner>
+
+            <Section id="meals">
+                <h2>Refeições</h2>
+                <ul>
+                    <li>
+                        <GoPencil/>
+                    </li>
+                </ul>
+
+            </Section>
+
+            <Footer />
 
         </Container>
     );
