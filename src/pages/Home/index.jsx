@@ -1,8 +1,11 @@
 import { Container, Banner, BannerText, Section } from './styles';
 
 import unparalleledFlavors from '../../assets/unparalleled-flavors.png';
+import saladRavanello from '../../assets/dishes/saladRavanello.png';
+import spaguettiGambe from '../../assets/dishes/spaguettiGambe.png';
 
-import { GoPencil } from 'react-icons/go';
+import { PiPencilSimpleBold } from 'react-icons/pi';
+import { IoIosArrowForward } from 'react-icons/io';
 
 
 import { Header } from '../../components/Header';
@@ -27,10 +30,39 @@ export function Home(){
                 <h2>Refeições</h2>
                 <ul>
                     <li>
-                        <GoPencil/>
+                        <a href="#">
+                            <PiPencilSimpleBold/>
+                        </a>
+
+                        <img 
+                            src={saladRavanello} 
+                            alt="Prato de Salada Ravanello" 
+                        />
+
+                        <p>
+                            Salada Ravanello 
+                            <IoIosArrowForward/>
+                        </p>
+                        <p className="pPrice">R$ 49,97</p>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <PiPencilSimpleBold/>
+                        </a>
+
+                        <img 
+                            src={spaguettiGambe} 
+                            alt="Prato de Spaguetti Gambe" 
+                        />
+
+                        <p>
+                            Spaguetti Gambe 
+                            <IoIosArrowForward/>
+                        </p>
+                        <p className="pPrice">R$ 79,97</p>
                     </li>
                 </ul>
-
             </Section>
 
             <Footer />
