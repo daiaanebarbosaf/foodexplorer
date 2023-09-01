@@ -71,15 +71,7 @@ export const Section = styled.div`
     > ul {
 
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 5rem;
-        
-        background-color: ${({ theme }) => theme.COLORS.DARK_300};
-
-        width: 13.125rem;
-        height: 18.25rem;
-        padding: 2rem;
+        gap: 1rem;        
         
         border-radius: 8px;
 
@@ -89,13 +81,21 @@ export const Section = styled.div`
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            padding: 2rem 1rem;
+
+            background-color: ${({ theme }) => theme.COLORS.DARK_300};
             
             gap: 1rem;
 
             > a > svg {
                 color: ${({ theme }) => theme.COLORS.LIGHT_300};
-                font-size: 2rem;
+                font-size: clamp(1vw, 3em, 30vw);
                 margin-left: 8rem;
+            }
+
+            > img {
+                width: clamp(3vw, 10em, 30vw);
             }
             
             > p {
@@ -116,6 +116,13 @@ export const Section = styled.div`
 
                 color: ${({ theme }) => theme.COLORS.CAKE_200};
             }
+        }
+    }
+
+    @media (max-width: 400px){
+        > ul {
+            display: flex;
+            flex-direction: column;
         }
     }
 `;
