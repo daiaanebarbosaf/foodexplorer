@@ -5,6 +5,7 @@ import saladRavanello from '../../assets/dishes/saladRavanello.png';
 import spaguettiGambe from '../../assets/dishes/spaguettiGambe.png';
 import prugnaPie from '../../assets/dishes/prugnaPie.png';
 import peachyPastrie from '../../assets/dishes/peachyPastrie.png';
+import espresso from '../../assets/dishes/espresso.png';
 
 import { PiPencilSimpleBold } from 'react-icons/pi';
 import { IoIosArrowForward } from 'react-icons/io';
@@ -101,6 +102,44 @@ export function Home(){
                             <IoIosArrowForward/>
                         </p>
                         <p className="pPrice">R$ 32,97</p>
+                    </li>
+                </ul>
+            </Section>
+
+            <Section title="Pratos principais">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <PiPencilSimpleBold/>
+                        </a>
+
+                        <img 
+                            src={espresso} 
+                            alt="Bebida Expressa" 
+                        />
+
+                        <p>
+                            Espresso
+                            <IoIosArrowForward/>
+                        </p>
+                        <p className="pPrice">R$ 15,97</p>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <PiPencilSimpleBold/>
+                        </a>
+
+                        <img 
+                            src={espresso} 
+                            alt="Copo de suco de maracujá" 
+                        />
+
+                        <p>
+                            Suco de maracujá
+                            <IoIosArrowForward/>
+                        </p>
+                        <p className="pPrice">R$ 13,97</p>
                     </li>
                 </ul>
             </Section>
