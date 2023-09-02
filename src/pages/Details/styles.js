@@ -11,4 +11,10 @@ export const Container = styled.div`
     grid-template-areas: 
     "header"
     "content";
+
+    #tag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 `;
