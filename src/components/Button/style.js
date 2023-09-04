@@ -7,8 +7,7 @@ export const Container = styled.button`
 
     height: 2.5rem;
     border: 0;
-    padding: 0 5rem;
-    margin-top: 2rem;
+ 
     border-radius: 5px;
 
     font-family: 'Poppins', sans-serif;
