@@ -9,6 +9,5 @@ export const Container = styled.span`
     background-color: ${({ theme }) => theme.COLORS.DARK_1000};
 
     border-radius: 5px;
-    padding: 5px 14px;
-    margin-right: 6px;
+    padding: 0.3125rem 0.875rem;
 `;
