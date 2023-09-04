@@ -11,10 +11,41 @@ export const Container = styled.div`
     grid-template-areas: 
     "header"
     "content";
+`;
 
-    #tag {
+export const Content= styled.div`
+    padding: 2rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    .back {
+
+        display: flex;
+        align-items: center;
+
+        margin-right: 15rem;
+
+        font-family: 'Poppins', sans-serif;
+        font-size: clamp(0.8vw, 1.5em, 30vw);
+        font-weight: 500;
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+
+        > svg {
+            font-size: clamp(0.8vw, 1.2em, 30vw);
+        }
+
+    }
+
+    .tags {
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 1rem;
     }
 `;
