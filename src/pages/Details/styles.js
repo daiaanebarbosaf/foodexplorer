@@ -14,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const Content= styled.div`
-    padding: 2rem;
+    padding: 2rem 3rem 2rem 1rem;
 
     display: flex;
     align-items: center;
@@ -76,10 +76,11 @@ export const Content= styled.div`
         flex-wrap: wrap;
 
         gap: 1rem;
+
     }
 
     .buttoneEditDish {
-        width: 90%;
+        width: 98%;
     }
     
 `;
