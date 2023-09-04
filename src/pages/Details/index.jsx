@@ -44,6 +44,7 @@ export function Details(){
           <Tag title="cebola"/>
           <Tag title="pão naan"/>
           <Tag title="pepino"/>
+          <Tag title="rabanete"/>
           <Tag title="tomate"/>
 
         </div>
