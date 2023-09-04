@@ -1,9 +1,9 @@
 import { Container, Content } from './styles.js';
 
 import { ButtonText } from '../../components/ButtonText';
+import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
-import { Section } from '../../components/Section';
 import { Tag } from '../../components/Tag';
 
 import { IoIosArrowBack } from 'react-icons/io';
@@ -28,6 +28,15 @@ export function Details(){
             src={saladRavanello} 
             alt="Prato de Salada Ravanello" 
           />
+
+          <h1>
+            Salada Ravanello 
+          </h1>
+                        
+          <p >
+            Rabanetes, folhas verdes e molho 
+            agridoce salpicados com gergelim.
+          </p>
         </div>
 
         <div className="tags">
@@ -38,6 +47,12 @@ export function Details(){
           <Tag title="tomate"/>
 
         </div>
+
+        <Button
+          className="buttoneEditDish"
+          title="Editar prato"
+        />
+
       </Content>
 
       <Footer/>
