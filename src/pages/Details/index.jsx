@@ -1,4 +1,4 @@
-import { Container } from './styles.js';
+import { Container, Content } from './styles.js';
 
 import { ButtonText } from '../../components/ButtonText';
 import { Header } from '../../components/Header';
@@ -8,24 +8,37 @@ import { Tag } from '../../components/Tag';
 
 import { IoIosArrowBack } from 'react-icons/io';
 
+import saladRavanello from '../../assets/dishes/saladRavanello.png';
+
 export function Details(){
   return(
     <Container>
       <Header />
 
-      <IoIosArrowBack/>
-      <ButtonText
-        title="voltar"
-      />
+      <Content>
+        <div className="back">
+          <IoIosArrowBack/>
+          <ButtonText
+            title="voltar"
+          />
+        </div>
 
-      <Section id="tags">
-        <Tag title="alface"/>
-        <Tag title="cebola"/>
-        <Tag title="pão naan"/>
-        <Tag title="pepino"/>
-        <Tag title="tomate"/>
+        <div className="dishDescription">
+          <img 
+            src={saladRavanello} 
+            alt="Prato de Salada Ravanello" 
+          />
+        </div>
 
-      </Section>
+        <div className="tags">
+          <Tag title="alface"/>
+          <Tag title="cebola"/>
+          <Tag title="pão naan"/>
+          <Tag title="pepino"/>
+          <Tag title="tomate"/>
+
+        </div>
+      </Content>
 
       <Footer/>
     </Container>
