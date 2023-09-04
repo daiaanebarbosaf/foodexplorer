@@ -18,6 +18,7 @@ export const Content= styled.div`
 
     display: flex;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     gap: 2rem;
 
@@ -40,6 +41,34 @@ export const Content= styled.div`
 
     }
 
+    .dishDescription {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        
+        font-family: 'Poppins', sans-serif; 
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+
+        > img {
+            width: clamp(3vw, 50em, 60vw);
+        }
+
+        > h1 {
+            font-size: clamp(0.8vw, 1.6em, 30vw);
+            font-weight: 500;
+        }
+
+        > p {
+            font-size: clamp(0.8vw, 1.1em, 30vw);
+            font-weight: 400;
+
+            padding: 0rem 3rem 0rem 3rem;
+        }
+        
+    }
+
     .tags {
         display: flex;
         align-items: center;
@@ -48,4 +77,9 @@ export const Content= styled.div`
 
         gap: 1rem;
     }
+
+    .buttoneEditDish {
+        width: 90%;
+    }
+    
 `;
