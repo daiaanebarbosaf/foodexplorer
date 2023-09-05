@@ -14,11 +14,12 @@ export const Container = styled.div`
 `;
 
 export const Content= styled.div`
-    padding: 2rem 3rem 2rem 1rem;
+    margin: 2rem;
 
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: center;
     flex-direction: column;
     gap: 2rem;
 
