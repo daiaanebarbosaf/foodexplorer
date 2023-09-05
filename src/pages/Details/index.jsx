@@ -16,12 +16,12 @@ export function Details(){
       <Header />
 
       <Content>
-        <div className="back">
+        <a className="back">
           <IoIosArrowBack/>
           <ButtonText
             title="voltar"
           />
-        </div>
+        </a>
 
         <div className="dishDescription">
           <img 
