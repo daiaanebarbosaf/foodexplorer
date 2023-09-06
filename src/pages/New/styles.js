@@ -5,7 +5,7 @@ export const Container = styled.div`
     height: 100vh;
 
     display: grid;
-    grid-template-rows: 6rem auto;
+    grid-template-rows: 105px auto;
     grid-template-areas: 
     "header"
     "content";
@@ -32,8 +32,13 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
-    max-width: 34rem;
+    max-width: 80%;
     margin: 2rem;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
 
     font-family: 'Roboto', sans-serif;
 
@@ -42,13 +47,27 @@ export const Form = styled.form`
             font-family: 'Poppins', sans-serif;
             font-size: clamp(1.5vw, 2em, 30vw);
             font-weight: 400;
+
+            margin-bottom: 1rem;
         }
+    }
+
+    > p {
+
+        font-weight: 400;
+        font-size: clamp(0.5vw, 1em, 30vw);
     }
 `;
 
 export const ImgDishes = styled.div`
     position: relative;
-    margin: 0 auto 32px;
+
+    > p {
+        margin-bottom: 0.8rem;
+
+        font-weight: 400;
+        font-size: clamp(0.5vw, 1em, 30vw);
+    }
 
     > label {
         width: 100%;
@@ -60,7 +79,6 @@ export const ImgDishes = styled.div`
         gap: 0.5rem;
 
         border-radius: 5px;
-        
 
         background-color: ${({ theme }) => theme.COLORS.DARK_900};
         
@@ -69,4 +87,38 @@ export const ImgDishes = styled.div`
             display: none;
         }
     }
+`;
+
+export const SelectCategory = styled.div`
+    
+    > p {
+        margin-bottom: 0.8rem;
+
+        font-weight: 400;
+        font-size: clamp(0.5vw, 1em, 30vw);
+    }
+
+    > select {
+        width: 100%;
+
+        background: transparent;
+        border: none;
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_400};
+
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        gap: 0.5rem;
+
+        font-family: 'Poppins', sans-serif;
+        font-size: clamp(0.5vw, 1em, 30vw);
+        font-weight: 400;
+
+        border-radius: 5px;
+
+        background-color: ${({ theme }) => theme.COLORS.DARK_900};
+
+    }
+
 `;
