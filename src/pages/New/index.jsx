@@ -1,4 +1,4 @@
-import { Container, Form, ImgDishes } from './styles';
+import { Container, Form, ImgDishes, SelectCategory } from './styles';
 
 import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
@@ -31,6 +31,7 @@ export function New(){
                     </header>
 
                     <ImgDishes>
+                        <p>Imagem do prato</p>
                         <label 
                             htmlFor="imgDishes"
                         >
@@ -44,7 +45,26 @@ export function New(){
                         </label>
                     </ImgDishes>
 
+                    <p>Nome</p>
                     <Input placeholder="Ex.: Salada Ceasar" />
+
+                    <SelectCategory>
+                        <p>Categoria</p>
+                        <select 
+                        >
+                            <option value="1">
+                                Refeição
+                            </option>
+                            <option value="2">
+                                Pratos Principais
+                            </option>
+
+                        </select>
+                        
+                    </SelectCategory>
+
+                    <p>Ingredientes</p>
+                    
                 </Form>
             </main>
 
