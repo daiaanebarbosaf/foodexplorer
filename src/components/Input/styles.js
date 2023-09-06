@@ -16,16 +16,18 @@ export const Container = styled.div`
 
     > input {
    
-       height: 2rem;
-       width: 100%;
+      height: 2rem;
+      width: 100%;
+
+      padding: 0.5rem;
 
 
-       color: ${({ theme }) => theme.COLORS.LIGHT_100};
-       background: transparent;
-       border: 0;
+      color: ${({ theme }) => theme.COLORS.LIGHT_100};
+      background: transparent;
+      border: 0;
 
-       font-family: 'Roboto', sans-serif;
-          font-weight: 400;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
           font-size: 0.7rem;
 
        &placeholder {
