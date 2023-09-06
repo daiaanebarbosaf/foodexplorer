@@ -28,7 +28,7 @@ export const Container = styled.div`
 
       font-family: 'Roboto', sans-serif;
       font-weight: 400;
-          font-size: 0.7rem;
+      font-size: 0.7rem;
 
        &placeholder {
             color: ${({ theme }) => theme.COLORS.LIGHT_500};
