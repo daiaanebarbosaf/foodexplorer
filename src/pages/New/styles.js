@@ -16,6 +16,7 @@ export const Container = styled.div`
         align-items: center;
 
         margin-right: 15rem;
+        margin: 2rem;
 
         font-family: 'Poppins', sans-serif;
         font-size: clamp(0.8vw, 1.5em, 30vw);
@@ -31,10 +32,41 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
-    max-width: 34.375rem;
-    margin: 2.375rem auto;
+    max-width: 34rem;
+    margin: 2rem;
 
-    > h1 {
+    font-family: 'Roboto', sans-serif;
 
+    > header {
+        > h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.5vw, 2em, 30vw);
+            font-weight: 400;
+        }
+    }
+`;
+
+export const ImgDishes = styled.div`
+    position: relative;
+    margin: 0 auto 32px;
+
+    > label {
+        width: 100%;
+        height: 2rem;
+
+        display: flex;
+        align-items: center;
+        padding: 0.9rem;
+        gap: 0.5rem;
+
+        border-radius: 5px;
+        
+
+        background-color: ${({ theme }) => theme.COLORS.DARK_900};
+        
+
+        > input {
+            display: none;
+        }
     }
 `;
