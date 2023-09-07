@@ -3,6 +3,8 @@ import { Container, Form, ImgDishes, SelectCategory } from './styles';
 import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
+import { Section } from '../../components/Section';
+import { Ingredients } from '../../components/Ingredients';
 
 import { IoIosArrowBack } from 'react-icons/io';
 import { FiUpload } from 'react-icons/fi';
@@ -64,6 +66,11 @@ export function New(){
                     </SelectCategory>
 
                     <p>Ingredientes</p>
+                    <Ingredients value="Pão Naan"/>
+                    <Ingredients 
+                        isNew 
+                        placeholder="Adicionar"
+                    />
                     
                 </Form>
             </main>
