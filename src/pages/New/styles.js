@@ -57,6 +57,21 @@ export const Form = styled.form`
         font-weight: 400;
         font-size: clamp(0.5vw, 1em, 30vw);
     }
+
+    .tags {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        align-items: left;
+
+        padding: 0.4rem;
+        gap: 0.5rem;
+    
+        width: 100%;
+        border-radius: 5px;
+
+        background-color: ${({ theme }) => theme.COLORS.DARK_900};
+    }
 `;
 
 export const ImgDishes = styled.div`
@@ -100,8 +115,6 @@ export const SelectCategory = styled.div`
 
     > select {
         width: 100%;
-
-        background: transparent;
         border: none;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_400};
@@ -121,4 +134,8 @@ export const SelectCategory = styled.div`
 
     }
 
+`;
+
+export const Ingredients = styled.div`
+    
 `;
