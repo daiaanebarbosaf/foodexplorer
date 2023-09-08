@@ -3,7 +3,7 @@ import { Container, Form, ImgDishes, SelectCategory } from './styles';
 import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
-import { Section } from '../../components/Section';
+import { Footer } from '../../components/Footer';
 import { Ingredients } from '../../components/Ingredients';
 
 import { IoIosArrowBack } from 'react-icons/io';
@@ -66,15 +66,20 @@ export function New(){
                     </SelectCategory>
 
                     <p>Ingredientes</p>
-                    <Ingredients value="Pão Naan"/>
-                    <Ingredients 
-                        isNew 
-                        placeholder="Adicionar"
-                    />
+
+                    <div className="tags">
+                        <Ingredients value="Pão Naan"/>
+                        <Ingredients 
+                            isNew 
+                            placeholder="Adicionar"
+                        />
+                    </div>
                     
                 </Form>
             </main>
-
+            <Footer/>
         </Container>
+
+        
     );
 }
