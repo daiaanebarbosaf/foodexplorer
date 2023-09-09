@@ -105,33 +105,36 @@ export const ImgDishes = styled.div`
 `;
 
 export const SelectCategory = styled.div`
+     
+     .input-select {
+        display: flex;
+        padding: 0.5rem;
+        
+        width: 100%;
+        
+        background-color: ${({ theme }) => theme.COLORS.DARK_900};
+        border-radius: 5px;
+        border: none;
+
+        > select {
+            width: 100%;
+            
+            color: ${({ theme }) => theme.COLORS.LIGHT_400};
+
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(0.5vw, 1em, 30vw);
+            font-weight: 400;
+            background-color: ${({ theme }) => theme.COLORS.DARK_900};
+
+            border: none;
+        }
+     }
     
     > p {
         margin-bottom: 0.8rem;
 
         font-weight: 400;
         font-size: clamp(0.5vw, 1em, 30vw);
-    }
-
-    > select {
-        width: 100%;
-        border: none;
-
-        color: ${({ theme }) => theme.COLORS.LIGHT_400};
-
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
-        gap: 0.5rem;
-
-        font-family: 'Poppins', sans-serif;
-        font-size: clamp(0.5vw, 1em, 30vw);
-        font-weight: 400;
-
-        border-radius: 5px;
-
-        background-color: ${({ theme }) => theme.COLORS.DARK_900};
-
     }
 
 `;
