@@ -138,7 +138,3 @@ export const SelectCategory = styled.div`
     }
 
 `;
-
-export const Ingredients = styled.div`
-    
-`;
