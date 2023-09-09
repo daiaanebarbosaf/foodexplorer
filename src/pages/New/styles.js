@@ -15,8 +15,8 @@ export const Container = styled.div`
         display: flex;
         align-items: center;
 
-        margin-right: 15rem;
-        margin: 2rem;
+        margin: 2rem 0rem 0rem 1.5rem;
+        
 
         font-family: 'Poppins', sans-serif;
         font-size: clamp(0.8vw, 1.5em, 30vw);
