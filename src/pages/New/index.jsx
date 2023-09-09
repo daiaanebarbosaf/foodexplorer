@@ -52,16 +52,18 @@ export function New(){
 
                     <SelectCategory>
                         <p>Categoria</p>
-                        <select 
-                        >
-                            <option value="1">
-                                Refeição
-                            </option>
-                            <option value="2">
-                                Pratos Principais
-                            </option>
+                        <div className="input-select">
+                            <select 
+                            >
+                                <option value="1">
+                                    Refeição
+                                </option>
+                                <option value="2">
+                                    Pratos Principais
+                                </option>
 
-                        </select>
+                            </select>
+                        </div>
                         
                     </SelectCategory>
 
@@ -74,6 +76,9 @@ export function New(){
                             placeholder="Adicionar"
                         />
                     </div>
+
+                    <p>Preço</p>
+                    <Input placeholder="R$ 00,00" />
                     
                 </Form>
             </main>
