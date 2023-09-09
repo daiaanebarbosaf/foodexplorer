@@ -6,6 +6,7 @@ import { Input } from '../../components/Input';
 import { Footer } from '../../components/Footer';
 import { Ingredients } from '../../components/Ingredients';
 import { Textarea } from '../../components/Textarea';
+import { Button } from '../../components/Button';
 
 import { IoIosArrowBack } from 'react-icons/io';
 import { FiUpload } from 'react-icons/fi';
@@ -83,6 +84,7 @@ export function New(){
                     <p>Descrição</p>
                     <Textarea placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"/>
                     
+                    <Button className="buttonSave" title="Salvar alterações"/> 
                 </Form>
             </main>
             <Footer/>
