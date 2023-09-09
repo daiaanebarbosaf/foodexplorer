@@ -68,9 +68,14 @@ export const Form = styled.form`
         gap: 0.5rem;
     
         width: 100%;
-        border-radius: 5px;
+        
+        border-radius: 8px;
 
         background-color: ${({ theme }) => theme.COLORS.DARK_900};
+    }
+
+    .buttonSave {
+        background-color: ${({ theme }) => theme.COLORS.TOMATO_400};
     }
 `;
 
