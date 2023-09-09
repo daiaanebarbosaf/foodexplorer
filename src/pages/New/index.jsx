@@ -5,6 +5,7 @@ import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
 import { Footer } from '../../components/Footer';
 import { Ingredients } from '../../components/Ingredients';
+import { Textarea } from '../../components/Textarea';
 
 import { IoIosArrowBack } from 'react-icons/io';
 import { FiUpload } from 'react-icons/fi';
@@ -64,7 +65,6 @@ export function New(){
 
                             </select>
                         </div>
-                        
                     </SelectCategory>
 
                     <p>Ingredientes</p>
@@ -79,6 +79,9 @@ export function New(){
 
                     <p>Preço</p>
                     <Input placeholder="R$ 00,00" />
+
+                    <p>Descrição</p>
+                    <Textarea placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"/>
                     
                 </Form>
             </main>
