@@ -10,12 +10,12 @@ export const Container = styled.div`
 
     border: ${({ theme, isNew }) => isNew ? `1px dashed ${theme.COLORS.LIGHT_500}` : "none"};
     
-    border-radius: 8px;
+    border-radius: 5px;
 
     > button {
         display: flex;
         align-items: center;
-     
+        justify-content: center;
 
         border: none;
         background: none;
@@ -38,7 +38,7 @@ export const Container = styled.div`
 
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
-        font-size: clamp(0.5vw, 1.5em, 30vw);
+        font-size: clamp(0.9vw, 1.3em, 30vw);
 
         width: 100%;
         padding: 0.2rem;
