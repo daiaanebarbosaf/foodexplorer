@@ -1,4 +1,6 @@
 import { Container, Form } from './styles';
+import { useState } from "react";
+
 import logo from '../../assets/logo.svg';
 
 import { Input } from '../../components/Input';
@@ -6,6 +8,10 @@ import { Button } from '../../components/Button';
 
 
 export function SignUp(){
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     return (
         <Container>
 
