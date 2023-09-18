@@ -12,6 +12,12 @@ export function SignUp(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    function handleSignUp(){
+        if(!name || !email || !password){
+            return alert("Preencha todos os campos!") 
+        }
+    }
+
     return (
         <Container>
 
@@ -24,7 +30,8 @@ export function SignUp(){
                 <Input
                     className="inputSignUp"
                     type="text"
-                    placeholder="Exemplo: Maria da Silva" 
+                    placeholder="Exemplo: Maria da Silva"
+                    onChange={e => setName(e.target.value)} 
                 />
 
                 <p className="inputSignUpP">Email</p>
@@ -32,16 +39,18 @@ export function SignUp(){
                     className="inputSignUp"
                     type="text"
                     placeholder="Exemplo: exemplo@exemplo.com.br" 
+                    onChange={e => setEmail(e.target.value)} 
                 />
                 <p className="inputSignUpP">Senha</p>
                 <Input
                     className="inputSignUp"
                     type="password"
-                    placeholder="No mínimo 6 caracteres" 
+                    placeholder="No mínimo 6 caracteres"
+                    onChange={e => setPassword(e.target.value)} 
                    
                 />
 
-                <Button title="Criar conta"/>
+                <Button title="Criar conta" onClick={handleSignUp} />
 
                 <footer>
                     <a href="#">
