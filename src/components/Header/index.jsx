@@ -1,6 +1,8 @@
 import { Container, Menu, MenuExpand, MenuClose } from './styles';
 import { FiSearch } from 'react-icons/fi';
 
+import { Link } from 'react-router-dom';
+
 import logoAdmin from '../../assets/logo-admin.svg';
 import buttonHidden from '../../assets/hidden-menu.svg';
 import buttonClose from '../../assets/close-menu.svg';
@@ -63,7 +65,7 @@ export function Header(){
                             placeholder="Busque por pratos ou ingredientes" 
                         />
                         <a id="buttonExit" href="#">Sair</a>
-                        <a id="buttonNewDishes" href="#">Novo prato</a>
+                        <Link id="buttonNewDishes" to="/new">Novo prato</Link>
                     </div>
                 </Menu>
         
