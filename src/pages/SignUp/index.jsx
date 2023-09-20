@@ -1,7 +1,7 @@
 import { Container, Form } from './styles';
 import { useState } from "react";
 
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { api } from "../../services/api";
 
@@ -74,9 +74,9 @@ export function SignUp(){
                 />
 
                 <footer>
-                    <a href="#">
+                    <Link to="/">
                         Já tenho uma conta                   
-                    </a>
+                    </Link>
                 </footer>
 
             </Form>
