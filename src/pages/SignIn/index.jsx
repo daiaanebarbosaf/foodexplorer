@@ -1,6 +1,8 @@
 import { Container, Form } from './styles';
 import logo from '../../assets/logo.svg';
 
+import { Link } from 'react-router-dom';
+
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 
@@ -31,9 +33,9 @@ export function SignIn(){
                 <Button title="Entrar"/>
 
                 <footer>
-                    <a href="#">
+                    <Link to="/register">
                         Criar uma conta                    
-                    </a>
+                    </Link>
                 </footer>
 
             </Form>
