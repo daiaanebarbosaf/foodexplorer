@@ -1,5 +1,7 @@
 import { Container, Form, ImgDishes, SelectCategory } from './styles';
 
+import { Link } from 'react-router-dom';
+
 import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
@@ -17,16 +19,16 @@ export function Edit(){
     return (
         <Container>
             <Header/>
-            <a 
+            <Link 
                 className="back"
-                href="#"
+                to="/"
             >
                 
                 <IoIosArrowBack/>
                 <ButtonText
                     title="voltar"
                 />
-            </a>
+            </Link>
 
             <main>
                 <Form>
