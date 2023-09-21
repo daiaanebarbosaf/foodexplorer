@@ -1,5 +1,7 @@
 import { Container, Banner, BannerText } from './styles';
 
+import { Link } from 'react-router-dom';
+
 import unparalleledFlavors from '../../assets/unparalleled-flavors.png';
 import saladRavanello from '../../assets/dishes/saladRavanello.png';
 import spaguettiGambe from '../../assets/dishes/spaguettiGambe.png';
@@ -33,9 +35,9 @@ export function Home(){
             <Section title="Refeições">
                 <ul>
                     <li>
-                        <a href="#">
+                        <Link to="/edit">
                             <PiPencilSimpleBold/>
-                        </a>
+                        </Link>
 
                         <img 
                             src={saladRavanello} 
