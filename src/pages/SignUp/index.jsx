@@ -1,7 +1,7 @@
 import { Container, Form } from './styles';
 import { useState } from "react";
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { api } from "../../services/api";
 
@@ -11,12 +11,13 @@ import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 
 
-
 export function SignUp(){
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const navigate = useNavigate();
 
     function handleSignUp(){
         if(!name || !email || !password){
@@ -26,6 +27,7 @@ export function SignUp(){
         api.post("/users", { name, email, password })
         .then(() => {
             alert("Usuário cadastrado com sucesso!");
+            navigate("/");
         })
         .catch(error => {
             if(error.response){
