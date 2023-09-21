@@ -22,8 +22,7 @@ export function New(){
             <Link 
                 className="back"
                 to="/"
-            >
-                
+            > 
                 <IoIosArrowBack/>
                 <ButtonText
                     title="voltar"
