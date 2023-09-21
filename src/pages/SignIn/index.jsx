@@ -1,13 +1,19 @@
+import { useContext } from 'react';
 import { Container, Form } from './styles';
 import logo from '../../assets/logo.svg';
 
 import { Link } from 'react-router-dom';
+
+import { MyContext } from '../../myContext';
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 
 
 export function SignIn(){
+    const data = useContext(MyContext);
+    console.log("MEU CONTEXTO =>", data);
+
     return (
         <Container>
 
