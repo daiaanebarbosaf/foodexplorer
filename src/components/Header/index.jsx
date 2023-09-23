@@ -1,6 +1,8 @@
 import { Container, Menu, MenuExpand, MenuClose } from './styles';
 import { FiSearch } from 'react-icons/fi';
 
+import { useAuth } from '../../hooks/auth';
+
 import { Link } from 'react-router-dom';
 
 import logoAdmin from '../../assets/logo-admin.svg';
@@ -45,6 +47,8 @@ export function Header(){
         adminLogo.classList.remove('hide');
     }
 
+    const { signOut } = useAuth();
+
     return(
         <Container>
 
@@ -64,7 +68,7 @@ export function Header(){
                             id="searchPlate" 
                             placeholder="Busque por pratos ou ingredientes" 
                         />
-                        <a id="buttonExit" href="#">Sair</a>
+                        <Link id="buttonExit" onClick={signOut}>Sair</Link>
                         <Link id="buttonNewDishes" to="/new">Novo prato</Link>
                     </div>
                 </Menu>
