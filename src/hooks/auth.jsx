@@ -16,7 +16,9 @@ function AuthProvider({ children }) {
             localStorage.setItem("@foodexplorer:token", token);
             
             api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-            setData({ user, token })
+            setData({ user, token });
+
+            await api.post("/dishes", dish);
            
         } catch (error) {
             if (error.response){
@@ -33,6 +35,23 @@ function AuthProvider({ children }) {
         localStorage.removeItem("@foodexplorer:user");
 
         setData({});
+    }
+
+    async function updateProfile({ user }){
+        try{
+            await api.put("/user", user);
+            localStorage.setItem("@foodexplorer:user", JSON.stringify(user));
+
+            setData({user, token: data.token});
+            alert("Perfil atualizado com sucesso!")
+
+        } catch (error) {
+            if (error.response){
+                alert(error.response.data.message);
+            } else {
+                alert("Não foi possível atualizar.")
+            }
+        }
     }
 
     useEffect(() => {
@@ -53,7 +72,8 @@ function AuthProvider({ children }) {
         <AuthContext.Provider value={{ 
                 signIn, 
                 user: data.user,
-                signOut 
+                signOut,
+                dish: data.user,
             }}>
 
             {children}
@@ -63,7 +83,6 @@ function AuthProvider({ children }) {
 
 function useAuth(){
     const context = useContext(AuthContext);
-
     return context;
 }
 
