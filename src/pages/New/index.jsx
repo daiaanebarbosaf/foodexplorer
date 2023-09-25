@@ -1,7 +1,6 @@
 import { Container, Form, ImgDishes, SelectCategory } from './styles';
 
 import { useState } from 'react';
-import { useAuth } from '../../hooks/auth';
 
 import { Link } from 'react-router-dom';
 

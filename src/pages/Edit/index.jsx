@@ -25,6 +25,18 @@ export function Edit(){
     const [price, setPrice] = useState();
     const [description, setDescription] = useState();
 
+    const [tags, setTags] = useState([]);
+    const [newTag, setNewTag] = useState("");
+
+    function handleAddTag(){
+        setTags(prevState => [...prevState, newTag]);
+        setNewTag("");
+    }
+
+    function handleRemoveTag(deleted){
+        setTags(prevState => prevState.filter(tag => tag !== deleted));
+    }
+
 
     return (
         <Container>
@@ -88,10 +100,22 @@ export function Edit(){
                     <p>Ingredientes</p>
 
                     <div className="tags">
-                        <Ingredients value="Pão Naan"/>
+                    {
+                            tags.map((tag, index) =>
+                                <Ingredients 
+                                    key={String(index)}
+                                    value={tag}
+                                    onClick={() => {handleRemoveTag(tag)}}
+                                />
+                            )
+                        }
+                        
                         <Ingredients 
                             isNew 
                             placeholder="Adicionar"
+                            onChange={e => setNewTag(e.target.value)}
+                            value={newTag}
+                            onClick={handleAddTag}
                         />
                     </div>
 
