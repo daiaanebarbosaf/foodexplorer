@@ -1,5 +1,8 @@
 import { Container, Form, ImgDishes, SelectCategory } from './styles';
 
+import { useState } from 'react';
+import { useAuth } from '../../hooks/auth';
+
 import { Link } from 'react-router-dom';
 
 import { Header } from '../../components/Header';
@@ -14,8 +17,14 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { FiUpload } from 'react-icons/fi';
 
 
-
 export function New(){
+    const [tags, setTags] = useState([]);
+    const [newTag, setNewTag] = useState("");
+
+    function handleAddTag(){
+        setTags(prevState => [...prevState, newTag])
+    }
+
     return (
         <Container>
             <Header/>
@@ -72,10 +81,22 @@ export function New(){
                     <p>Ingredientes</p>
 
                     <div className="tags">
-                        <Ingredients value="Pão Naan"/>
+                        {
+                            tags.map((tag, index) =>
+                                <Ingredients 
+                                    key={String(index)}
+                                    value={tag}
+                                    onClick={() => { }}
+                                />
+                            )
+                        }
+                        
                         <Ingredients 
                             isNew 
                             placeholder="Adicionar"
+                            onChange={e => setNewTag(e.target.value)}
+                            value={newTag}
+                            onClick={handleAddTag}
                         />
                     </div>
 
