@@ -1,5 +1,8 @@
 import { Container, Form, ImgDishes, SelectCategory } from './styles';
 
+import { useState } from 'react';
+import { useAuth } from '../../hooks/auth';
+
 import { Link } from 'react-router-dom';
 
 import { Header } from '../../components/Header';
@@ -13,9 +16,16 @@ import { Button } from '../../components/Button';
 import { IoIosArrowBack } from 'react-icons/io';
 import { FiUpload } from 'react-icons/fi';
 
-
-
 export function Edit(){
+    const { dish } = useAuth();
+
+    const [title, setTitle] = useState(dish.title);
+    const [categoty, setCategoty] = useState();
+    const [tag, setTag] = useState();
+    const [price, setPrice] = useState();
+    const [description, setDescription] = useState();
+
+
     return (
         <Container>
             <Header/>
@@ -52,9 +62,14 @@ export function Edit(){
                     </ImgDishes>
 
                     <p>Nome</p>
-                    <Input placeholder="Salada Ceasar" />
+                    <Input 
+                        placeholder="Salada Ceasar" 
+                        value={title}
+                    />
 
-                    <SelectCategory>
+                    <SelectCategory
+                        
+                    >
                         <p>Categoria</p>
                         <div className="input-select">
                             <select 
