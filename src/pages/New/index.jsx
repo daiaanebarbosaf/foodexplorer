@@ -1,8 +1,10 @@
 import { Container, Form, ImgDishes, SelectCategory } from './styles';
 
+import { api } from '../../services/api';
+
 import { useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
@@ -17,8 +19,13 @@ import { FiUpload } from 'react-icons/fi';
 
 
 export function New(){
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+
     const [tags, setTags] = useState([]);
     const [newTag, setNewTag] = useState("");
+
+    const navigate = useNavigate();
 
     function handleAddTag(){
         setTags(prevState => [...prevState, newTag]);
@@ -27,6 +34,17 @@ export function New(){
 
     function handleRemoveTag(deleted){
         setTags(prevState => prevState.filter(tag => tag !== deleted));
+    }
+
+    async function handleNewDish(){
+        await api.post("/dishes", {
+            title,
+            description,
+            tags
+        });
+
+        alert("Nota criada com sucesso!");
+        navigate("/");
     }
 
     return (
@@ -64,7 +82,10 @@ export function New(){
                     </ImgDishes>
 
                     <p>Nome</p>
-                    <Input placeholder="Ex.: Salada Ceasar" />
+                    <Input 
+                        placeholder="Ex.: Salada Ceasar"
+                        onChange={e => setTitle(e.target.value)} 
+                    />
 
                     <SelectCategory>
                         <p>Categoria</p>
@@ -108,9 +129,16 @@ export function New(){
                     <Input placeholder="R$ 00,00" />
 
                     <p>Descrição</p>
-                    <Textarea placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"/>
+                    <Textarea 
+                        placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+                        onChange={e => setDescription(e.target.value)} 
+                    />
                     
-                    <Button className="buttonSave" title="Salvar alterações"/> 
+                    <Button 
+                        className="buttonSave" 
+                        title="Salvar alterações"
+                        onClick={handleNewDish}
+                    /> 
                 </Form>
             </main>
             <Footer/>
