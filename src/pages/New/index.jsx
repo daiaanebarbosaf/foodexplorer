@@ -22,7 +22,8 @@ export function New(){
     const [newTag, setNewTag] = useState("");
 
     function handleAddTag(){
-        setTags(prevState => [...prevState, newTag])
+        setTags(prevState => [...prevState, newTag]);
+        setNewTag("");
     }
 
     return (
