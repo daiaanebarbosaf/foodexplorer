@@ -1,5 +1,7 @@
 import { Container, Form, ImgDishes, SelectCategory } from './styles';
 
+import { useAuth } from '../../hooks/auth';
+
 import { api } from '../../services/api';
 
 import { useState } from 'react';
@@ -19,11 +21,19 @@ import { FiUpload } from 'react-icons/fi';
 
 
 export function New(){
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
 
+    const [imgdish, setImgdish ] = useState(null);
+    const [imgdishFile, setImgdishFile ] = useState("");
+
+    const [title, setTitle] = useState("");
+    const [categoty, setCategoty] = useState("");
+
+    
     const [tags, setTags] = useState([]);
     const [newTag, setNewTag] = useState("");
+    
+    const [price, setPrice] = useState("");
+    const [description, setDescription] = useState("");
 
     const navigate = useNavigate();
 
@@ -36,15 +46,28 @@ export function New(){
         setTags(prevState => prevState.filter(tag => tag !== deleted));
     }
 
-    async function handleNewDish(){
-        await api.post("/dishes", {
-            title,
-            description,
-            tags
-        });
+    function handleChangeImgDish(event){
+        const file = event.target.files[0];
+        setImgdishFile(file);
 
-        alert("Nota criada com sucesso!");
-        navigate("/");
+        const imagePreview = URL.createObjectURL(file);
+        setImgdish(imagePreview);
+    }
+
+    async function handleNewDish(){
+        try{
+            await api.post("/dishes");
+
+            alert("Nota criada com sucesso!");
+            navigate("/");
+
+        } catch (error) {
+            if (error.response) {
+              alert(error.response.data.message);
+            } else {
+              alert("Não foi possível cadastrar o prato.");
+            }
+        }
     }
 
     return (
@@ -73,10 +96,15 @@ export function New(){
                         >
                             <FiUpload/>
                             <p>Selecione uma imagem</p>
+                            <img 
+                                src={imgdish}
+                                alt="Imagem do Parto" 
+                            />
 
                             <input 
-                                id="imgDishes" 
+                                id="imgdish" 
                                 type="file" 
+                                onChange={handleChangeImgDish}
                             />
                         </label>
                     </ImgDishes>
@@ -87,7 +115,9 @@ export function New(){
                         onChange={e => setTitle(e.target.value)} 
                     />
 
-                    <SelectCategory>
+                    <SelectCategory
+                        onChange={e => setCategoty(e.target.value)} 
+                    >
                         <p>Categoria</p>
                         <div className="input-select">
                             <select 
@@ -126,7 +156,10 @@ export function New(){
                     </div>
 
                     <p>Preço</p>
-                    <Input placeholder="R$ 00,00" />
+                    <Input 
+                        placeholder="R$ 00,00"
+                        onChange={e => setPrice(e.target.value)}  
+                    />
 
                     <p>Descrição</p>
                     <Textarea 
