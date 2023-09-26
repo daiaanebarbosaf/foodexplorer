@@ -17,8 +17,6 @@ function AuthProvider({ children }) {
             
             api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             setData({ user, token });
-
-            await api.post("/dishes", dish);
            
         } catch (error) {
             if (error.response){
@@ -54,6 +52,19 @@ function AuthProvider({ children }) {
         }
     }
 
+    async function createDish({ dish }){
+        try{
+            const dish = await api.post("/dishes", dish);
+         
+        } catch (error) {
+            if (error.response){
+                alert(error.response.data.message);
+            } else {
+                alert("Não foi possível atualizar.")
+            }
+        }
+    }
+
     useEffect(() => {
         const token = localStorage.getItem("@foodexplorer:token");
         const user = localStorage.getItem("@foodexplorer:user");
@@ -73,7 +84,7 @@ function AuthProvider({ children }) {
                 signIn, 
                 user: data.user,
                 signOut,
-                dish: data.user,
+    
             }}>
 
             {children}
