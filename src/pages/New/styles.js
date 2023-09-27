@@ -104,7 +104,7 @@ export const ImgDishes = styled.div`
         
 
         > input {
-            display: none;
+            
         }
     }
 `;
