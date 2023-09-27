@@ -54,9 +54,24 @@ export function New(){
         setImgdish(imagePreview);
     }
 
-    async function handleNewDish(){
+    async function handleNewDish(imgdishFile){
         try{
-            await api.post("/dishes");
+            if(imgdishFile){
+                const fileUploadForm = new FormData();
+                fileUploadForm.append("imgdish", imgdishFile);
+
+                const response = await api.patch("/dishes/imgdish", fileUploadForm);
+                dish.imgdish = response.data.imgdish;
+            }
+
+            await api.post("/dishes", {
+                title,
+                categoty,
+                price,
+                description,
+                tags
+            });
+            
 
             alert("Nota criada com sucesso!");
             navigate("/");
