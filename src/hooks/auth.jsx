@@ -35,27 +35,22 @@ function AuthProvider({ children }) {
         setData({});
     }
 
-    async function updateProfile({ user }){
+    async function updateDish({ dish, imgdishFile }){
         try{
-            await api.put("/user", user);
-            localStorage.setItem("@foodexplorer:user", JSON.stringify(user));
+            if(imgdishFile){
+                const fileUploadForm = new FormData();
+                fileUploadForm.append("imgdish", imgdishFile);
 
-            setData({user, token: data.token});
+                const response = await api.patch("/dishes/imgdish", fileUploadForm);
+                dish.imgdish = response.data.imgdish;
+            }
+
+            await api.put("/dishes", dish);
+            localStorage.setItem("@foodexplorer:dish", JSON.stringify(dish));
+
+            setData({dish, token: data.token});
             alert("Perfil atualizado com sucesso!")
 
-        } catch (error) {
-            if (error.response){
-                alert(error.response.data.message);
-            } else {
-                alert("Não foi possível atualizar.")
-            }
-        }
-    }
-
-    async function createDish({ dish }){
-        try{
-            const dish = await api.post("/dishes", dish);
-         
         } catch (error) {
             if (error.response){
                 alert(error.response.data.message);
@@ -84,7 +79,7 @@ function AuthProvider({ children }) {
                 signIn, 
                 user: data.user,
                 signOut,
-    
+                updateDish,
             }}>
 
             {children}
