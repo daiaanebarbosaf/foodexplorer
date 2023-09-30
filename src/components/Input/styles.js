@@ -21,7 +21,6 @@ export const Container = styled.div`
 
       padding: 0.5rem;
 
-
       color: ${({ theme }) => theme.COLORS.LIGHT_100};
       background: transparent;
       border: 0;
@@ -32,7 +31,6 @@ export const Container = styled.div`
 
        &placeholder {
             color: ${({ theme }) => theme.COLORS.LIGHT_500};
-            
        }
     }
 
