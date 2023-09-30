@@ -2,6 +2,9 @@ import { Container, Menu, MenuExpand, MenuClose } from './styles';
 import { FiSearch } from 'react-icons/fi';
 
 import { useAuth } from '../../hooks/auth';
+import { useState, useEffect } from 'react';
+
+import { api } from '../../services/api';
 
 import { Link } from 'react-router-dom';
 
@@ -11,7 +14,14 @@ import buttonClose from '../../assets/close-menu.svg';
 
 import { Input } from '../../components/Input';
 
+
 export function Header(){
+    const [search, setSearch] = useState("");
+
+    const [tags, setTags] = useState([]);
+    const [tagsSelected, setTagsSelected] = useState([]);
+
+    const [dishes, setDishes] = useState([]);
 
     function expandMenu(){
         
@@ -49,6 +59,24 @@ export function Header(){
 
     const { signOut } = useAuth();
 
+    useEffect(() => {
+        async function fetchTags() {
+            const response = await api.get("/tags");
+            setTags(response.data);
+        }
+
+        fetchTags();
+    }, []);
+
+    useEffect(() => {
+        async function fetchDishes(){
+            const response = await api.get(`/dishes?title=${search}&tags=${tagsSelected}`);
+            setDishes(response.data);
+        }
+
+        fetchDishes();
+    },[tagsSelected, search]);
+
     return(
         <Container>
 
@@ -67,6 +95,7 @@ export function Header(){
                             icon={FiSearch} 
                             id="searchPlate" 
                             placeholder="Busque por pratos ou ingredientes" 
+                            onChange={() => setSearch(e.target.value)}
                         />
                         <Link id="buttonExit" onClick={signOut}>Sair</Link>
                         <Link id="buttonNewDishes" to="/new">Novo prato</Link>
