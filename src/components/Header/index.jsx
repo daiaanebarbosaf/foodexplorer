@@ -80,21 +80,22 @@ export function Header(){
     return(
         <Container>
             <nav>
-                <MenuExpand onClick={expandMenu}>
+                <Menu onClick={expandMenu}>
                     <img className="" id="buttonHidden" src={buttonHidden} alt="Imagem do menu escondido" />
                     <img className="" id="logoAdmin" src={logoAdmin} alt="Logo da Food Explorer" />
-                </MenuExpand>
+                </Menu>
                 
                 <MenuClose id="menuClose" onClick={closeMenu} className="hide">
                     <img  id="buttonClose" src={buttonClose} alt="Imagem de um X para fechar o menu" />
                     <h1  id="menuText">Menu</h1>
                 </MenuClose>
-                <Menu id="menu" onClick={expandMenu} className="hide">
+
+                <MenuExpand id="menu" onClick={expandMenu} className="hide">
                     <div id="optionsMenu">
                         <Link id="buttonExit" onClick={signOut}>Sair</Link>
                         <Link id="buttonNewDishes" to="/new">Novo prato</Link>
                     </div>
-                </Menu>
+                </MenuExpand>
             </nav>
         </Container>
     );
