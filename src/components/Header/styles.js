@@ -1,28 +1,38 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-    grid-area: header;
-
-    height: 6rem;
-    width: 100%;
-
-    padding: 0 2rem;
-
-    background-color: ${({ theme }) => theme.COLORS.DARK_700};
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     cursor: pointer;
 
-    .hide {
-        display: none;
-        visibility: none;
-    }
+    > nav {
+        position: fixed;
+        top: 0;
+        left: 50%;
 
-    .opacity {
-        opacity: 0;
+        width: 100%;
+
+        height: 6rem;
+
+        padding: 0 2rem;
+
+        background-color: ${({ theme }) => theme.COLORS.DARK_700};
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        transform: translateX(-50%);
+
+        .hide {
+        
+            display: none;
+            visibility: none;
+        }
+
+        .opacity {
+            opacity: 0;
+        }
+
     }
 
 `;
@@ -35,10 +45,6 @@ export const Menu = styled.div`
 
 
     #optionsMenu {
-
-        margin-top: 2rem;
-        margin-left: -5rem;
-
         display: flex;
         flex-direction: column;
 
