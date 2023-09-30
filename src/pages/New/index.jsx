@@ -22,7 +22,8 @@ import { FiUpload } from 'react-icons/fi';
 
 export function New(){
 
-    const [imgdish, setImgdish ] = useState(null);
+
+    const [imgdish, setImgdish ] = useState("");
     const [imgdishFile, setImgdishFile ] = useState("");
 
     const [title, setTitle] = useState("");
@@ -54,17 +55,18 @@ export function New(){
         setImgdish(imagePreview);
     }
 
-    async function handleNewDish(imgdishFile){
-        try{
-            if(imgdishFile){
-                const fileUploadForm = new FormData();
-                fileUploadForm.append("imgdish", imgdishFile);
+    async function handleNewDish(){
+        if(!title){
+            return alert("Digite o nome do prato.")
+        }
 
-                const response = await api.patch("/dishes/imgdish", fileUploadForm);
-                dish.imgdish = response.data.imgdish;
-            }
+        if (newTag){
+            return alert("Você deixou um ingrediente sem salvar.");
+        }
 
+        try {
             await api.post("/dishes", {
+                imgdish,
                 title,
                 categoty,
                 price,
