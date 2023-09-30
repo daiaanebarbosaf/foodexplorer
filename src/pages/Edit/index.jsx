@@ -17,16 +17,28 @@ import { IoIosArrowBack } from 'react-icons/io';
 import { FiUpload } from 'react-icons/fi';
 
 export function Edit(){
-    const { dish } = useAuth();
+    const { dish, updateDish } = useAuth();
 
     const [title, setTitle] = useState(dish.title);
-    const [categoty, setCategoty] = useState();
-    const [tag, setTag] = useState();
-    const [price, setPrice] = useState();
-    const [description, setDescription] = useState();
+    const [categoty, setCategoty] = useState(dish.categoty);
+    const [tag, setTag] = useState(dish.tag);
+    const [price, setPrice] = useState(dish.price);
+    const [description, setDescription] = useState(dish.description);
 
     const [tags, setTags] = useState([]);
     const [newTag, setNewTag] = useState("");
+
+    async function handleUpdate(){
+        const dish = {
+            title,
+            categoty,
+            tag,
+            price,
+            description,
+        }
+
+        await updateDish({dish});
+    }
 
     function handleAddTag(){
         setTags(prevState => [...prevState, newTag]);
@@ -77,10 +89,12 @@ export function Edit(){
                     <Input 
                         placeholder="Salada Ceasar" 
                         value={title}
+                        onChange={e => setTitle(e.target.value)}
                     />
 
                     <SelectCategory
-                        
+                        value={categoty}
+                        onChange={e => setCategoty(e.target.value)}
                     >
                         <p>Categoria</p>
                         <div className="input-select">
@@ -120,13 +134,25 @@ export function Edit(){
                     </div>
 
                     <p>Preço</p>
-                    <Input placeholder="R$ 40,00" />
+                    <Input 
+                        placeholder="R$ 40,00" 
+                        value={price}
+                        onChange={e => setPrice(e.target.value)}
+                    />
 
                     <p>Descrição</p>
-                    <Textarea placeholder="A Salada César é uma opção refrescante para o verão."/>
+                    <Textarea 
+                        placeholder="A Salada César é uma opção refrescante para o verão."
+                        value={description}
+                        onChange={e => setDescription(e.target.value)}
+                    />
                     <div className="buttons">
                         <Button className="buttonDelete" title="Excluir prato"/> 
-                        <Button className="buttonSave" title="Salvar alterações"/> 
+                        <Button 
+                            className="buttonSave" 
+                            title="Salvar alterações"
+                            onClick={handleUpdate}
+                        /> 
                     </div>
                 </Form>
             </main>
