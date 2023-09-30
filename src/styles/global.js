@@ -8,6 +8,12 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+    }
+
     body {
         background-color: ${({ theme }) => theme.COLORS.DARK_400};
         color: ${({ theme }) => theme.COLORS.LIGHT_300};
@@ -15,6 +21,9 @@ export default createGlobalStyle`
         font-size: 62.5%;
 
         -webkit-font-smoothing: antialiased;
+
+        margin-inline: auto;
+        padding-inline: 2.4rem;
     }
 
     a {
