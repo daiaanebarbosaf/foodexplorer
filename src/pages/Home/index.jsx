@@ -1,4 +1,7 @@
-import { Container, Banner, BannerText } from './styles';
+import { Container, Banner, BannerText, Search } from './styles';
+
+import { useState } from 'react';
+import { useAuth } from '../../hooks/auth';
 
 import { Link } from 'react-router-dom';
 
@@ -16,11 +19,19 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Section } from '../../components/Section';
+import { Input } from '../../components/Input';
 
 export function Home(){
+
     return(
         <Container>
-            <Header />
+            <Header>
+                
+            </Header>
+
+            <Search>
+                <Input placeholder="Busque por pratos ou ingredientes"/>
+            </Search>
 
             <Banner className="gradient-container">
                 <img src={unparalleledFlavors} alt="Quitutes ao ar" />
@@ -34,23 +45,22 @@ export function Home(){
 
             <Section title="Refeições">
                 <ul>
-                    <li>
-                        <Link to="/edit">
-                            <PiPencilSimpleBold/>
-                        </Link>
-
-                        <img 
-                            src={saladRavanello} 
-                            alt="Prato de Salada Ravanello" 
-                        />
-
-                        <p>
-                            Salada Ravanello 
-                            <IoIosArrowForward/>
-                        </p>
-                        <p className="pPrice">R$ 49,97</p>
-                    </li>
-
+                            <li>
+                                <Link to="/edit">
+                                    <PiPencilSimpleBold/>
+                                </Link>
+                    
+                                <img 
+                                    src={saladRavanello} 
+                                    alt="Prato de Salada Ravanello" 
+                                />
+                    
+                                <p>
+                                    Salada Ravanello 
+                                    <IoIosArrowForward/>
+                                </p>
+                                <p className="pPrice">R$ 49,97</p>
+                            </li>
                     <li>
                         <a href="#">
                             <PiPencilSimpleBold/>
