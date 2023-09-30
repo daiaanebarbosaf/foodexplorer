@@ -64,7 +64,7 @@ export const Container = styled.section`
         }
     }
 
-    @media (max-width: 400px){
+    @media (max-width: 450px){
         > ul {
             display: flex;
             flex-direction: column;
