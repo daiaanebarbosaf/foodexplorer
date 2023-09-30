@@ -79,7 +79,7 @@ export function Header(){
 
     return(
         <Container>
-
+            <nav>
                 <MenuExpand onClick={expandMenu}>
                     <img className="" id="buttonHidden" src={buttonHidden} alt="Imagem do menu escondido" />
                     <img className="" id="logoAdmin" src={logoAdmin} alt="Logo da Food Explorer" />
@@ -91,17 +91,11 @@ export function Header(){
                 </MenuClose>
                 <Menu id="menu" onClick={expandMenu} className="hide">
                     <div id="optionsMenu">
-                        <Input
-                            icon={FiSearch} 
-                            id="searchPlate" 
-                            placeholder="Busque por pratos ou ingredientes" 
-                            onChange={() => setSearch(e.target.value)}
-                        />
                         <Link id="buttonExit" onClick={signOut}>Sair</Link>
                         <Link id="buttonNewDishes" to="/new">Novo prato</Link>
                     </div>
                 </Menu>
-        
+            </nav>
         </Container>
     );
 }
