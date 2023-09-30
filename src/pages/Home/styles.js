@@ -15,10 +15,10 @@ export const Banner = styled.div`
 
     background: linear-gradient(to bottom, #091E26, #00131C);
 
-    width: 85%;
+    width: 95%;
     height: 110px;
 
-    margin-top: 2rem;
+    margin-top: 8rem;
     margin-bottom: 3rem;
     
     > img {
