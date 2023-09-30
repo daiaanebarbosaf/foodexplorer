@@ -36,7 +36,12 @@ function AuthProvider({ children }) {
     }
 
     async function updateDish({ dish, imgdishFile }){
-        try{
+        try {
+            await api.put("/dishes", dish);
+            localStorage.setItem("@foodexplorer:dish", JSON.stringify(dish));
+
+            setData({dish, token: data.token });
+
             if(imgdishFile){
                 const fileUploadForm = new FormData();
                 fileUploadForm.append("imgdish", imgdishFile);
@@ -45,10 +50,6 @@ function AuthProvider({ children }) {
                 dish.imgdish = response.data.imgdish;
             }
 
-            await api.put("/dishes", dish);
-            localStorage.setItem("@foodexplorer:dish", JSON.stringify(dish));
-
-            setData({dish, token: data.token});
             alert("Perfil atualizado com sucesso!")
 
         } catch (error) {
@@ -77,9 +78,10 @@ function AuthProvider({ children }) {
     return(
         <AuthContext.Provider value={{ 
                 signIn, 
-                user: data.user,
                 signOut,
                 updateDish,
+                user: data.user,
+                dish: data.user,
             }}>
 
             {children}
