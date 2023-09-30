@@ -43,46 +43,6 @@ export const Menu = styled.div`
     justify-content: center;
     align-items: center;
 
-
-    #optionsMenu {
-        display: flex;
-        flex-direction: column;
-
-        justify-content: flex-start;
-
-        gap: 1rem;
-
-        > a {
-            border-bottom-width: 0.1rem;
-            border-bottom-style: solid;
-            border-bottom-color: ${({ theme }) => theme.COLORS.LIGHT_500};
-        }
-        
-    }
-    
-    margin-top: 15rem;
-
-    #buttonClose {
-        height: 1.5rem;
-    }
-
-    #buttonExit, #buttonNewDishes {
-        color: ${({ theme }) => theme.COLORS.LIGHT_300};
-        font-family: 'Poppins', sans-serif;
-        font-weight: 100;
-        font-size: clamp(2vw, 1.8em, 10vw);
-
-        margin-bottom: 0.5rem;
-    }
-    
-
-`;
-
-export const MenuExpand = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     #logoAdmin, #buttonHidden {
         height: 1.5rem;
     }
@@ -97,14 +57,51 @@ export const MenuExpand = styled.div`
 
 `;
 
+export const MenuExpand = styled.div`
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: ${({ theme }) => theme.COLORS.DARK_700};
+
+    #optionsMenu {
+        display: flex;
+        flex-direction: column;
+       
+
+        gap: 1rem;
+
+        > a {
+            border-bottom-width: 0.1rem;
+            border-bottom-style: solid;
+            border-bottom-color: ${({ theme }) => theme.COLORS.LIGHT_500};
+        }
+        
+    }
+    
+    margin-top: 5rem;
+
+
+    #buttonExit, #buttonNewDishes {
+        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+        font-family: 'Poppins', sans-serif;
+        font-weight: 100;
+        font-size: clamp(2vw, 1.8em, 10vw);
+
+        margin-bottom: 0.5rem;
+    }
+
+`;
+
 export const MenuClose = styled.div`
 
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-
-    gap: 1rem;
+    justify-content: space-between;
+    
 
      #buttonClose {
         height: 1.5rem;
