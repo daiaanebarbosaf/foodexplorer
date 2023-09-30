@@ -1,6 +1,6 @@
 import { Container, Banner, BannerText, Search } from './styles';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../../hooks/auth';
 
 import { Link } from 'react-router-dom';
@@ -14,6 +14,7 @@ import espresso from '../../assets/dishes/espresso.png';
 
 import { PiPencilSimpleBold } from 'react-icons/pi';
 import { IoIosArrowForward } from 'react-icons/io';
+import { FiSearch } from 'react-icons/fi';
 
 
 import { Header } from '../../components/Header';
@@ -23,15 +24,39 @@ import { Input } from '../../components/Input';
 
 export function Home(){
 
+    const [search, setSearch] = useState("");
+
+    const [tags, setTags] = useState([]);
+    const [tagsSelected, setTagsSelected] = useState([]);
+
+    useEffect(() => {
+        async function fetchTags() {
+            const response = await api.get("/tags");
+            setTags(response.data);
+        }
+
+        fetchTags();
+    }, []);
+
+    useEffect(() => {
+        async function fetchDishes(){
+            const response = await api.get(`/dishes?title=${search}&tags=${tagsSelected}`);
+            setDishes(response.data);
+        }
+
+        fetchDishes();
+    },[tagsSelected, search]);
+
     return(
         <Container>
             <Header>
-                
+                <Input
+                    icon={FiSearch} 
+                    id="searchPlate" 
+                    placeholder="Busque por pratos ou ingredientes" 
+                    onChange={() => setSearch(e.target.value)}
+                />
             </Header>
-
-            <Search>
-                <Input placeholder="Busque por pratos ou ingredientes"/>
-            </Search>
 
             <Banner className="gradient-container">
                 <img src={unparalleledFlavors} alt="Quitutes ao ar" />
