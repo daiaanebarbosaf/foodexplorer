@@ -11,16 +11,11 @@ export const Container = styled.header`
 
         width: 100%;
 
-        height: 6rem;
-
         padding: 0 2rem;
 
         background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-
         transform: translateX(-50%);
 
         .hide {
@@ -32,7 +27,6 @@ export const Container = styled.header`
         .opacity {
             opacity: 0;
         }
-
     }
 
 `;
@@ -40,8 +34,9 @@ export const Container = styled.header`
 export const Menu = styled.div`
 
     display: flex;
-    justify-content: center;
     align-items: center;
+
+    height: 6rem;
 
     #logoAdmin, #buttonHidden {
         height: 1.5rem;
@@ -59,20 +54,50 @@ export const Menu = styled.div`
 
 export const MenuExpand = styled.div`
 
-    position: fixed;
-    top: 0;
-    left: 0;
+    display: flex;
+    align-items: center;
+    
+    flex-direction: column;
+
+    margin-top: 2rem;
+
+    gap: 1rem;
 
     width: 100vw;
     height: 100vh;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
+
+    #closeMenu {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        
+        gap: 1.5rem;
+
+        #buttonClose {
+            height: 1.5rem;
+            width: clamp(5vw, 2em, 30vw);
+        
+        }
+
+        > h1 {
+            
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: clamp(2vw, 2em, 10vw);
+            
+        }
+    }
+
     #optionsMenu {
         display: flex;
         flex-direction: column;
-       
 
+        width: 100%;
+   
         gap: 1rem;
 
         > a {
@@ -82,8 +107,6 @@ export const MenuExpand = styled.div`
         }
         
     }
-    
-    margin-top: 5rem;
 
 
     #buttonExit, #buttonNewDishes {
@@ -99,23 +122,11 @@ export const MenuExpand = styled.div`
 
 export const MenuClose = styled.div`
 
+    height: 100vh;
+
     display: flex;
-    justify-content: space-between;
-    
+    flex-direction: column;
 
-     #buttonClose {
-        height: 1.5rem;
-        width: clamp(5vw, 2em, 30vw);
-        
-    }
-
-    > h1 {
-        
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
-        font-size: clamp(2vw, 2em, 10vw);
-        
-    }
 
 `;
 
