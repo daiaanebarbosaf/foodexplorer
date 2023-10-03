@@ -5,6 +5,8 @@ import { useAuth } from '../../hooks/auth';
 
 import { Link } from 'react-router-dom';
 
+import { api } from '../../services/api';
+
 import unparalleledFlavors from '../../assets/unparalleled-flavors.png';
 import saladRavanello from '../../assets/dishes/saladRavanello.png';
 import spaguettiGambe from '../../assets/dishes/spaguettiGambe.png';
@@ -29,6 +31,8 @@ export function Home(){
     const [tags, setTags] = useState([]);
     const [tagsSelected, setTagsSelected] = useState([]);
 
+    const [dishes, setDishes] = useState([]);
+
     useEffect(() => {
         async function fetchTags() {
             const response = await api.get("/tags");
@@ -50,12 +54,8 @@ export function Home(){
     return(
         <Container>
             <Header>
-                <Input
-                    icon={FiSearch} 
-                    id="searchPlate" 
-                    placeholder="Busque por pratos ou ingredientes" 
-                    onChange={() => setSearch(e.target.value)}
-                />
+ 
+       
             </Header>
 
             <Banner className="gradient-container">
@@ -67,6 +67,13 @@ export function Home(){
                 </BannerText>
                 
             </Banner>
+
+            <Input
+                    icon={FiSearch} 
+                    id="searchPlate" 
+                    placeholder="Busque por pratos ou ingredientes" 
+                    onChange={() => setSearch(e.target.value)}
+                />
 
             <Section title="Refeições">
                 <ul>
