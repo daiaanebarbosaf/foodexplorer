@@ -1,37 +1,33 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-
+    
     cursor: pointer;
 
     > nav {
+
         position: fixed;
+        z-index: 9999;
         top: 0;
         left: 50%;
 
         width: 100%;
 
-        padding: 0 2rem;
-
-        background-color: ${({ theme }) => theme.COLORS.DARK_700};
-
         display: flex;
         transform: translateX(-50%);
 
         .hide {
-        
             display: none;
             visibility: none;
-        }
-
-        .opacity {
-            opacity: 0;
         }
     }
 
 `;
 
 export const Menu = styled.div`
+    width: 100%;
+
+    background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
     display: flex;
     align-items: center;
@@ -43,6 +39,7 @@ export const Menu = styled.div`
     }
 
     #buttonHidden {
+        margin-left: 2rem;
         width: clamp(5vw, 2em, 30vw);
     }
 
@@ -56,28 +53,27 @@ export const MenuExpand = styled.div`
 
     display: flex;
     align-items: center;
-    
     flex-direction: column;
 
-    margin-top: 2rem;
+    z-index: 9999;  
+        
 
-    gap: 1rem;
-
-    width: 100vw;
+    width: 200vw;
     height: 100vh;
-
-    background-color: ${({ theme }) => theme.COLORS.DARK_700};
-
 
     #closeMenu {
         width: 100%;
+        height: 6rem;
 
         display: flex;
         align-items: center;
         
-        gap: 1.5rem;
+        gap: 1rem;
+
+        background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
         #buttonClose {
+            margin-left: 2rem;
             height: 1.5rem;
             width: clamp(5vw, 2em, 30vw);
         
@@ -92,13 +88,17 @@ export const MenuExpand = styled.div`
         }
     }
 
-    #optionsMenu {
+    #optionsMenu {      
+
         display: flex;
         flex-direction: column;
 
         width: 100%;
    
         gap: 1rem;
+        
+        margin-top: 2rem;
+        margin-left: 3rem;
 
         > a {
             border-bottom-width: 0.1rem;
@@ -127,7 +127,7 @@ export const MenuClose = styled.div`
     display: flex;
     flex-direction: column;
 
-
+    background-color: ${({ theme }) => theme.COLORS.DARK_400};
 `;
 
 
