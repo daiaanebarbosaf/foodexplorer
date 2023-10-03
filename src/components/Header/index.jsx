@@ -85,21 +85,19 @@ export function Header(){
                     <img className="" id="logoAdmin" src={logoAdmin} alt="Logo da Food Explorer" />
                 </Menu>
 
-                    <MenuClose id="menuClose" onClick={closeMenu}>
-                        <MenuExpand id="menu" onClick={closeMenu} className="hide">
-                            <div id="closeMenu">
-                                <img  id="buttonClose" src={buttonClose} alt="Imagem de um X para fechar o menu" />
-                                <h1  id="menuText">Menu</h1>
-                            </div>
+                <MenuClose id="menuClose" onClick={closeMenu}>
+                    <MenuExpand id="menu" onClick={closeMenu} className="hide">
+                        <div id="closeMenu">
+                            <img  id="buttonClose" src={buttonClose} alt="Imagem de um X para fechar o menu" />
+                            <h1  id="menuText">Menu</h1>
+                        </div>
 
-                            <div id="optionsMenu">
-                                <Link id="buttonExit" onClick={signOut}>Sair</Link>
-                                <Link id="buttonNewDishes" to="/new">Novo prato</Link>
-                            </div>
-                        </MenuExpand>
-                    </MenuClose>
-                
-
+                        <div id="optionsMenu">
+                            <Link id="buttonExit" onClick={signOut}>Sair</Link>
+                            <Link id="buttonNewDishes" to="/new">Novo prato</Link>
+                        </div>
+                    </MenuExpand>
+                </MenuClose>
             </nav>
         </Container>
     );
