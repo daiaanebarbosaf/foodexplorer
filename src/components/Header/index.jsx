@@ -1,4 +1,4 @@
-import { Container, Menu, MenuExpand, MenuClose } from './styles';
+import { Container, Menu, MenuExpand, MenuClose, Search } from './styles';
 import { FiSearch } from 'react-icons/fi';
 
 import { useAuth } from '../../hooks/auth';
@@ -15,7 +15,7 @@ import buttonClose from '../../assets/close-menu.svg';
 import { Input } from '../../components/Input';
 
 
-export function Header(){
+export function Header({children}){
     const [search, setSearch] = useState("");
 
     const [tags, setTags] = useState([]);
@@ -85,19 +85,21 @@ export function Header(){
                     <img className="" id="logoAdmin" src={logoAdmin} alt="Logo da Food Explorer" />
                 </Menu>
 
-                <MenuClose id="menuClose" onClick={closeMenu}>
-                    <MenuExpand id="menu" onClick={closeMenu} className="hide">
-                        <div id="closeMenu">
-                            <img  id="buttonClose" src={buttonClose} alt="Imagem de um X para fechar o menu" />
-                            <h1  id="menuText">Menu</h1>
-                        </div>
-
-                        <div id="optionsMenu">
-                            <Link id="buttonExit" onClick={signOut}>Sair</Link>
-                            <Link id="buttonNewDishes" to="/new">Novo prato</Link>
-                        </div>
-                    </MenuExpand>
+                <MenuClose id="menuClose" onClick={closeMenu} className="hide">
+                    <div id="closeMenu">
+                        <img  id="buttonClose" src={buttonClose} alt="Imagem de um X para fechar o menu" />
+                        <h1  id="menuText">Menu</h1>
+                    </div>
                 </MenuClose>
+                <Search onClick={closeMenu} className="">
+                    {children}
+                </Search>
+                <MenuExpand id="menu" onClick={closeMenu} className="">
+                    <div id="optionsMenu">
+                        <Link id="buttonExit" onClick={signOut}>Sair</Link>
+                        <Link id="buttonNewDishes" to="/new">Novo prato</Link>
+                    </div>
+                </MenuExpand>
             </nav>
         </Container>
     );
