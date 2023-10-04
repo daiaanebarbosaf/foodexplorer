@@ -11,9 +11,15 @@ import { PiPencilSimpleBold } from 'react-icons/pi';
 import { IoIosArrowForward } from 'react-icons/io';
 import { FiSearch } from 'react-icons/fi';
 
-export function Dish(data, ...rest){
+import { Tag } from '../../components/Tag';
+
+export function Dishes({ data, ...rest }){
     return(
-        <Container>
+        <Container {...rest}>
+                <a href="#">
+                    <PiPencilSimpleBold/>
+                </a>
+
                 <img 
                     src={saladRavanello} 
                     alt="Prato de Salada Ravanello" 
@@ -23,18 +29,23 @@ export function Dish(data, ...rest){
                     {data.title}
                     <IoIosArrowForward/>
                 </p>
-                <p className="pPrice">R$ 49,97</p>
+                <p className="pPrice">
+                    {data.price}
+                </p>
                 {
                     data.tags &&
                     <footer>
-                        {
-                            data.tags.map(tag => {
-                                <span key={tag.id}>
-                                    {tag.name}
-                                </span>
-                            })
+                        {    
+                            data.tags.map( tag=> 
+                                <Tag
+                                    key={tag.id}
+                                    title={tag.name}
+                                />
+
+                            )
                         }
                     </footer>
+
                 }
         </Container>
     );
