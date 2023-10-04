@@ -5,7 +5,6 @@ export const Container = styled.header`
     cursor: pointer;
 
     > nav {
-
         position: fixed;
         z-index: 9999;
         top: 0;
@@ -14,6 +13,8 @@ export const Container = styled.header`
         width: 100%;
 
         display: flex;
+        flex-direction: column;
+
         transform: translateX(-50%);
 
         .hide {
@@ -56,37 +57,9 @@ export const MenuExpand = styled.div`
     flex-direction: column;
 
     z-index: 9999;  
-        
 
     width: 200vw;
     height: 100vh;
-
-    #closeMenu {
-        width: 100%;
-        height: 6rem;
-
-        display: flex;
-        align-items: center;
-        
-        gap: 1rem;
-
-        background-color: ${({ theme }) => theme.COLORS.DARK_700};
-
-        #buttonClose {
-            margin-left: 2rem;
-            height: 1.5rem;
-            width: clamp(5vw, 2em, 30vw);
-        
-        }
-
-        > h1 {
-            
-            font-family: 'Roboto', sans-serif;
-            font-weight: 400;
-            font-size: clamp(2vw, 2em, 10vw);
-            
-        }
-    }
 
     #optionsMenu {      
 
@@ -97,7 +70,6 @@ export const MenuExpand = styled.div`
    
         gap: 1rem;
         
-        margin-top: 2rem;
         margin-left: 3rem;
 
         > a {
@@ -121,13 +93,32 @@ export const MenuExpand = styled.div`
 `;
 
 export const MenuClose = styled.div`
-
     height: 100vh;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_400};
+
+    #buttonClose {
+            margin-left: 2rem;
+            height: 1.5rem;
+            width: clamp(5vw, 2em, 30vw);
+    }
+
+    > h1 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: clamp(2vw, 2em, 10vw);     
+    }
+        
+`;
+
+export const Search = styled.div`
+
+  @media (max-width: 700px){
+    margin-bottom: 1rem;
+  }
 `;
 
 
