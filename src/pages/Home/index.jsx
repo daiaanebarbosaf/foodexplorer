@@ -23,41 +23,28 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Section } from '../../components/Section';
 import { Input } from '../../components/Input';
+import { Dishes } from '../../components/Dishes';
 
 export function Home(){
 
     const [search, setSearch] = useState("");
 
-    const [tags, setTags] = useState([]);
-    const [tagsSelected, setTagsSelected] = useState([]);
-
     const [dishes, setDishes] = useState([]);
 
-    useEffect(() => {
-        async function fetchTags() {
-            const response = await api.get("/tags");
-            setTags(response.data);
-        }
-
-        fetchTags();
-    }, []);
 
     useEffect(() => {
         async function fetchDishes(){
-            const response = await api.get(`/dishes?title=${search}&tags=${tagsSelected}`);
+            const response = await api.get(`/dishes?title=${search}`);
             setDishes(response.data);
         }
 
         fetchDishes();
-    },[tagsSelected, search]);
+    },[search]);
 
     return(
         <Container>
-            <Header>
- 
-       
-            </Header>
-
+            <Header/>
+    
             <Banner className="gradient-container">
                 <img src={unparalleledFlavors} alt="Quitutes ao ar" />
 
@@ -69,123 +56,29 @@ export function Home(){
             </Banner>
 
             <Input
-                    icon={FiSearch} 
-                    id="searchPlate" 
-                    placeholder="Busque por pratos ou ingredientes" 
-                    onChange={() => setSearch(e.target.value)}
-                />
+                icon={FiSearch} 
+                id="searchPlate" 
+                placeholder="Busque por pratos ou ingredientes" 
+                onChange={(e) => setSearch(e.target.value)}
+            />
 
             <Section title="Refeições">
-                <ul>
-                            <li>
-                                <Link to="/edit">
-                                    <PiPencilSimpleBold/>
-                                </Link>
-                    
-                                <img 
-                                    src={saladRavanello} 
-                                    alt="Prato de Salada Ravanello" 
-                                />
-                    
-                                <p>
-                                    Salada Ravanello 
-                                    <IoIosArrowForward/>
-                                </p>
-                                <p className="pPrice">R$ 49,97</p>
-                            </li>
-                    <li>
-                        <a href="#">
-                            <PiPencilSimpleBold/>
-                        </a>
-
-                        <img 
-                            src={spaguettiGambe} 
-                            alt="Prato de Spaguetti Gambe" 
+                {
+                    dishes.map(dish => (
+                        <Dishes
+                            key={String(dish.id)}
+                            data={dish}
                         />
-
-                        <p>
-                            Spaguetti Gambe 
-                            <IoIosArrowForward/>
-                        </p>
-                        <p className="pPrice">R$ 79,97</p>
-                    </li>
-                </ul>
+                    ))
+                }
             </Section>
 
             <Section title="Pratos principais">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <PiPencilSimpleBold/>
-                        </a>
 
-                        <img 
-                            src={prugnaPie} 
-                            alt="Prato de Prugna Pie" 
-                        />
-
-                        <p>
-                            Prugna Pie 
-                            <IoIosArrowForward/>
-                        </p>
-                        <p className="pPrice">R$ 79,97</p>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <PiPencilSimpleBold/>
-                        </a>
-
-                        <img 
-                            src={peachyPastrie} 
-                            alt="Prato de Peachy pastrie" 
-                        />
-
-                        <p>
-                            Peachy pastrie 
-                            <IoIosArrowForward/>
-                        </p>
-                        <p className="pPrice">R$ 32,97</p>
-                    </li>
-                </ul>
             </Section>
 
             <Section title="Pratos principais">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <PiPencilSimpleBold/>
-                        </a>
 
-                        <img 
-                            src={espresso} 
-                            alt="Bebida Expressa" 
-                        />
-
-                        <p>
-                            Espresso
-                            <IoIosArrowForward/>
-                        </p>
-                        <p className="pPrice">R$ 15,97</p>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <PiPencilSimpleBold/>
-                        </a>
-
-                        <img 
-                            src={espresso} 
-                            alt="Copo de suco de maracujá" 
-                        />
-
-                        <p>
-                            Suco de maracujá
-                            <IoIosArrowForward/>
-                        </p>
-                        <p className="pPrice">R$ 13,97</p>
-                    </li>
-                </ul>
             </Section>
 
             <Footer />
