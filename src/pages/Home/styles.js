@@ -55,8 +55,3 @@ export const BannerText = styled.div`
     }
     
 `;
-
-export const Search = styled.div`
-
-`;
-
