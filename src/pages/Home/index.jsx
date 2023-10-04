@@ -1,4 +1,4 @@
-import { Container, Banner, BannerText, Search } from './styles';
+import { Container, Banner, BannerText } from './styles';
 
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../hooks/auth';
@@ -43,7 +43,14 @@ export function Home(){
 
     return(
         <Container>
-            <Header/>
+            <Header>
+                <Input
+                    icon={FiSearch} 
+                    id="searchPlate" 
+                    placeholder="Busque por pratos ou ingredientes" 
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+            </Header>
     
             <Banner className="gradient-container">
                 <img src={unparalleledFlavors} alt="Quitutes ao ar" />
@@ -54,13 +61,6 @@ export function Home(){
                 </BannerText>
                 
             </Banner>
-
-            <Input
-                icon={FiSearch} 
-                id="searchPlate" 
-                placeholder="Busque por pratos ou ingredientes" 
-                onChange={(e) => setSearch(e.target.value)}
-            />
 
             <Section title="Refeições">
                 {
