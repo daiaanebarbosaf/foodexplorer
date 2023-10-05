@@ -61,29 +61,38 @@ export const MenuExpand = styled.div`
     width: 200vw;
     height: 100vh;
 
-    padding: 0 2rem;
+    margin-top: -2rem; 
 
+    padding: 2rem;
+    
     background-color: ${({ theme }) => theme.COLORS.DARK_400};
 
-
-    #optionsMenu {      
+    #optionsMenu {    
 
         display: flex;
         flex-direction: column;
 
+        padding-right: 1rem;
         width: 100%;
    
         gap: 1rem;
-        
+        z-index: 9999;
+        padding-right: 2rem;
+
+        background-color: ${({ theme }) => theme.COLORS.DARK_400};
 
         > a {
-            border-bottom-width: 0.1rem;
-            border-bottom-style: solid;
-            border-bottom-color: ${({ theme }) => theme.COLORS.LIGHT_500};
+            border-bottom: 1px solid ${({ theme }) => theme.COLORS.LIGHT_500};
+            width: 48%;
+        }
+
+        @media (max-width: 700px){
+            > a {
+                width: 46%;
+            }
         }
         
     }
-
 
     #buttonExit, #buttonNewDishes {
         color: ${({ theme }) => theme.COLORS.LIGHT_300};
@@ -94,6 +103,21 @@ export const MenuExpand = styled.div`
         margin-bottom: 0.5rem;
     }
 
+`;
+
+export const Search = styled.div`
+
+    width: 100%;
+    height: 6rem;
+
+    padding: 2rem;
+
+    z-index: 9999;  
+    background-color: ${({ theme }) => theme.COLORS.DARK_400};
+
+  @media (max-width: 700px){
+    margin-bottom: 1rem;
+  }
 `;
 
 export const MenuClose = styled.div`
@@ -111,6 +135,8 @@ export const MenuClose = styled.div`
     align-items: center;
     flex-direction: row;
 
+    gap: 1rem;
+
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
     #buttonClose {
@@ -127,19 +153,6 @@ export const MenuClose = styled.div`
         
 `;
 
-export const Search = styled.div`
 
-    width: 100%;
-    height: 6rem;
-
-    padding: 2rem;
-
-    z-index: 9999;  
-    background-color: ${({ theme }) => theme.COLORS.DARK_400};
-
-  @media (max-width: 700px){
-    margin-bottom: 1rem;
-  }
-`;
 
 
