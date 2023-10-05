@@ -93,11 +93,12 @@ export function Header({children}){
                     <h1  id="menuText">Menu</h1>
                     
                 </MenuClose>
-                <Search id="search" onClick={closeMenu} className="hide">
+                <Search id="search" className="hide">
                     {children}
                 </Search>
                 <MenuExpand id="menu" onClick={closeMenu} className="hide">
                     <div id="optionsMenu">
+                        
                         <Link id="buttonExit" onClick={signOut}>Sair</Link>
                         <Link id="buttonNewDishes" to="/new">Novo prato</Link>
                     </div>
