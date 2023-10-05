@@ -30,11 +30,13 @@ export function Header({children}){
 
         var menu = document.getElementById('menu');
         var menuClose = document.getElementById('menuClose');
+        var search = document.getElementById('search');
               
 
         menuExpand.classList.add('hide');
         adminLogo.classList.add('hide');
 
+        search.classList.remove('hide');
         menuClose.classList.remove('hide');
         menu.classList.remove('hide');
        
@@ -45,13 +47,14 @@ export function Header({children}){
         var menuExpand = document.getElementById('buttonHidden');
         var adminLogo = document.getElementById('logoAdmin');
 
+        var search = document.getElementById('search');
         var menuClose = document.getElementById('menuClose');
         var menu = document.getElementById('menu');   
         
  
         menuClose.classList.add('hide');
         menu.classList.add('hide');
-
+        search.classList.add('hide');
 
         menuExpand.classList.remove('hide');
         adminLogo.classList.remove('hide');
@@ -86,15 +89,14 @@ export function Header({children}){
                 </Menu>
 
                 <MenuClose id="menuClose" onClick={closeMenu} className="hide">
-                    <div id="closeMenu">
-                        <img  id="buttonClose" src={buttonClose} alt="Imagem de um X para fechar o menu" />
-                        <h1  id="menuText">Menu</h1>
-                    </div>
+                    <img  id="buttonClose" src={buttonClose} alt="Imagem de um X para fechar o menu" />
+                    <h1  id="menuText">Menu</h1>
+                    
                 </MenuClose>
-                <Search onClick={closeMenu} className="">
+                <Search id="search" onClick={closeMenu} className="hide">
                     {children}
                 </Search>
-                <MenuExpand id="menu" onClick={closeMenu} className="">
+                <MenuExpand id="menu" onClick={closeMenu} className="hide">
                     <div id="optionsMenu">
                         <Link id="buttonExit" onClick={signOut}>Sair</Link>
                         <Link id="buttonNewDishes" to="/new">Novo prato</Link>
