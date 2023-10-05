@@ -51,7 +51,7 @@ export const Menu = styled.div`
 `;
 
 export const MenuExpand = styled.div`
-
+ 
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -60,6 +60,11 @@ export const MenuExpand = styled.div`
 
     width: 200vw;
     height: 100vh;
+
+    padding: 0 2rem;
+
+    background-color: ${({ theme }) => theme.COLORS.DARK_400};
+
 
     #optionsMenu {      
 
@@ -70,7 +75,6 @@ export const MenuExpand = styled.div`
    
         gap: 1rem;
         
-        margin-left: 3rem;
 
         > a {
             border-bottom-width: 0.1rem;
@@ -93,12 +97,21 @@ export const MenuExpand = styled.div`
 `;
 
 export const MenuClose = styled.div`
-    height: 100vh;
+    
+    position: fixed;
+    top: 0;
+    left: 50%;
+
+    width: 100%;
+    height: 6rem;
+
+    transform: translateX(-50%);
 
     display: flex;
+    align-items: center;
     flex-direction: row;
 
-    background-color: ${({ theme }) => theme.COLORS.DARK_400};
+    background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
     #buttonClose {
             margin-left: 2rem;
@@ -115,6 +128,14 @@ export const MenuClose = styled.div`
 `;
 
 export const Search = styled.div`
+
+    width: 100%;
+    height: 6rem;
+
+    padding: 2rem;
+
+    z-index: 9999;  
+    background-color: ${({ theme }) => theme.COLORS.DARK_400};
 
   @media (max-width: 700px){
     margin-bottom: 1rem;
