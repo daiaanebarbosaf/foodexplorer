@@ -31,6 +31,14 @@ export function Home(){
     const [tags, setTags] = useState([]);
     const [dishes, setDishes] = useState([]);
 
+    useEffect(() => {
+        async function fetchTags(){
+            const response = await api.get("/tags");
+            setTags(response.data);
+        }
+
+        fetchTags();
+    }, []);
 
     useEffect(() => {
         async function fetchDishes(){
@@ -63,6 +71,15 @@ export function Home(){
             </Banner>
 
             <Section title="Refeições">
+                {
+                    tags.map(tag =>{
+                        <li
+                            key={String(tag.id)}
+                        >
+                        </li>
+                    })
+                }
+
                 {
                     dishes.map(dish => (
                         <Dishes
