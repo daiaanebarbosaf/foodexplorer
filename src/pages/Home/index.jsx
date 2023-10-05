@@ -28,7 +28,7 @@ import { Dishes } from '../../components/Dishes';
 export function Home(){
 
     const [search, setSearch] = useState("");
-
+    const [tags, setTags] = useState([]);
     const [dishes, setDishes] = useState([]);
 
 
