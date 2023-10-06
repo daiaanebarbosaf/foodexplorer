@@ -1,4 +1,9 @@
+import { useState, useEffect } from 'react';
 import { Container, Content } from './styles.js';
+
+import { useParams } from 'react-router-dom';
+
+import { api } from '../../services/api';
 
 import { ButtonText } from '../../components/ButtonText';
 import { Button } from '../../components/Button';
@@ -11,6 +16,19 @@ import { IoIosArrowBack } from 'react-icons/io';
 import saladRavanello from '../../assets/dishes/saladRavanello.png';
 
 export function Details(){
+  const [data, setData] = useState(null);
+
+  const params = useParams();
+
+  useEffect(() => {
+    async function fetchDish(){
+      const response = await api.get(`/dishes/${params.id}`);
+      setData(response.data);
+    }
+
+    fetchDish();
+  }, []);
+
   return(
     <Container>
       <Header />
@@ -23,31 +41,42 @@ export function Details(){
           />
         </a>
 
-        <div className="dishDescription">
-          <img 
-            src={saladRavanello} 
-            alt="Prato de Salada Ravanello" 
-          />
+        {
+          data &&
+              <main>
+                  <div className="dishDescription">
+                      <img 
+                        src={saladRavanello} 
+                        alt="Prato de Salada Ravanello" 
+                      />
+          
+                      <h1>
+                        {data.title}
+                      </h1>
+                                    
+                      <p >
+                        {data.description}
+                      </p>
+                    </div>
 
-          <h1>
-            Salada Ravanello 
-          </h1>
-                        
-          <p >
-            Rabanetes, folhas verdes e molho 
-            agridoce salpicados com gergelim.
-          </p>
-        </div>
+                    {
+                      data.tags &&
+                      <div className="tags">
+                        {
+                          data.tags.map(tag => (
+                            <Tag 
+                              key={String(tag.id)}
+                              title={tag.name}
+                            />
 
-        <div className="tags">
-          <Tag title="alface"/>
-          <Tag title="cebola"/>
-          <Tag title="pão naan"/>
-          <Tag title="pepino"/>
-          <Tag title="rabanete"/>
-          <Tag title="tomate"/>
+                          ))
+                        }
+                      </div>
+                    }
+          
+              </main>
+        }
 
-        </div>
 
         <Button
           className="buttoneEditDish"
