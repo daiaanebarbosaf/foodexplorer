@@ -1,6 +1,7 @@
 import { Container, Banner, BannerText } from './styles';
 
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth';
 
 import { Link } from 'react-router-dom';
@@ -24,12 +25,19 @@ import { Footer } from '../../components/Footer';
 import { Section } from '../../components/Section';
 import { Input } from '../../components/Input';
 import { Dishes } from '../../components/Dishes';
+import { Tag } from '../../components/Tag';
 
 export function Home(){
 
     const [search, setSearch] = useState("");
     const [tags, setTags] = useState([]);
     const [dishes, setDishes] = useState([]);
+
+    const navigate = useNavigate();
+
+    function handleDetails(id){
+        navigate(`/details/${id}`);
+    }
 
     useEffect(() => {
         async function fetchTags(){
@@ -72,22 +80,15 @@ export function Home(){
 
             <Section title="Refeições">
                 {
-                    tags.map(tag =>{
-                        <li
-                            key={String(tag.id)}
-                        >
-                        </li>
-                    })
-                }
-
-                {
                     dishes.map(dish => (
                         <Dishes
                             key={String(dish.id)}
                             data={dish}
+                            onClick={() => handleDetails(dish.id)} 
                         />
                     ))
                 }
+
             </Section>
 
             <Section title="Pratos principais">
