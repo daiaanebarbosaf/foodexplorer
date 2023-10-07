@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container, Content } from './styles.js';
 
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { api } from '../../services/api';
 
@@ -19,6 +19,11 @@ export function Details(){
   const [data, setData] = useState(null);
 
   const params = useParams();
+  const navigate = useNavigate();
+
+  function handleBack(){
+    navigate("/");
+  }
 
   useEffect(() => {
     async function fetchDish(){
@@ -38,6 +43,7 @@ export function Details(){
           <IoIosArrowBack/>
           <ButtonText
             title="voltar"
+            onClick={handleBack}
           />
         </a>
 
