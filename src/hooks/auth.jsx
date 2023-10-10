@@ -50,7 +50,7 @@ function AuthProvider({ children }) {
                 dish.imgdish = response.data.imgdish;
             }
 
-            alert("Perfil atualizado com sucesso!")
+            alert("Perfil atualizado com sucesso!");
 
         } catch (error) {
             if (error.response){
