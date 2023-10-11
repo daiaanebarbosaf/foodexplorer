@@ -1,5 +1,7 @@
 import { Container } from './styles';
 
+import { useParams, useNavigate } from 'react-router-dom';
+
 import unparalleledFlavors from '../../assets/unparalleled-flavors.png';
 import saladRavanello from '../../assets/dishes/saladRavanello.png';
 import spaguettiGambe from '../../assets/dishes/spaguettiGambe.png';
@@ -14,6 +16,13 @@ import { FiSearch } from 'react-icons/fi';
 import { Tag } from '../../components/Tag';
 
 export function Dishes({ data, ...rest }){
+    const params = useParams();
+    const navigate = useNavigate();
+
+    function handleEdit(id){
+        navigate(`/edit/${id}`);
+    }
+
     return(
         <Container {...rest}>
                 <a href="#">
