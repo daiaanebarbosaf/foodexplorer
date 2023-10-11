@@ -17,6 +17,7 @@ import saladRavanello from '../../assets/dishes/saladRavanello.png';
 
 export function Details(){
   const [data, setData] = useState(null);
+  const [dishes, setDishes] = useState([]);
 
   const params = useParams();
   const navigate = useNavigate();
@@ -24,6 +25,12 @@ export function Details(){
   function handleBack(){
     navigate("/");
   }
+
+  function handleEdit(){
+    navigate(`/edit/${params.id}`);
+    console.log(params.id);
+  }
+
 
   useEffect(() => {
     async function fetchDish(){
@@ -78,16 +85,14 @@ export function Details(){
                           ))
                         }
                       </div>
-                    }
-          
+                    }                      
+                        <Button
+                          className="buttoneEditDish"
+                          title="Editar prato"
+                          onClick={handleEdit}
+                        />
               </main>
         }
-
-
-        <Button
-          className="buttoneEditDish"
-          title="Editar prato"
-        />
 
       </Content>
 
