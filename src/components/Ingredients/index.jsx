@@ -2,24 +2,24 @@ import { Container } from './styles';
 
 import { FiPlus, FiX } from 'react-icons/fi';
 
-export function Ingredients({ isNew, value, onClick, ...rest}){
+export function Ingredients({ isnew, value, onClick, ...rest}){
     return(
-        <Container isNew={isNew}>
+        <Container isnew={isnew}>
            <input
                 type="text"
                 value={value}
-                readOnly={!isNew}
+                readOnly={!isnew}
                 {...rest}
            /> 
 
            <button
                 type="button"
                 onClick={onClick}
-                className={isNew ? 'button-delete' : 'button-add'}
+                className={isnew ? 'button-delete' : 'button-add'}
            >
 
-            {isNew ? <FiPlus/> : <FiX/>}
+            {isnew ? <FiPlus/> : <FiX/>}
            </button>
         </Container>
-    )
+    );
 }
