@@ -4,7 +4,9 @@ export const Container = styled.div`
     width: 100%;
     
     display: flex;
-    justify-content: center;
+    align-items: center;
+
+    gap: 0.5rem;
   
     background-color: ${({ theme, isnew }) => isnew ? "transparent" : theme.COLORS.LIGHT_500};
     color: ${({ theme, isnew }) => isnew ? "transparent" : theme.COLORS.LIGHT_100};
@@ -12,24 +14,22 @@ export const Container = styled.div`
     border: ${({ theme, isnew }) => isnew ? `1px dashed ${theme.COLORS.LIGHT_500}` : "none"};
     
     border-radius: 5px;
+  
 
     > button {
+       
         width: 100%;
-
         display: flex;
         align-items: center;
         justify-content: center;
 
-        padding: 0.1rem;
+        gap: 0.5rem;
 
         border: none;
         background: none;
 
-        gap: 1rem;
-
-        > svg {
-            margin-right: 0.5rem;
-        }
+        margin-right: 1rem;
+  
     }
 
     .button-delete {
@@ -40,19 +40,22 @@ export const Container = styled.div`
     .button-add {
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
         background-color: transparent;
+
     }
 
     > input {
+        width: 100%;
+        height: 1.5rem;
+
         display: flex;
         align-items: center;
         justify-content: center;
 
+        margin-left: 1rem;
+      
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
         font-size: clamp(0.9vw, 1.3em, 30vw);
-
-        width: 100%;
-        padding: 0.3rem;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
         background: transparent;
@@ -62,5 +65,7 @@ export const Container = styled.div`
         &::placeholder {
             color: ${({ theme }) => theme.COLORS.LIGHT_100};
         }
+
     }
+
 `;
