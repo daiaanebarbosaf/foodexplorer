@@ -14,6 +14,7 @@ import { Footer } from '../../components/Footer';
 import { Ingredients } from '../../components/Ingredients';
 import { Textarea } from '../../components/Textarea';
 import { Button } from '../../components/Button';
+import { Tag } from '../../components/Tag';
 
 import { IoIosArrowBack } from 'react-icons/io';
 import { FiUpload } from 'react-icons/fi';
@@ -67,10 +68,19 @@ export function Edit(){
     }
 
     function handleRemoveTag(deleted){
-        setTags(prevState => prevState.filter(tag => tag !== deleted));
+        setTags((prevState) => prevState.filter((tag) => tag !== deleted));
     }
 
     useEffect(() => {
+        async function fetchTags(){
+          const response = await api.get("/tags");
+          setData(response.data);
+        }
+    
+        fetchTags();
+      }, [tags]);
+
+      useEffect(() => {
         async function fetchDish(){
           const response = await api.get(`/dishes/${params.id}`);
           setData(response.data);
@@ -154,15 +164,21 @@ export function Edit(){
                         <p>Ingredientes</p>
 
                         <div className="tags">
-                            {
-                                tags.map((tag, index) =>
-                                    <Ingredients 
-                                        key={String(index)}
-                                        value={tag}
-                                        onClick={() => {handleRemoveTag(tag)}}
-                                    />
-                                )
-                            }
+
+                        {
+                            data.tags &&
+                            <footer>
+                                {    
+                                    data.tags.map((tag, index) => 
+                                        <Ingredients
+                                            key={String(index)}
+                                            title={tag.name}
+                                            onClick={() => handleRemoveTag(tags)}
+                                        />
+                                    )
+                                }
+                            </footer>
+                        }
                             
                             <Ingredients 
                                 isnew
