@@ -11,9 +11,7 @@ export function Ingredients({ title, isnew, value, onClick, ...rest}){
                 readOnly={!isnew}
                 {...rest}
            />
-
-
-
+           
            <button
                 type="button"
                 onClick={onClick}
