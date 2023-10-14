@@ -29,6 +29,10 @@ export const Container = styled.div`
         background: none;
 
         margin-right: 1rem;
+
+        > svg {
+            width: 1rem;
+        }
   
     }
 
