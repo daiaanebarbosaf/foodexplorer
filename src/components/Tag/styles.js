@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.span`
+    width: auto;
+
     font-family: 'Poppins', sans-serif;
     font-size: clamp(0.8vw, 1.3em, 30vw);
     font-weight: 500;
@@ -10,4 +12,6 @@ export const Container = styled.span`
 
     border-radius: 5px;
     padding: 0.3125rem 0.875rem;
+
+    
 `;
