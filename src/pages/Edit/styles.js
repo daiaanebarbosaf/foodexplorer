@@ -61,17 +61,25 @@ export const Form = styled.form`
     .tags {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        align-items: left;
+        justify-content: center;
 
-        padding: 0.4rem;
+   
         gap: 0.5rem;
     
-        width: 100%;
+   
+        height: 2.5rem;
+
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
         
         border-radius: 8px;
 
         background-color: ${({ theme }) => theme.COLORS.DARK_900};
+
+        > footer {
+            display: flex;
+            justify-content: flex-start;
+        }
     }
 
     .buttons{
