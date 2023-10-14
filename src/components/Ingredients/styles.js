@@ -1,24 +1,31 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: 35%;
+    width: 100%;
     
     display: flex;
+    justify-content: center;
+  
+    background-color: ${({ theme, isnew }) => isnew ? "transparent" : theme.COLORS.LIGHT_500};
+    color: ${({ theme, isnew }) => isnew ? "transparent" : theme.COLORS.LIGHT_100};
 
-    background-color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.LIGHT_500};
-    color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.LIGHT_100};
-
-    border: ${({ theme, isNew }) => isNew ? `1px dashed ${theme.COLORS.LIGHT_500}` : "none"};
+    border: ${({ theme, isnew }) => isnew ? `1px dashed ${theme.COLORS.LIGHT_500}` : "none"};
     
     border-radius: 5px;
 
     > button {
+        width: 100%;
+
         display: flex;
         align-items: center;
         justify-content: center;
 
+        padding: 0.1rem;
+
         border: none;
         background: none;
+
+        gap: 1rem;
 
         > svg {
             margin-right: 0.5rem;
@@ -27,21 +34,25 @@ export const Container = styled.div`
 
     .button-delete {
         color: ${({ theme }) => theme.COLORS.LIGHT_500};
+  
     }
 
     .button-add {
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
+        background-color: transparent;
     }
 
     > input {
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
         font-size: clamp(0.9vw, 1.3em, 30vw);
 
         width: 100%;
-        padding: 0.2rem;
+        padding: 0.3rem;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
         background: transparent;
@@ -49,8 +60,7 @@ export const Container = styled.div`
         border: none;
 
         &::placeholder {
-            color: ${({ theme }) => theme.COLORS.LIGHT_500};
-            
+            color: ${({ theme }) => theme.COLORS.LIGHT_100};
         }
     }
 `;
