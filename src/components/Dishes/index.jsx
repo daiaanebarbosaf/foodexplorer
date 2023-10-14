@@ -39,7 +39,7 @@ export function Dishes({ data, ...rest }){
                     <IoIosArrowForward/>
                 </p>
                 <p className="pPrice">
-                    {data.price}
+                    R$ {data.price}
                 </p>
                 {
                     data.tags &&
