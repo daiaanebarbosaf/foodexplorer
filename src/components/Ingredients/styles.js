@@ -4,72 +4,60 @@ export const Container = styled.div`
     width: 100%;
     
     display: flex;
-    align-items: center;
+    align-items: center;  
 
-    gap: 0.5rem;
-  
     background-color: ${({ theme, isnew }) => isnew ? "transparent" : theme.COLORS.LIGHT_500};
-    color: ${({ theme, isnew }) => isnew ? "transparent" : theme.COLORS.LIGHT_100};
+    color: ${({ theme }) =>  theme.COLORS.LIGHT_100};
 
     border: ${({ theme, isnew }) => isnew ? `1px dashed ${theme.COLORS.LIGHT_500}` : "none"};
-    
-    border-radius: 5px;
+
   
+    border-radius: 5px;
+    padding-right: 1rem;
 
     > button {
-       
-        width: 100%;
+
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-self:center;
 
         gap: 0.5rem;
 
         border: none;
         background: none;
-
-        margin-right: 1rem;
-
-        > svg {
-            width: 1rem;
-        }
-  
     }
 
     .button-delete {
         color: ${({ theme }) => theme.COLORS.LIGHT_500};
-  
     }
 
     .button-add {
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
         background-color: transparent;
-
+        
     }
 
-    > input {
-        width: 100%;
-        height: 1.5rem;
 
+    > input {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        margin-left: 1rem;
-      
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
-        font-size: clamp(0.9vw, 1.3em, 30vw);
+        height: 1.5rem;
+        width: 100%;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
         background: transparent;
 
         border: none;
 
+        margin-left: 1rem;
+
         &::placeholder {
             color: ${({ theme }) => theme.COLORS.LIGHT_100};
+            width: 10px;
         }
 
-    }
 
+    }
 `;
