@@ -165,20 +165,20 @@ export function Edit(){
 
                         <div className="tags">
 
-                        {
-                            data.tags &&
-                            <footer>
-                                {    
-                                    data.tags.map((tag, index) => 
-                                        <Ingredients
-                                            key={String(index)}
-                                            title={tag.name}
-                                            onClick={() => handleRemoveTag(tags)}
-                                        />
-                                    )
-                                }
-                            </footer>
-                        }
+                            {
+                                data.tags &&
+                                <footer>
+                                    {    
+                                        data.tags.map((tag, index) => 
+                                            <Ingredients
+                                                key={String(index)}
+                                                title={tag.name}
+                                                onClick={() => handleRemoveTag(tags)}
+                                            />
+                                        )
+                                    }
+                                </footer>
+                            }
                             
                             <Ingredients 
                                 isnew
