@@ -63,9 +63,9 @@ export const Form = styled.form`
         align-items: center;
         justify-content: center;
 
+        
    
         gap: 0.5rem;
-    
    
         height: 2.5rem;
 
@@ -77,6 +77,7 @@ export const Form = styled.form`
         background-color: ${({ theme }) => theme.COLORS.DARK_900};
 
         > footer {
+            width: 120px;
             display: flex;
             justify-content: flex-start;
         }
