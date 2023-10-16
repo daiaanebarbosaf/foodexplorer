@@ -2,7 +2,7 @@ import { Container } from './styles';
 
 import { FiPlus, FiX } from 'react-icons/fi';
 
-export function Ingredients({ title, isnew, value, onClick, ...rest}){
+export function Ingredients({ title, isnew = false, value, onClick, ...rest}){
     return(
         <Container isnew={isnew}>
            <input
