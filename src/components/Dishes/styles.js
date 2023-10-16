@@ -50,10 +50,4 @@ export const Container = styled.section`
                 gap: 0.5rem;
             }
 
-    @media (max-width: 450px){
-        > ul {
-            display: flex;
-            flex-direction: column;
-        }
-    }
 `;
