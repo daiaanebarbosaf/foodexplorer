@@ -6,10 +6,10 @@ export const Container = styled.div`
     display: flex;
     align-items: center;  
 
-    background-color: ${({ theme, isnew }) => isnew ? "transparent" : theme.COLORS.LIGHT_500};
+    background-color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.LIGHT_500};
     color: ${({ theme }) =>  theme.COLORS.LIGHT_100};
 
-    border: ${({ theme, isnew }) => isnew ? `1px dashed ${theme.COLORS.LIGHT_500}` : "none"};
+    border: ${({ theme, isNew }) => isNew ? `1px dashed ${theme.COLORS.LIGHT_500}` : "none"};
 
   
     border-radius: 5px;
