@@ -28,7 +28,6 @@ export function Details(){
 
   function handleEdit(){
     navigate(`/edit/${params.id}`);
-    console.log(params.id);
   }
 
 
