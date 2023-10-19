@@ -1,6 +1,7 @@
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 import unparalleledFlavors from '../../assets/unparalleled-flavors.png';
 import saladRavanello from '../../assets/dishes/saladRavanello.png';
@@ -11,24 +12,28 @@ import espresso from '../../assets/dishes/espresso.png';
 
 import { PiPencilSimpleBold } from 'react-icons/pi';
 import { IoIosArrowForward } from 'react-icons/io';
-import { FiSearch } from 'react-icons/fi';
 
 import { Tag } from '../../components/Tag';
 
-export function Dishes({ data, ...rest }){
-    const params = useParams();
+
+export function Dishes({ data, dishId, ...rest }){
+
     const navigate = useNavigate();
 
-    function handleEdit(id){
-        navigate(`/edit/${id}`);
+      function handleEdit(dishId){
+
+        navigate(`/edit/${dishId}`);
     }
 
     return(
-        <Container {...rest}>
-                <a href="#">
-                    <PiPencilSimpleBold/>
-                </a>
-
+        <Container>
+            <a>
+                <PiPencilSimpleBold
+                    onClick={() => handleEdit(dishId)}
+                />
+            </a>
+            
+            <Content {...rest}>
                 <img 
                     src={saladRavanello} 
                     alt="Prato de Salada Ravanello" 
@@ -41,6 +46,7 @@ export function Dishes({ data, ...rest }){
                 <p className="pPrice">
                     R$ {data.price}
                 </p>
+                    
                 {
                     data.tags &&
                     <footer>
@@ -54,6 +60,7 @@ export function Dishes({ data, ...rest }){
                         }
                     </footer>
                 }
+            </Content>
         </Container>
     );
 }
