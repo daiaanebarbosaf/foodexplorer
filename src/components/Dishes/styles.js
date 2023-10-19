@@ -3,6 +3,30 @@ import styled from 'styled-components';
 export const Container = styled.section`
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+
+    flex-direction: column;
+
+    gap: 1rem;
+
+    background-color: ${({ theme }) => theme.COLORS.DARK_300};
+
+    padding: 3rem 1rem;
+
+    > a > svg {
+                color: ${({ theme }) => theme.COLORS.LIGHT_300};
+                font-size: clamp(1vw, 3em, 30vw);
+                margin-left: 8rem;
+            }
+
+            
+
+`;
+
+export const Content = styled.section`
+
+    display: flex;
+    align-items: center;
     justify-content: center;
 
     flex-direction: column;
@@ -16,17 +40,7 @@ export const Container = styled.section`
 
     border-radius: 8px;
 
-    background-color: ${({ theme }) => theme.COLORS.DARK_300};
-
-    padding: 3rem 1rem;
-
-    > a > svg {
-                color: ${({ theme }) => theme.COLORS.LIGHT_300};
-                font-size: clamp(1vw, 3em, 30vw);
-                margin-left: 8rem;
-            }
-
-            > p {
+    > p {
                 display: flex;
                 align-items: center;
                 gap: 0.2rem;
@@ -51,3 +65,4 @@ export const Container = styled.section`
             }
 
 `;
+
