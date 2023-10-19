@@ -1,10 +1,8 @@
 import { Container, Banner, BannerText } from './styles';
 
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth';
-
-import { Link } from 'react-router-dom';
 
 import { api } from '../../services/api';
 
@@ -25,15 +23,17 @@ import { Footer } from '../../components/Footer';
 import { Section } from '../../components/Section';
 import { Input } from '../../components/Input';
 import { Dishes } from '../../components/Dishes';
-import { Tag } from '../../components/Tag';
+import { ButtonText } from '../../components/ButtonText';
 
 export function Home(){
 
+    const [data, setData] = useState(null);
     const [search, setSearch] = useState("");
     const [tags, setTags] = useState([]);
     const [dishes, setDishes] = useState([]);
 
     const navigate = useNavigate();
+    const params = useParams();
 
     function handleDetails(id){
         navigate(`/details/${id}`);
@@ -57,6 +57,15 @@ export function Home(){
         fetchDishes();
     },[search]);
 
+    useEffect(() => {
+        async function fetchDish(){
+          const response = await api.get(`/dishes/${params.id}`);
+          setData(response.data);
+        }
+    
+        fetchDish();
+      }, []);
+
     return(
         <Container>
             <Header>
@@ -79,16 +88,18 @@ export function Home(){
             </Banner>
 
             <Section title="Refeições">
-                {
-                    dishes.map(dish => (
-                        <Dishes
-                            key={String(dish.id)}
-                            data={dish}
-                            onClick={() => handleDetails(dish.id)} 
-                        />
-                    ))
-                }
-
+                <div className="dish">                    
+                    {
+                        dishes.map(dish => (
+                            <Dishes
+                                key={String(dish.id)}
+                                data={dish}
+                                onClick={() => handleDetails(dish.id)} 
+                                dishId={dish.id}
+                            />
+                        ))
+                    }
+                </div>
             </Section>
 
             <Section title="Pratos principais">
