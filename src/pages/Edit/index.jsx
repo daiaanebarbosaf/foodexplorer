@@ -52,14 +52,29 @@ export function Edit(){
     }
 
     async function handleUpdate(){
-        const dish = {
-            title,
-            categoty,
-            price,
-            description,
-        }
+        try {
+            const updatedDish = {
+              title: data.title,
+              categoty: data.categoty,
+              price: data.price,
+              description: data.description,
+              tags: data.tags,
+            };
+            
+            
+            await api.patch(`/dishes/${params.id}`, updatedDish);
+            console.log(updatedDish);
 
-        await updateDish({dish});
+            alert("Nota alterada com sucesso!");
+            navigate("/");
+
+        } catch (error) {
+            if (error.response) {
+              alert(error.response.data.message);
+            } else {
+              alert("Não foi possível editar o prato.");
+            }
+        }
     }
 
     function handleAddTag(){
@@ -68,7 +83,7 @@ export function Edit(){
     }
 
     function handleRemoveTag(deleted){
-        setTags((prevState) => prevState.filter((tag) => tag !== deleted));
+        setTags(prevState => prevState.filter(tag => tag !== deleted));
     }
 
     useEffect(() => {
@@ -173,7 +188,7 @@ export function Edit(){
                                             <Ingredients
                                                 key={String(index)}
                                                 title={tag.name}
-                                                onClick={() => handleRemoveTag(tags)}
+                                                onClick={() => handleRemoveTag(tag)}
                                             />
                                         )
                                     }
@@ -181,11 +196,11 @@ export function Edit(){
                             }
                             
                             <Ingredients 
-                                isnew
+                                isNew
                                 placeholder="Adicionar"
-                                onChange={e => setNewTag(e.target.value)}
                                 value={newTag}
                                 onClick={handleAddTag}
+                                onChange={e => setNewTag(e.target.value)}
                             />
                         </div>
 
