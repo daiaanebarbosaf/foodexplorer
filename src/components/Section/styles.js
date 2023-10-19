@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-
-    margin-bottom: 2rem;
+    
 
     > h2 {
         font-family: 'Poppins', sans-serif;
@@ -14,7 +13,7 @@ export const Container = styled.section`
     }
 
     > ul {
-
+        
         display: flex;
         gap: 1rem;        
 
@@ -23,6 +22,7 @@ export const Container = styled.section`
         list-style: none;
 
         > li {
+            
             display: flex;
             flex-direction: column;
             align-items: center;
