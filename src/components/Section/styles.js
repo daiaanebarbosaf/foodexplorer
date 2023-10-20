@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
     
-
     > h2 {
         font-family: 'Poppins', sans-serif;
         font-size: clamp(0.8vw, 1.3em, 30vw);
