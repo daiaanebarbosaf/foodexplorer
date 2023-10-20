@@ -21,7 +21,6 @@ export function Dishes({ data, dishId, ...rest }){
     const navigate = useNavigate();
 
       function handleEdit(dishId){
-
         navigate(`/edit/${dishId}`);
     }
 
