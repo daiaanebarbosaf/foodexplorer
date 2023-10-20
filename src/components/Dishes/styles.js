@@ -12,6 +12,7 @@ export const Container = styled.section`
     background-color: ${({ theme }) => theme.COLORS.DARK_300};
 
     padding: 3rem 1rem;
+    margin-bottom: 2rem;
 
     > a > svg {
                 color: ${({ theme }) => theme.COLORS.LIGHT_300};
