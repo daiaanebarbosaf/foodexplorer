@@ -4,7 +4,7 @@ import { useAuth } from '../../hooks/auth';
 
 import { api } from '../../services/api';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -17,18 +17,19 @@ import { Textarea } from '../../components/Textarea';
 import { Button } from '../../components/Button';
 
 import { IoIosArrowBack } from 'react-icons/io';
-import { FiUpload } from 'react-icons/fi';
+import { FiUpload} from 'react-icons/fi';
 
 
 export function New(){
 
+    const [dish, setDish] = useState("");
+    const [data, setData] = useState([]);
 
-    const [imgdish, setImgdish ] = useState("");
-    const [imgdishFile, setImgdishFile ] = useState("");
+    const [imgdish, setImgdish ] = useState(null);
+    const [imgdishFile, setImgdishFile ] = useState(null);
 
     const [title, setTitle] = useState("");
     const [categoty, setCategoty] = useState("");
-
     
     const [tags, setTags] = useState([]);
     const [newTag, setNewTag] = useState("");
@@ -65,8 +66,15 @@ export function New(){
         }
 
         try {
+            if(imgdishFile){
+                const fileUploadForm = new FormData();
+                fileUploadForm.append("imgdish", imgdishFile);
+
+                const response = await api.patch("/dishes", fileUploadForm);
+                dish.imgdish = response.data.imgdish;
+            }
+
             await api.post("/dishes", {
-                imgdish,
                 title,
                 categoty,
                 price,
@@ -86,6 +94,15 @@ export function New(){
             }
         }
     }
+
+    useEffect(() => {
+        async function fetchDishes(){
+          const response = await api.get("/dishes");
+          setData(response.data);
+        }
+    
+        fetchDishes();
+      }, [dish]);
 
     return (
         <Container>
