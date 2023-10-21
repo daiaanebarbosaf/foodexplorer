@@ -80,14 +80,12 @@ export const Form = styled.form`
 `;
 
 export const ImgDishes = styled.div`
-    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 
-    > p {
-        margin-bottom: 0.8rem;
-
-        font-weight: 400;
-        font-size: clamp(0.5vw, 1em, 30vw);
-    }
+    padding-top: 5rem;
+    gap: 0.5rem;
 
     > label {
         width: 100%;
@@ -95,16 +93,34 @@ export const ImgDishes = styled.div`
 
         display: flex;
         align-items: center;
+        justify-content: flex-start;
+        
         padding: 0.9rem;
         gap: 0.5rem;
 
         border-radius: 5px;
 
         background-color: ${({ theme }) => theme.COLORS.DARK_900};
-        
+
+        > img {
+            margin-bottom: 12rem;
+            margin-left: -7rem;
+    
+            width: 6rem;
+            height: 6rem;
+
+            border-radius: 50%;
+        }
+
+        > p {
+
+            font-weight: 400;
+            font-size: clamp(0.5vw, 1em, 30vw);
+        }
+
 
         > input {
-            
+           
         }
     }
 `;
