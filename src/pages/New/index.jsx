@@ -6,7 +6,7 @@ import { api } from '../../services/api';
 
 import { useState, useEffect } from 'react';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
@@ -21,6 +21,8 @@ import { FiUpload} from 'react-icons/fi';
 
 
 export function New(){
+
+    let id = 1;
 
     const [dish, setDish] = useState("");
     const [data, setData] = useState([]);
@@ -38,6 +40,7 @@ export function New(){
     const [description, setDescription] = useState("");
 
     const navigate = useNavigate();
+    const params = useParams();
 
     function handleAddTag(){
         setTags(prevState => [...prevState, newTag]);
@@ -50,10 +53,7 @@ export function New(){
 
     function handleChangeImgDish(event){
         const file = event.target.files[0];
-        setImgdishFile(file);
-
-        const imagePreview = URL.createObjectURL(file);
-        setImgdish(imagePreview);
+        setImgdish(file);
     }
 
     async function handleNewDish(){
@@ -66,23 +66,20 @@ export function New(){
         }
 
         try {
-            if(imgdishFile){
-                const fileUploadForm = new FormData();
-                fileUploadForm.append("imgdish", imgdishFile);
-
-                const response = await api.patch("/dishes", fileUploadForm);
-                dish.imgdish = response.data.imgdish;
-            }
-
-            await api.post("/dishes", {
+             await api.post("/dishes", {
                 title,
                 categoty,
                 price,
                 description,
                 tags
             });
-            
 
+            const fileUploadForm = new FormData()
+            fileUploadForm.append("imgdish", imgdish);
+            
+            await api.patch(`/dishes/imgdish/${id}`, fileUploadForm);
+            console.log()
+           
             alert("Nota criada com sucesso!");
             navigate("/");
 
@@ -90,6 +87,7 @@ export function New(){
             if (error.response) {
               alert(error.response.data.message);
             } else {
+                console.log(error)
               alert("Não foi possível cadastrar o prato.");
             }
         }
