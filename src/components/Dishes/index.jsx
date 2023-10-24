@@ -16,7 +16,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { Tag } from '../../components/Tag';
 
 
-export function Dishes({ data, dishId, ...rest }){
+export function Dishes({ data, dishId, imgdish, ...rest }){
 
     const navigate = useNavigate();
 
@@ -34,7 +34,7 @@ export function Dishes({ data, dishId, ...rest }){
             
             <Content {...rest}>
                 <img 
-                    src={saladRavanello} 
+                    src={imgdish} 
                     alt="Prato de Salada Ravanello" 
                 />
 
