@@ -93,6 +93,7 @@ export function Home(){
                         dishes.map(dish => (
                             <Dishes
                                 key={String(dish.id)}
+                                imgdish={`${api.defaults.baseURL}/files/${dish.imgdish}`}
                                 data={dish}
                                 onClick={() => handleDetails(dish.id)} 
                                 dishId={dish.id}
