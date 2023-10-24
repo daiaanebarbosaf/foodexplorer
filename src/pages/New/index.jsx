@@ -27,7 +27,7 @@ export function New(){
     const [dish, setDish] = useState("");
     const [data, setData] = useState([]);
 
-    const [imgdish, setImgdish ] = useState(null);
+    const [imgdish, setImgdish ] = useState("");
     const [imgdishFile, setImgdishFile ] = useState(null);
 
     const [title, setTitle] = useState("");
@@ -51,10 +51,12 @@ export function New(){
         setTags(prevState => prevState.filter(tag => tag !== deleted));
     }
 
-    function handleChangeImgDish(event){
-        const file = event.target.files[0];
-        setImgdish(file);
-    }
+    function handleSelectedImage(e) {
+        const file = e.target.files[0];
+        if (file) {
+          setImgdish(file);
+        }
+      }
 
     async function handleNewDish(){
         if(!title){
@@ -65,32 +67,36 @@ export function New(){
             return alert("Você deixou um ingrediente sem salvar.");
         }
 
+
         try {
-             await api.post("/dishes", {
-                title,
-                categoty,
-                price,
-                description,
-                tags
-            });
 
-            const fileUploadForm = new FormData()
-            fileUploadForm.append("imgdish", imgdish);
-            
-            await api.patch(`/dishes/imgdish/${id}`, fileUploadForm);
-            console.log()
-           
-            alert("Nota criada com sucesso!");
-            navigate("/");
+            if(imgdish) {
+                const fileUploadForm = new FormData();
+                fileUploadForm.append("imgdish", imgdish);
 
-        } catch (error) {
-            if (error.response) {
-              alert(error.response.data.message);
-            } else {
-                console.log(error)
-              alert("Não foi possível cadastrar o prato.");
+                const { data: dish_id } = await api.post("/dishes", {
+                    categoty,
+                    title,
+                    price,
+                    tags,
+                    description
+                });
+
+                fileUploadForm.append("dish_id", dish_id);
+                await api.patch("/dishes", fileUploadForm);
+            }    
+                alert("Nota criada com sucesso!");
+                navigate("/");
+
+            } catch (error) {
+                if (error.response) {
+                  alert(error.response.data.message);
+                } else {
+                    console.log(error)
+                  alert("Não foi possível cadastrar o prato.");
+                }
             }
-        }
+
     }
 
     useEffect(() => {
@@ -136,7 +142,7 @@ export function New(){
                             <input 
                                 id="imgdish" 
                                 type="file" 
-                                onChange={handleChangeImgDish}
+                                onChange={handleSelectedImage}
                             />
                         </label>
                     </ImgDishes>
