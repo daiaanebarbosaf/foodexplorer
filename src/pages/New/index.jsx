@@ -22,8 +22,6 @@ import { FiUpload} from 'react-icons/fi';
 
 export function New(){
 
-    let id = 1;
-
     const [dish, setDish] = useState("");
     const [data, setData] = useState([]);
 
