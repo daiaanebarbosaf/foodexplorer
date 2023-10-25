@@ -40,7 +40,10 @@ function AuthProvider({ children }) {
             await api.put("/dishes", dish);
             localStorage.setItem("@foodexplorer:dish", JSON.stringify(dish));
 
-            setData({dish, token: data.token });
+            setData({
+                dish, 
+                token: data.token 
+            });
 
             if(imgdishFile){
                 const fileUploadForm = new FormData();
