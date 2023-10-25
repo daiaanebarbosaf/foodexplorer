@@ -23,10 +23,11 @@ export function Edit(){
     const params = useParams();
     const navigate = useNavigate();
 
-    const { updateDish } = useAuth();
-
     const [dish, setDish] = useState(null);
     const [data, setData] = useState([]);
+
+    const [imgdish, setImgdish ] = useState("");
+    const [imgdishFile, setImgdishFile ] = useState(null);
 
     const [title, setTitle] = useState("");
     const [categoty, setCategoty] = useState("");
@@ -53,6 +54,7 @@ export function Edit(){
 
     async function handleUpdate(){
         try {
+        
             const updatedDish = {
               title: data.title,
               categoty: data.categoty,
@@ -60,10 +62,17 @@ export function Edit(){
               description: data.description,
               tags: data.tags,
             };
-            
-            
-            await api.patch(`/dishes/${params.id}`, updatedDish);
-            console.log(updatedDish);
+
+            if (imgdish) {
+                const formData = new FormData();
+                formData.append("imgdish", imgdish);
+          
+                await api.patch(`/dishes/${params.id}`, formData, {
+                  headers: { "Content-Type": "multipart/form-data" },
+                });
+            }
+
+            await api.put(`/dishes/${params.id}`, updatedDish);
 
             alert("Nota alterada com sucesso!");
             navigate("/");
