@@ -29,11 +29,11 @@ export function Edit(){
     const [imgdish, setImgdish ] = useState("");
     const [imgdishFile, setImgdishFile ] = useState(null);
 
-    const [title, setTitle] = useState("");
+    const [title, setTitle] = useState(data.title);
     const [categoty, setCategoty] = useState("");
   
-    const [price, setPrice] = useState("");
-    const [description, setDescription] = useState("");
+    const [price, setPrice] = useState(data.price);
+    const [description, setDescription] = useState(data.description);
 
     const [tags, setTags] = useState([]);
     const [newTag, setNewTag] = useState("");
@@ -52,39 +52,7 @@ export function Edit(){
         }
     }
 
-    async function handleUpdate(){
-        try {
-        
-            const updatedDish = {
-              title: data.title,
-              categoty: data.categoty,
-              price: data.price,
-              description: data.description,
-              tags: data.tags,
-            };
 
-            if (imgdish) {
-                const formData = new FormData();
-                formData.append("imgdish", imgdish);
-          
-                await api.patch(`/dishes/${params.id}`, formData, {
-                  headers: { "Content-Type": "multipart/form-data" },
-                });
-            }
-
-            await api.put(`/dishes/${params.id}`, updatedDish);
-
-            alert("Nota alterada com sucesso!");
-            navigate("/");
-
-        } catch (error) {
-            if (error.response) {
-              alert(error.response.data.message);
-            } else {
-              alert("Não foi possível editar o prato.");
-            }
-        }
-    }
 
     function handleAddTag(){
         setTags((prevState) => [...prevState, newTag]);
@@ -125,6 +93,38 @@ export function Edit(){
         }
       }, [dish]);
 
+      async function handleUpdate(){
+
+        console.log(data.title)
+        
+        const titleNew = title != data.title ? title : data.title;
+
+        console.log(titleNew)
+
+        try {
+
+            const updatedDish = {
+                title: titleNew,
+                categoty: categoty,
+                price: price,
+                description: description,
+                tags: tags,
+              };
+
+            await api.patch(`/dishes/${params.id}`, updatedDish);
+
+            alert("Nota alterada com sucesso!");
+            navigate("/");
+
+        } catch (error) {
+            if (error.response) {
+              alert(error.response.data.message);
+            } else {
+              alert("Não foi possível editar o prato.");
+            }
+        }
+    }
+
     return (
         <Container>
             <Header/>
@@ -163,7 +163,7 @@ export function Edit(){
                         <Input
                             type="text"
                             placeholder="Salada Ceasar"
-                            value={data.title} 
+                            defaultValue={data.title} 
                             onChange={e => setTitle(e.target.value)}
                         />
 
@@ -172,7 +172,7 @@ export function Edit(){
                             <p>Categoria</p>
                             <div className="input-select">
                                 <select 
-                                    value={data.categoty}
+                                    defaultValue={data.categoty}
                                     onChange={e => setCategoty(e.target.value)}
                                 >
                                     <option value="1">
@@ -196,7 +196,7 @@ export function Edit(){
                                         data.tags.map((tag, index) => 
                                             <Ingredients
                                                 key={String(index)}
-                                                title={tag.name}
+                                                defaultValue={tag.name}
                                                 onClick={() => handleRemoveTag(tag)}
                                             />
                                         )
@@ -207,7 +207,7 @@ export function Edit(){
                             <Ingredients 
                                 isNew
                                 placeholder="Adicionar"
-                                value={newTag}
+                                defaultValue={newTag}
                                 onClick={handleAddTag}
                                 onChange={e => setNewTag(e.target.value)}
                             />
@@ -217,7 +217,7 @@ export function Edit(){
                         <Input 
                             placeholder="R$ 40,00"
                             type="number" 
-                            value={data.price}
+                            defaultValue={data.price}
                             onChange={e => setPrice(e.target.value)}
                         />
 
