@@ -28,6 +28,7 @@ export function Edit(){
 
     const [imgdish, setImgdish ] = useState("");
     const [imgdishFile, setImgdishFile ] = useState(null);
+    const [updatedImage, setUpdatedImage] = useState(null);
 
     const [title, setTitle] = useState(data.title);
     const [categoty, setCategoty] = useState("");
@@ -52,10 +53,8 @@ export function Edit(){
         }
     }
 
-
-
     function handleAddTag(){
-        setTags((prevState) => [...prevState, newTag]);
+        setTags(prevState => [...prevState, newTag]);
         setNewTag("");
     }
 
@@ -83,27 +82,32 @@ export function Edit(){
 
       useEffect(() => {
         if (dish) {
-          setTitle(dish.title);
-          setCategoty(dish.categoty);
-          setPrice(dish.price);
-          setDescription(dish.description);
-      
-          const allTags = dish.tags.map((tag) => tag.name);
-          setTags(allTags);
+            setImgdishFile(dish.imgdish);
+            setTitle(dish.title);
+            setCategoty(dish.categoty);
+            setPrice(dish.price);
+            setDescription(dish.description);
+        
+            const allTags = dish.tags.map((tag) => tag.name);
+            setTags(allTags);
         }
       }, [dish]);
 
       async function handleUpdate(){
 
-        console.log(data.title)
-        
         const titleNew = title != data.title ? title : data.title;
         const categotyNew = categoty != data.categoty ? categoty : data.categoty;
         const priceNew = price != data.price ? price : data.price;
         const descriptionNew = description != data.description ? description : data.description;
 
-        console.log(titleNew, priceNew)
+        const tagsNew = tags != data.tags ? tags : data.tags;
 
+        if (tags.length === 0){
+            return alert("Digite pelo menos 1 ingrediente!");
+        }
+       
+       console.log(tagsNew)
+ 
         try {
 
             const updatedDish = {
@@ -111,10 +115,11 @@ export function Edit(){
                 categoty: categotyNew,
                 price: priceNew,
                 description: descriptionNew,
-                tags: tags,
-              };
+                tags: tagsNew,
+            };
 
             await api.patch(`/dishes/${params.id}`, updatedDish);
+
 
             alert("Nota alterada com sucesso!");
             navigate("/");
@@ -157,7 +162,8 @@ export function Edit(){
 
                                 <input 
                                     id="imgDishes" 
-                                    type="file" 
+                                    type="file"
+                                    defaultValue={data.imgdish} 
                                 />
                             </label>
                         </ImgDishes>
@@ -212,7 +218,7 @@ export function Edit(){
                                 placeholder="Adicionar"
                                 defaultValue={newTag}
                                 onClick={handleAddTag}
-                                onChange={e => setNewTag(e.target.value)}
+                                
                             />
                         </div>
 
