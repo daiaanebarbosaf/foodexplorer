@@ -98,16 +98,19 @@ export function Edit(){
         console.log(data.title)
         
         const titleNew = title != data.title ? title : data.title;
+        const categotyNew = categoty != data.categoty ? categoty : data.categoty;
+        const priceNew = price != data.price ? price : data.price;
+        const descriptionNew = description != data.description ? description : data.description;
 
-        console.log(titleNew)
+        console.log(titleNew, priceNew)
 
         try {
 
             const updatedDish = {
                 title: titleNew,
-                categoty: categoty,
-                price: price,
-                description: description,
+                categoty: categotyNew,
+                price: priceNew,
+                description: descriptionNew,
                 tags: tags,
               };
 
