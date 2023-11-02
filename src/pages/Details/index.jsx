@@ -23,7 +23,7 @@ export function Details(){
   const navigate = useNavigate();
 
   function handleBack(){
-    navigate("/");
+    navigate(-1);
   }
 
   function handleEdit(){
@@ -58,7 +58,7 @@ export function Details(){
               <main>
                   <div className="dishDescription">
                       <img 
-                        src={saladRavanello} 
+                        src={`${api.defaults.baseURL}/files/${data.imgdish}`} 
                         alt="Prato de Salada Ravanello" 
                       />
           
