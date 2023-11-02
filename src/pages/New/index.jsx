@@ -40,6 +40,10 @@ export function New(){
     const navigate = useNavigate();
     const params = useParams();
 
+    function handleBack(){
+        navigate(-1);
+    }
+
     function handleAddTag(){
         setTags(prevState => [...prevState, newTag]);
         setNewTag("");
@@ -111,11 +115,11 @@ export function New(){
             <Header/>
             <Link 
                 className="back"
-                to="/"
             > 
                 <IoIosArrowBack/>
                 <ButtonText
                     title="voltar"
+                    onClick={handleBack}
                 />
             </Link>
 
