@@ -1,5 +1,4 @@
 import { Container, Menu, MenuExpand, MenuClose, Search } from './styles';
-import { FiSearch } from 'react-icons/fi';
 
 import { useAuth } from '../../hooks/auth';
 import { useState, useEffect } from 'react';
@@ -11,9 +10,6 @@ import { Link } from 'react-router-dom';
 import logoAdmin from '../../assets/logo-admin.svg';
 import buttonHidden from '../../assets/hidden-menu.svg';
 import buttonClose from '../../assets/close-menu.svg';
-
-import { Input } from '../../components/Input';
-
 
 export function Header({children}){
     const [search, setSearch] = useState("");
@@ -62,6 +58,8 @@ export function Header({children}){
 
     const { signOut } = useAuth();
 
+
+
     useEffect(() => {
         async function fetchTags() {
             const response = await api.get("/tags");
@@ -99,7 +97,7 @@ export function Header({children}){
                 <MenuExpand id="menu" onClick={closeMenu} className="hide">
                     <div id="optionsMenu">
                         
-                        <Link id="buttonExit" onClick={signOut}>Sair</Link>
+                        <Link id="buttonExit" onClick={signOut} to="/"> Sair</Link>
                         <Link id="buttonNewDishes" to="/new">Novo prato</Link>
                     </div>
                 </MenuExpand>
