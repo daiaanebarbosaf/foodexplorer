@@ -29,6 +29,7 @@ export function Edit(){
     const [imgdish, setImgdish ] = useState("");
     const [imgdishFile, setImgdishFile ] = useState(null);
     const [updatedImage, setUpdatedImage] = useState(null);
+    const [fileName, setFileName] = useState("");
 
     const [title, setTitle] = useState(data.title);
     const [categoty, setCategoty] = useState("");
@@ -38,6 +39,7 @@ export function Edit(){
 
     const [tags, setTags] = useState([]);
     const [newTag, setNewTag] = useState("");
+
 
     function handleBack(){
         navigate("/");
@@ -59,8 +61,15 @@ export function Edit(){
     }
 
     function handleRemoveTag(deleted){
-        setTags(prevState => prevState.filter(tag => tag !== deleted));
+        setTags((prevState) => prevState.filter(tag => tag !== deleted));
     }
+
+    function handleImageChange(e) {
+        const file = e.target.files[0];
+        setImgdish(file);
+        setUpdatedImage(file);
+        setFileName(file.name);
+      }
 
     useEffect(() => {
         async function fetchTags(){
@@ -83,6 +92,7 @@ export function Edit(){
       useEffect(() => {
         if (dish) {
             setImgdishFile(dish.imgdish);
+            setImgdish(dish.image);
             setTitle(dish.title);
             setCategoty(dish.categoty);
             setPrice(dish.price);
@@ -102,23 +112,40 @@ export function Edit(){
 
         const tagsNew = tags != data.tags ? tags : data.tags;
 
-        if (tags.length === 0){
-            return alert("Digite pelo menos 1 ingrediente!");
-        }
+        console.log(data.imgdish)
+
+        const imgdishNew = imgdish != data.imgdish ? imgdish : data.imgdish;
        
-       console.log(tagsNew)
- 
         try {
 
-            const updatedDish = {
+            console.log(imgdishNew)
+
+            if(imgdishNew) {
+
+                const fileUploadForm = new FormData();
+                fileUploadForm.append("imgdish", imgdishNew);
+
+                const { data: dish_id } = await api.put(`/dishes/${params.id}`, {
+                    title: titleNew,
+                    categoty: categotyNew,
+                    price: priceNew,
+                    description: descriptionNew,
+                    tags: tagsNew,
+                });
+
+                fileUploadForm.append("dish_id", params.id);
+                await api.patch("/dishes", fileUploadForm);
+                
+            }
+ 
+            await api.put(`/dishes/${params.id}`, {
+                
                 title: titleNew,
                 categoty: categotyNew,
                 price: priceNew,
                 description: descriptionNew,
                 tags: tagsNew,
-            };
-
-            await api.patch(`/dishes/${params.id}`, updatedDish);
+            });
 
 
             alert("Nota alterada com sucesso!");
@@ -129,6 +156,7 @@ export function Edit(){
               alert(error.response.data.message);
             } else {
               alert("Não foi possível editar o prato.");
+              console.log(error)
             }
         }
     }
@@ -158,12 +186,12 @@ export function Edit(){
                                 htmlFor="imgDishes"
                             >
                                 <FiUpload/>
-                                <p>Selecione imagem para alterá-la</p>
+                                <span>{fileName || "Selecione imagem"}</span>
 
                                 <input 
                                     id="imgDishes" 
                                     type="file"
-                                    defaultValue={data.imgdish} 
+                                    onChange={handleImageChange}
                                 />
                             </label>
                         </ImgDishes>
@@ -205,18 +233,29 @@ export function Edit(){
                                         data.tags.map((tag, index) => 
                                             <Ingredients
                                                 key={String(index)}
-                                                defaultValue={tag.name}
+                                                value={tag.name}
                                                 onClick={() => handleRemoveTag(tag)}
                                             />
                                         )
                                     }
                                 </footer>
                             }
+
+                            {
+                                tags.map((tag, index) =>
+                                    <Ingredients 
+                                        key={String(index)}
+                                        value={tag}
+                                        onClick={() => handleRemoveTag(tag)}
+                                    />
+                                )
+                            }
                             
                             <Ingredients 
                                 isNew
                                 placeholder="Adicionar"
-                                defaultValue={newTag}
+                                onChange={e => setNewTag(e.target.value)}
+                                value={newTag}
                                 onClick={handleAddTag}
                                 
                             />
