@@ -42,7 +42,7 @@ export function Edit(){
 
 
     function handleBack(){
-        navigate("/");
+        navigate(-1);
     }
     
 
@@ -118,7 +118,7 @@ export function Edit(){
        
         try {
 
-            console.log(imgdishNew)
+            //console.log(imgdishNew)
 
             if(imgdishNew) {
 
@@ -166,12 +166,12 @@ export function Edit(){
             <Header/>
             <Link 
                 className="back"
-                to="/"
             >
                 
                 <IoIosArrowBack/>
                 <ButtonText
                     title="voltar"
+                    onClick={handleBack}
                 />
             </Link>
                 <main>
