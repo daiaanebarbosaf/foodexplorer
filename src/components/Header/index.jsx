@@ -56,7 +56,7 @@ export function Header({children}){
         adminLogo.classList.remove('hide');
     }
 
-    const { signOut } = useAuth();
+    const { signOut, user } = useAuth();
 
 
 
@@ -84,6 +84,8 @@ export function Header({children}){
                 <Menu onClick={expandMenu}>
                     <img className="" id="buttonHidden" src={buttonHidden} alt="Imagem do menu escondido" />
                     <img className="" id="logoAdmin" src={logoAdmin} alt="Logo da Food Explorer" />
+                    <span>Olá, <strong>{user.name}</strong> </span>
+                    <p>Perfil de {user.role} </p>
                 </Menu>
 
                 <MenuClose id="menuClose" onClick={closeMenu} className="hide">
