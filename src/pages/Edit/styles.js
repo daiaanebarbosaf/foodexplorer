@@ -63,8 +63,6 @@ export const Form = styled.form`
         align-items: center;
         justify-content: center;
 
-        
-   
         gap: 0.5rem;
    
         height: 2.5rem;
