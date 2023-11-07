@@ -1,20 +1,15 @@
-import { Container, Banner, BannerText } from './styles';
+import { Container, Banner, BannerText, Profile } from './styles';
 
 import { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
+
 import { useAuth } from '../../hooks/auth';
+import { USER_ROLE } from '../../utils/roles';
 
 import { api } from '../../services/api';
 
 import unparalleledFlavors from '../../assets/unparalleled-flavors.png';
-import saladRavanello from '../../assets/dishes/saladRavanello.png';
-import spaguettiGambe from '../../assets/dishes/spaguettiGambe.png';
-import prugnaPie from '../../assets/dishes/prugnaPie.png';
-import peachyPastrie from '../../assets/dishes/peachyPastrie.png';
-import espresso from '../../assets/dishes/espresso.png';
 
-import { PiPencilSimpleBold } from 'react-icons/pi';
-import { IoIosArrowForward } from 'react-icons/io';
 import { FiSearch } from 'react-icons/fi';
 
 
@@ -34,6 +29,8 @@ export function Home(){
 
     const navigate = useNavigate();
     const params = useParams();
+
+    const { user } = useAuth();
 
     function handleDetails(id){
         navigate(`/details/${id}`);
@@ -86,6 +83,11 @@ export function Home(){
                 </BannerText>
                 
             </Banner>
+            
+            <Profile>
+                <span>Olá, <strong>{user.name}</strong> </span>
+                <p>Perfil de {user.role} </p>
+            </Profile>
 
             <Section title="Refeições">
                 <div className="dish">                    
