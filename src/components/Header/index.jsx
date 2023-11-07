@@ -1,6 +1,8 @@
 import { Container, Menu, MenuExpand, MenuClose, Search } from './styles';
 
 import { useAuth } from '../../hooks/auth';
+import { USER_ROLE } from '../../utils/roles';
+
 import { useState, useEffect } from 'react';
 
 import { api } from '../../services/api';
@@ -8,8 +10,11 @@ import { api } from '../../services/api';
 import { Link } from 'react-router-dom';
 
 import logoAdmin from '../../assets/logo-admin.svg';
+import logoCustomer from '../../assets/logo-customer.svg';
+
 import buttonHidden from '../../assets/hidden-menu.svg';
 import buttonClose from '../../assets/close-menu.svg';
+import receipt from '../../assets/receipt.svg';
 
 export function Header({children}){
     const [search, setSearch] = useState("");
@@ -58,8 +63,6 @@ export function Header({children}){
 
     const { signOut, user } = useAuth();
 
-
-
     useEffect(() => {
         async function fetchTags() {
             const response = await api.get("/tags");
@@ -82,10 +85,24 @@ export function Header({children}){
         <Container>
             <nav>
                 <Menu onClick={expandMenu}>
-                    <img className="" id="buttonHidden" src={buttonHidden} alt="Imagem do menu escondido" />
-                    <img className="" id="logoAdmin" src={logoAdmin} alt="Logo da Food Explorer" />
-                    <span>Olá, <strong>{user.name}</strong> </span>
-                    <p>Perfil de {user.role} </p>
+                    <img className="" id="buttonHidden" src={buttonHidden} alt="Hidden menu icon" />
+
+                    {
+                        [USER_ROLE.ADMIN].includes(user.role) &&
+                        <img className="soon" id="logoAdmin" src={logoAdmin} alt="SoonFood Explorer" />
+                    }
+
+                    {
+                        [USER_ROLE.CUSTOMER].includes(user.role) &&
+                        <img className="soon" id="logoAdmin" src={logoCustomer} alt="Soon Food Explorer" />
+                    }
+
+                    {
+                        [USER_ROLE.CUSTOMER].includes(user.role) &&
+                        <img  id="receipt" src={receipt} alt="Soon Food Explorer" />
+                    }
+
+                    
                 </Menu>
 
                 <MenuClose id="menuClose" onClick={closeMenu} className="hide">
@@ -100,7 +117,13 @@ export function Header({children}){
                     <div id="optionsMenu">
                         
                         <Link id="buttonExit" onClick={signOut} to="/"> Sair</Link>
-                        <Link id="buttonNewDishes" to="/new">Novo prato</Link>
+                        {
+                            [USER_ROLE.ADMIN].includes(user.role) &&
+                            <>
+                                <Link id="buttonNewDishes" to="/new">Novo prato</Link>
+                            </>
+                        }
+                        
                     </div>
                 </MenuExpand>
             </nav>
