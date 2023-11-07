@@ -35,7 +35,7 @@ export const Menu = styled.div`
 
     height: 6rem;
 
-    #logoAdmin, #buttonHidden {
+    #logoAdmin, #logoCustomer, #buttonHidden {
         height: 1.5rem;
     }
 
@@ -44,8 +44,12 @@ export const Menu = styled.div`
         width: clamp(5vw, 2em, 30vw);
     }
 
-    #logoAdmin {
+    #logoAdmin, #logoCustomer {
         width: clamp(15vw, 150em, 80vw);
+    }
+
+    #receipt {
+        margin-right: 1rem;
     }
 
 `;
