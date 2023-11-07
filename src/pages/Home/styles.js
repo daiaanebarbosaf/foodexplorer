@@ -8,6 +8,26 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+
+`;
+
+export const Profile = styled.div`
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+
+        width: 100%;
+        
+        > span, p {
+        font-family: 'Poppins', sans-serif;
+        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+        
+        font-size: clamp(0.8vw, 1.3em, 30vw);
+
+    }
+
+    margin-bottom: 2rem;
 `;
 
 export const Banner = styled.div`
