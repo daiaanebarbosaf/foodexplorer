@@ -64,6 +64,11 @@ export const Content = styled.section`
                 display: flex;
                 gap: 0.5rem;
             }
+    
+    .buttonInclude {
+        width: 130%;
+        height: 1.8rem;
+    }
 
 `;
 
