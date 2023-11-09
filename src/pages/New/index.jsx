@@ -162,11 +162,17 @@ export function New(){
                         <div className="input-select">
                             <select 
                             >
-                                <option value="1">
+                                <option value="">
+                                    Selecionar
+                                </option>
+                                <option value="meal">
                                     Refeição
                                 </option>
-                                <option value="2">
-                                    Pratos Principais
+                                <option value="dessert">
+                                    Sobremesa
+                                </option>
+                                <option value="drink">
+                                    Bebida
                                 </option>
 
                             </select>
