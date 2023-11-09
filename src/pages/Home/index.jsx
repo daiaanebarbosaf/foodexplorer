@@ -20,12 +20,17 @@ import { Input } from '../../components/Input';
 import { Dishes } from '../../components/Dishes';
 import { ButtonText } from '../../components/ButtonText';
 
+import { register } from 'swiper/element/bundle';
+
+register();
+
 export function Home(){
 
-    const [data, setData] = useState(null);
+    const [data, setData] = useState();
     const [search, setSearch] = useState("");
     const [tags, setTags] = useState([]);
     const [dishes, setDishes] = useState([]);
+    const [dessert, setDessert] = useState([]);
 
     const navigate = useNavigate();
     const params = useParams();
@@ -37,18 +42,11 @@ export function Home(){
     }
 
     useEffect(() => {
-        async function fetchTags(){
-            const response = await api.get("/tags");
-            setTags(response.data);
-        }
-
-        fetchTags();
-    }, []);
-
-    useEffect(() => {
         async function fetchDishes(){
-            const response = await api.get(`/dishes?title=${search}`);
-            setDishes(response.data);
+            const { data } = await api.get(`/dishes?title=${search}`);
+            setDishes(data.filter((dish) => dish.categoty === "meal"))
+            setDessert(data.filter((dessert) => dessert.categoty === "dessert"))
+            
         }
 
         fetchDishes();
@@ -62,6 +60,16 @@ export function Home(){
     
         fetchDish();
       }, []);
+      
+
+    useEffect(() => {
+        async function fetchTags(){
+            const response = await api.get("/tags");
+            setTags(response.data);
+        }
+
+        fetchTags();
+    }, []);
 
     return(
         <Container>
@@ -90,22 +98,46 @@ export function Home(){
             </Profile>
 
             <Section title="Refeições">
-                <div className="dish">                    
+                <div className="dish"> 
+                
+                    {!dishes ? <p>Sem resultados</p> : ""}                
                     {
-                        dishes.map(dish => (
+                        dishes && dishes.map((dish, categoty) => (
+                                <Dishes
+                                    key={String(dish.id)}
+                                    imgdish={`${api.defaults.baseURL}/files/${dish.imgdish}`}
+                                    data={dish}
+                                    dishId={dish.id}
+                                    onClick={() => handleDetails(dish.id)} 
+                                    categoty={categoty}
+                            />
+                            
+                        ))
+                    }
+                    
+                </div>
+            </Section>
+
+            <Section title="Sobremesas">
+
+            <div className="dish"> 
+                
+                {!dishes ? <p>Sem resultados</p> : ""}                
+                {
+                    dishes && dishes.map((dish, categoty) => (
                             <Dishes
                                 key={String(dish.id)}
                                 imgdish={`${api.defaults.baseURL}/files/${dish.imgdish}`}
                                 data={dish}
-                                onClick={() => handleDetails(dish.id)} 
                                 dishId={dish.id}
-                            />
-                        ))
-                    }
-                </div>
-            </Section>
-
-            <Section title="Pratos principais">
+                                onClick={() => handleDetails(dish.id)} 
+                                categoty={categoty}
+                        />
+                        
+                    ))
+                }
+                
+            </div>
 
             </Section>
 
