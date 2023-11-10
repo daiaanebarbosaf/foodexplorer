@@ -84,8 +84,12 @@ export const Content= styled.div`
 
     }
 
-    .buttoneEditDish {
+    .orderInformation{
+        display: flex;
+        gap: 1rem;
+    }
+
+    .buttonEditDish {
         width: 98%;
     }
-    
 `;
