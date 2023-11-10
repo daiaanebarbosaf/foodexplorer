@@ -1,18 +1,22 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    
-    position: relative;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
 
-    .dishes {
+    > main {
+        padding-inline: 2.4rem;
+        position: relative;
+
         display: flex;
+        flex-direction: column;
         align-items: flex-start;
-        gap: 1rem;
+        justify-content: flex-start;
+
+        .dishes {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
     }
 
 `;
