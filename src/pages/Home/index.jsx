@@ -31,6 +31,7 @@ export function Home(){
     const [tags, setTags] = useState([]);
     const [dishes, setDishes] = useState([]);
     const [dessert, setDessert] = useState([]);
+    const [drink, setDrink] = useState([]);
 
     const navigate = useNavigate();
     const params = useParams();
@@ -46,6 +47,7 @@ export function Home(){
             const { data } = await api.get(`/dishes?title=${search}`);
             setDishes(data.filter((dish) => dish.categoty === "meal"))
             setDessert(data.filter((dessert) => dessert.categoty === "dessert"))
+            setDrink(data.filter((drink) => drink.categoty === "drink"))
             
         }
 
@@ -122,16 +124,15 @@ export function Home(){
 
             <div className="dish"> 
                 
-                {!dishes ? <p>Sem resultados</p> : ""}                
+                {!dessert ? <p>Sem resultados</p> : ""}                
                 {
-                    dishes && dishes.map((dish, categoty) => (
+                    dessert && dessert.map((dessert) => (
                             <Dishes
-                                key={String(dish.id)}
-                                imgdish={`${api.defaults.baseURL}/files/${dish.imgdish}`}
-                                data={dish}
-                                dishId={dish.id}
-                                onClick={() => handleDetails(dish.id)} 
-                                categoty={categoty}
+                                key={String(dessert.id)}
+                                imgdish={`${api.defaults.baseURL}/files/${dessert.imgdish}`}
+                                data={dessert}
+                                dishId={dessert.id}
+                                onClick={() => handleDetails(dessert.id)} 
                         />
                         
                     ))
@@ -141,7 +142,25 @@ export function Home(){
 
             </Section>
 
-            <Section title="Pratos principais">
+            <Section title="Bebidas">
+
+            <div className="dish"> 
+                
+                {!drink ? <p>Sem resultados</p> : ""}                
+                {
+                    drink && drink.map((drink) => (
+                            <Dishes
+                                key={String(drink.id)}
+                                imgdish={`${api.defaults.baseURL}/files/${drink.imgdish}`}
+                                data={drink}
+                                dishId={drink.id}
+                                onClick={() => handleDetails(drink.id)} 
+                        />
+                        
+                    ))
+                }
+                
+            </div>
 
             </Section>
 
