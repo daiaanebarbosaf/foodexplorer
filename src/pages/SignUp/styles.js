@@ -37,7 +37,7 @@ export const Form = styled.form`
         margin-bottom: 0.3rem;
     }
 
-    .inputSignUpP {
+    .inputSignUpP, .buttonCreateAccount {
         margin-top: 1.5rem;
     }
 
