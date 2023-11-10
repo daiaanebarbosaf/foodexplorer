@@ -23,7 +23,7 @@ export default createGlobalStyle`
         -webkit-font-smoothing: antialiased;
 
         margin-inline: auto;
-        padding-inline: 2.4rem;
+        
     }
 
     a {
