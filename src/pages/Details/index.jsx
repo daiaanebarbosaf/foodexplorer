@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Container, Content } from './styles.js';
 
+
+import { useAuth } from '../../hooks/auth';
+import { USER_ROLE } from '../../utils/roles';
+
+import { PiReceipt } from 'react-icons/pi';
+
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { api } from '../../services/api';
@@ -16,6 +22,8 @@ import { IoIosArrowBack } from 'react-icons/io';
 import saladRavanello from '../../assets/dishes/saladRavanello.png';
 
 export function Details(){
+  const { user } = useAuth();
+
   const [data, setData] = useState(null);
   const [dishes, setDishes] = useState([]);
 
@@ -84,12 +92,29 @@ export function Details(){
                           ))
                         }
                       </div>
-                    }                      
+                    }
+
+                    {
+                      [USER_ROLE.ADMIN].includes(user.role) &&
+                      <Button
+                        className="buttoneEditDish"
+                        title="Editar prato"
+                        onClick={handleEdit}
+                      />
+                    }  
+
+                    {
+                      [USER_ROLE.CUSTOMER].includes(user.role) &&
+                      <>
+                      
                         <Button
                           className="buttoneEditDish"
-                          title="Editar prato"
+                          title={`pedir ∙ R$ ${data.price}`}
+                          icon={PiReceipt}
                           onClick={handleEdit}
                         />
+                      </>
+                    }                     
               </main>
         }
 
