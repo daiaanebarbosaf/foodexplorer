@@ -36,7 +36,7 @@ export const Form = styled.form`
         margin-bottom: 0.3rem;
     }
 
-    .inputSignInP {
+    .inputSignInP, .buttonEnter {
         margin-top: 1rem;
     }
 
