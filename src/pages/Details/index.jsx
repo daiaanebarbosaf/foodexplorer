@@ -16,10 +16,9 @@ import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Tag } from '../../components/Tag';
+import { NumberOfDishes } from '../../components/NumberOfDishes';
 
 import { IoIosArrowBack } from 'react-icons/io';
-
-import saladRavanello from '../../assets/dishes/saladRavanello.png';
 
 export function Details(){
   const { user } = useAuth();
@@ -97,7 +96,7 @@ export function Details(){
                     {
                       [USER_ROLE.ADMIN].includes(user.role) &&
                       <Button
-                        className="buttoneEditDish"
+                        className="buttonEditDish"
                         title="Editar prato"
                         onClick={handleEdit}
                       />
@@ -106,13 +105,15 @@ export function Details(){
                     {
                       [USER_ROLE.CUSTOMER].includes(user.role) &&
                       <>
-                      
-                        <Button
-                          className="buttoneEditDish"
-                          title={`pedir ∙ R$ ${data.price}`}
-                          icon={PiReceipt}
-                          onClick={handleEdit}
-                        />
+                        <div className="orderInformation">
+                          <NumberOfDishes number="01"/>
+                            <Button
+                              className="buttoneOrderDish"
+                              title={`pedir ∙ R$ ${data.price}`}
+                              icon={PiReceipt}
+                              onClick={handleEdit}
+                            />
+                        </div>
                       </>
                     }                     
               </main>
