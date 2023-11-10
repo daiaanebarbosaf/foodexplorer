@@ -11,7 +11,7 @@ export const Container = styled.section`
 
     background-color: ${({ theme }) => theme.COLORS.DARK_300};
 
-    padding: 3rem 1rem;
+    padding: 1rem 2rem;
     margin-bottom: 2rem;
 
     > a > svg {
@@ -19,8 +19,6 @@ export const Container = styled.section`
                 font-size: clamp(1vw, 3em, 30vw);
                 margin-left: 8rem;
             }
-
-            
 
 `;
 
@@ -33,10 +31,11 @@ export const Content = styled.section`
     flex-direction: column;
 
     margin-bottom: 2rem;
-    gap: 1rem;
+    gap: 0.5rem;
 
     > img {
         width: clamp(3vw, 10em, 30vw);
+        margin-top: -2rem;
     }
 
     border-radius: 8px;
@@ -68,6 +67,7 @@ export const Content = styled.section`
     .buttonInclude {
         width: 130%;
         height: 1.8rem;
+        margin-top: 1rem;
     }
 
 `;

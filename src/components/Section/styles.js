@@ -23,7 +23,6 @@ export const Container = styled.section`
         > li {
             
             display: flex;
-            flex-direction: column;
             align-items: center;
 
             padding: 2rem 1rem;
