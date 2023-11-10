@@ -43,7 +43,11 @@ export function SignIn(){
                     onChange={e => setPassword(e.target.value)} 
                 />
 
-                <Button title="Entrar" onClick={handleSignIn}/>
+                <Button 
+                    className="buttonEnter" 
+                    title="Entrar" 
+                    onClick={handleSignIn}
+                />
 
                 <footer>
                     <Link to="/register">
