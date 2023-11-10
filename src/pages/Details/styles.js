@@ -21,6 +21,7 @@ export const Content= styled.div`
     text-align: center;
     justify-content: center;
     flex-direction: column;
+
     gap: 2rem;
 
     .back {
@@ -47,6 +48,7 @@ export const Content= styled.div`
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+        margin-bottom: 1rem;
         
         font-family: 'Poppins', sans-serif; 
 
@@ -77,6 +79,8 @@ export const Content= styled.div`
         flex-wrap: wrap;
 
         gap: 1rem;
+
+        margin-bottom: 2rem;
 
     }
 
