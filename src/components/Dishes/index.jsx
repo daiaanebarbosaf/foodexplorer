@@ -42,7 +42,6 @@ export function Dishes({ data, dishId, imgdish, ...rest }){
                 }
                 
                 
-
             </a>
             
             <Content {...rest}>
