@@ -77,7 +77,6 @@ export function Dishes({ data, dishId, imgdish, ...rest }){
                     <NumberOfDishes number="01"/>
                 }
 
-                
 
                 {
                     [USER_ROLE.CUSTOMER].includes(user.role) &&
