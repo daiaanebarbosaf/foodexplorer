@@ -71,6 +71,7 @@ export function SignUp(){
                 />
 
                 <Button 
+                    className="buttonCreateAccount"
                     title="Criar conta" 
                     onClick={handleSignUp}
                 />
