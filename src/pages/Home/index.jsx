@@ -1,6 +1,6 @@
 import { Container, Banner, BannerText, Profile } from './styles';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../../hooks/auth';
@@ -32,6 +32,8 @@ export function Home(){
     const [dishes, setDishes] = useState([]);
     const [dessert, setDessert] = useState([]);
     const [drink, setDrink] = useState([]);
+
+    const swiperElRef1 = useRef(null);
 
     const navigate = useNavigate();
     const params = useParams();
@@ -100,24 +102,34 @@ export function Home(){
             </Profile>
 
             <Section title="Refeições">
-                <div className="dish"> 
+
+                <swiper-container
                 
-                    {!dishes ? <p>Sem resultados</p> : ""}                
-                    {
-                        dishes && dishes.map((dish, categoty) => (
-                                <Dishes
-                                    key={String(dish.id)}
-                                    imgdish={`${api.defaults.baseURL}/files/${dish.imgdish}`}
-                                    data={dish}
-                                    dishId={dish.id}
-                                    onClick={() => handleDetails(dish.id)} 
-                                    categoty={categoty}
-                            />
-                            
-                        ))
-                    }
-                    
-                </div>
+                        slides-per-view="auto"
+                        loop="true"
+                        grab-cursor="true"
+                    >
+                        <div className="dishes"> 
+                
+                            {!dishes ? <p>Sem resultados</p> : ""}                
+                            {
+                                dishes && dishes.map((dish, categoty) => (
+                                    <swiper-slide key={String(dish.id)}>
+                                        <Dishes
+                                            imgdish={`${api.defaults.baseURL}/files/${dish.imgdish}`}
+                                            data={dish}
+                                            dishId={dish.id}
+                                            onClick={() => handleDetails(dish.id)} 
+                                            categoty={categoty}
+                                        />
+                                    </swiper-slide>                                
+                                ))
+                            }
+
+                        </div>
+
+                </swiper-container>
+                
             </Section>
 
             <Section title="Sobremesas">
