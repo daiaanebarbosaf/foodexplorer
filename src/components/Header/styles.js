@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.header`
     cursor: pointer;
@@ -20,6 +21,52 @@ export const Container = styled.header`
             display: none;
             visibility: none;
         }
+
+        .orderInformation, .searchPlate, .svgsignOut {
+            visibility: hidden;
+        }
+
+
+
+        @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
+
+   
+
+
+        }
+
+        @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+            #logoAdmin, #logoCustomer {
+            
+                height: 20rem;
+                width: 20rem;
+            }
+
+            .searchPlateHeader{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .searchPlate {
+                width: 50%;
+                text-align: center;
+            }
+
+            .orderInformation {
+                width: 20%;
+            }
+
+            .orderInformation, .searchPlate, .svgsignOut {
+                visibility: visible;
+            }
+
+            .svgsignOut {
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+
     }
 
 `;
@@ -40,15 +87,34 @@ export const Menu = styled.div`
     }
 
     #buttonHidden {
-        width: clamp(5vw, 2em, 30vw);
+        width: clamp(5vw, 2em, 10vw);
     }
 
     #logoAdmin, #logoCustomer {
-        width: clamp(10vw, 100em, 55vw);
+        width: clamp(5vw, 20em, 85vw);
     }
 
     #receipt {
         left: 10rem;
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+        #logoAdmin, #logoCustomer {
+                
+                height: 20rem;
+                width: 20rem;
+            }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+
+        #buttonHidden,  #receipt {
+            display: none;
+        }
     }
 
 `;
