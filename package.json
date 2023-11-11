@@ -13,6 +13,7 @@
     "axios": "^1.5.0",
     "cors": "^2.8.5",
     "expo-linear-gradient": "~12.3.0",
+    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
