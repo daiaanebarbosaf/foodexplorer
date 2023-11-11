@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 
-
     > main {
-        padding-inline: 2.4rem;
+        
         position: relative;
+        
 
         display: flex;
         flex-direction: column;
@@ -16,6 +16,13 @@ export const Container = styled.div`
             display: flex;
             align-items: flex-start;
             gap: 1rem;
+
+            max-width: 50%;
+        }
+
+        .carousel {
+            cursor: grab;
+            overflow: hidden;
         }
     }
 
@@ -25,6 +32,7 @@ export const Profile = styled.div`
         display: flex;
         align-items: left;
         flex-direction: column;
+        padding-inline: 2.4rem;
 
         width: 100%;
         
