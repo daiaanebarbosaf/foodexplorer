@@ -54,6 +54,11 @@ export function Header({children}){
        
     }
 
+    
+    function handleHome(){
+        navigate("/");
+    }
+
     function handleNew(){
         navigate("/new");
     }
@@ -104,12 +109,12 @@ export function Header({children}){
 
                     {
                         [USER_ROLE.ADMIN].includes(user.role) &&
-                        <img className="soon" id="logoAdmin" src={logoAdmin} alt="SoonFood Explorer" />
+                        <img className="soon" id="logoAdmin" src={logoAdmin} onClick={handleHome} alt="SoonFood Explorer" />
                     }
 
                     {
                         [USER_ROLE.CUSTOMER].includes(user.role) &&
-                        <img className="soon" id="logoAdmin" src={logoCustomer} alt="Soon Food Explorer" />
+                        <img className="soon" id="logoAdmin" src={logoCustomer} onClick={handleHome} alt="Soon Food Explorer" />
                     }
 
                     {
