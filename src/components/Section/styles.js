@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-    padding-inline: 2.4rem;
-    
     
     > h2 {
         font-family: 'Poppins', sans-serif;
