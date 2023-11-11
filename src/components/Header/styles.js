@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-    
     cursor: pointer;
 
     > nav {
@@ -27,6 +26,7 @@ export const Container = styled.header`
 
 export const Menu = styled.div`
     width: 100%;
+    padding-inline: 2.4rem;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
@@ -40,16 +40,15 @@ export const Menu = styled.div`
     }
 
     #buttonHidden {
-        margin-left: 2rem;
         width: clamp(5vw, 2em, 30vw);
     }
 
     #logoAdmin, #logoCustomer {
-        width: clamp(15vw, 150em, 80vw);
+        width: clamp(10vw, 100em, 55vw);
     }
 
     #receipt {
-        margin-right: 1rem;
+        left: 10rem;
     }
 
 `;
