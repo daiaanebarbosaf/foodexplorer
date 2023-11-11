@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
 
     > main {
-        
         position: relative;
-        
+        padding-inline: 2.4rem;
 
         display: flex;
         flex-direction: column;
@@ -32,8 +31,7 @@ export const Profile = styled.div`
         display: flex;
         align-items: left;
         flex-direction: column;
-        padding-inline: 2.4rem;
-
+       
         width: 100%;
         
         > span, p {
@@ -53,7 +51,8 @@ export const Banner = styled.div`
 
     background: linear-gradient(to bottom, #091E26, #00131C);
 
-    width: 95%;
+    width: 16rem;
+    
     height: 110px;
 
     margin-top: 8rem;
