@@ -1,5 +1,7 @@
 import { Container, Banner, BannerText, Profile } from './styles';
 
+import { motion } from 'framer-motion';
+
 import { useState, useEffect, useRef } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
@@ -32,6 +34,8 @@ export function Home(){
     const [dishes, setDishes] = useState([]);
     const [dessert, setDessert] = useState([]);
     const [drink, setDrink] = useState([]);
+
+    const [width, setWidth] = useState(0);
 
     const swiperElRef1 = useRef(null);
 
@@ -75,6 +79,13 @@ export function Home(){
         fetchTags();
     }, []);
 
+    const carousel = useRef();
+
+    useEffect(() => {
+        console.log(carousel.current?.scrollWidth, carousel.current?.offsetWidth)
+        setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
+    }, [])
+
     return(
         <Container>
             <main>
@@ -104,32 +115,37 @@ export function Home(){
 
                 <Section title="Refeições">
 
-                    <swiper-container
-                    
-                            slides-per-view="auto"
-                            loop="true"
-                            grab-cursor="true"
+                    <motion.div 
+                            ref={carousel}
+                            className="carousel"
+                            whileTap={{cursor: "grabbing"}}
                         >
-                            <div className="dishes"> 
+                            <motion.div  
+                            className="dishes"
+                                drag="x"
+                                dragConstraints={{right: 0, left: -width}}
+                                initial={{ x: 100}}
+                                animate={{ x: 0}}
+                                transition={{duration: 0.8}}
+                            > 
                     
                                 {!dishes ? <p>Sem resultados</p> : ""}                
                                 {
                                     dishes && dishes.map((dish, categoty) => (
-                                        <swiper-slide key={String(dish.id)}>
-                                            <Dishes
-                                                imgdish={`${api.defaults.baseURL}/files/${dish.imgdish}`}
-                                                data={dish}
-                                                dishId={dish.id}
-                                                onClick={() => handleDetails(dish.id)} 
-                                                categoty={categoty}
-                                            />
-                                        </swiper-slide>                                
+                                        <Dishes
+                                            key={String(dish.id)}
+                                            imgdish={`${api.defaults.baseURL}/files/${dish.imgdish}`}
+                                            data={dish}
+                                            dishId={dish.id}
+                                            onClick={() => handleDetails(dish.id)} 
+                                            categoty={categoty}
+                                        />
+                                                                       
                                     ))
                                 }
 
-                            </div>
-
-                    </swiper-container>
+                            </motion.div >
+                    </motion.div>
                     
                 </Section>
 
