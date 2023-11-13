@@ -26,13 +26,6 @@ export const Container = styled.header`
             visibility: hidden;
         }
 
-
-
-        @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
-
-
-        }
-
         @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
             > nav {
                 z-index: 0;
@@ -193,13 +186,16 @@ export const MenuExpand = styled.div`
 
 export const Search = styled.div`
 
-    width: 100%;
-    height: 6rem;
+    width: 20rem;
+    height: 3rem;
 
     padding: 2rem;
 
-    
     background-color: ${({ theme }) => theme.COLORS.DARK_400};
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
+        width: 30rem;
+    }
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
     
@@ -207,12 +203,7 @@ export const Search = styled.div`
         width: 90%;
 
         margin-left: 20rem;
-        
-        #search {
-            visibility: visible;
 
-        }
-        
   }
 `;
 
