@@ -2,7 +2,7 @@ import { Container, Menu, MenuExpand, MenuClose, Search } from './styles';
 
 import { useAuth } from '../../hooks/auth';
 import { USER_ROLE } from '../../utils/roles';
-import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
+
 
 import { useState, useEffect } from 'react';
 
@@ -11,6 +11,7 @@ import { api } from '../../services/api';
 import { Link, useNavigate } from 'react-router-dom';
 
 import logoAdmin from '../../assets/logo-admin.svg';
+
 import logoCustomer from '../../assets/logo-customer.svg';
 
 import buttonHidden from '../../assets/hidden-menu.svg';
@@ -19,31 +20,23 @@ import receipt from '../../assets/receipt.svg';
 
 import { PiReceipt } from 'react-icons/pi';
 import { PiSignOutFill } from 'react-icons/pi';
-import { FiSearch } from 'react-icons/fi';
 
 import { Button } from '../../components/Button';
-import { Input } from '../../components/Input';
 
 export function Header({children}){
     const navigate = useNavigate();
 
-    const [search, setSearch] = useState("");
-
     const [tags, setTags] = useState([]);
-    const [tagsSelected, setTagsSelected] = useState([]);
-
-    const [dishes, setDishes] = useState([]);
 
     function expandMenu(){
         
         var menuExpand = document.getElementById('buttonHidden');
         var adminLogo = document.getElementById('logoAdmin');
+        var adminLogoLG = document.getElementById('logoAdmin');
 
         var menu = document.getElementById('menu');
         var menuClose = document.getElementById('menuClose');
         var search = document.getElementById('search');
-
-        
               
         menuExpand.classList.add('hide');
         adminLogo.classList.add('hide');
@@ -92,19 +85,11 @@ export function Header({children}){
         fetchTags();
     }, []);
 
-    useEffect(() => {
-        async function fetchDishes(){
-            const response = await api.get(`/dishes?title=${search}&tags=${tagsSelected}`);
-            setDishes(response.data);
-        }
-
-        fetchDishes();
-    },[tagsSelected, search]);
 
     return(
         <Container>
             <nav>
-                <Menu onClick={expandMenu}>
+                <Menu onClick={expandMenu} >
                     <img className="" id="buttonHidden" src={buttonHidden} alt="Hidden menu icon" />
 
                     {
@@ -121,16 +106,6 @@ export function Header({children}){
                         [USER_ROLE.CUSTOMER].includes(user.role) &&
                         <img  id="receipt" src={receipt} alt="Soon Food Explorer" />
                     }
-
-                   
-                    <div className="searchPlate">
-                        <Input
-                            icon={FiSearch} 
-                            className="searchPlateHeader"
-                            placeholder="Busque por pratos ou ingredientes" 
-                            onChange={(e) => setSearch(e.target.value)}
-                        />
-                    </div>
 
                     {
                       [USER_ROLE.CUSTOMER].includes(user.role) &&
@@ -171,7 +146,7 @@ export function Header({children}){
                     <h1  id="menuText">Menu</h1>
                     
                 </MenuClose>
-                <Search id="search" className="hide">
+                <Search id="search">
                     {children}
                 </Search>
                 <MenuExpand id="menu" onClick={closeMenu} className="hide">
