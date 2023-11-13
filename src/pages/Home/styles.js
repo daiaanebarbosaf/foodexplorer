@@ -24,6 +24,13 @@ export const Container = styled.div`
             cursor: grab;
             overflow: hidden;
         }
+
+        @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+            #searchPlateHome {
+                width: 50%;
+                margin-top: -6rem;
+            }
+        }
     }
 
 `;
