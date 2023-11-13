@@ -75,6 +75,10 @@ export const Banner = styled.div`
         bottom: 15px;
     }
 
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
+        width: 25rem;
+    }
+
 `;
 
 export const BannerText = styled.div`
