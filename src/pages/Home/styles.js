@@ -26,9 +26,20 @@ export const Container = styled.div`
         }
 
         @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+            padding-inline: 4rem;
+
             #searchPlateHome {
-                width: 50%;
+                width: 55%;
                 margin-top: -6rem;
+                margin-left: -4rem;
+            }
+        }
+
+        @media (min-width: ${DEVICE_BREAKPOINTS.XL}){
+            #searchPlateHome {
+                width: 58%;
+                margin-top: -6rem;
+                margin-left: -1rem;
             }
         }
     }
@@ -79,6 +90,30 @@ export const Banner = styled.div`
         width: 25rem;
     }
 
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        width: 43rem;
+        
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.XL}){
+        width: 75rem;
+        height: 210px;
+
+        margin-top: 13rem;
+
+        > img {
+            width: 450px;
+            height: 320px;
+
+            position: relative;
+            left: -55px;
+            bottom: 100px;
+    
+        }
+
+        
+    }
+
 `;
 
 export const BannerText = styled.div`
@@ -100,6 +135,18 @@ export const BannerText = styled.div`
     > p {
         font-weight: 400;
         font-size: 0.6rem;
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        margin-right: 0rem;
+        margin-left: 2rem;
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.XL}){
+        > h1 {
+            font-weight: 400;
+            font-size: clamp(0.8vw, 3em, 30vw);
+        }
     }
     
 `;
