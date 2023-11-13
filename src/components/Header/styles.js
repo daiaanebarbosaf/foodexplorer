@@ -27,15 +27,43 @@ export const Container = styled.header`
         }
 
         @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-            > nav {
-                z-index: 0;
-                background: transparent;
+            #logoAdmin, #logoCustomer {
+                z-index: 9999;
+                height: 2rem;
+                width: 20%;
+                margin-left: -3rem;
             }
 
+            .orderInformation, .searchPlate, .svgsignOut {
+                visibility: visible;
+            }
+
+            .searchPlate {
+                width: 40%;
+                
+            }
+
+            .orderInformation {
+                width: 15%;
+                margin-left: 16rem;
+            }
+
+  
+            .svgsignOut {
+                height: 5rem;
+                width: 2%;
+
+                margin-left: 2rem;
+                
+            }
+        }
+
+        @media (min-width: ${DEVICE_BREAKPOINTS.XL}){
+
             #logoAdmin, #logoCustomer {
-            
-                height: 20rem;
-                width: 20rem;
+                height: 2rem;
+                width: 40%;
+                margin-left: -8rem;
             }
 
             .searchPlateHeader{
@@ -45,23 +73,24 @@ export const Container = styled.header`
             }
 
             .searchPlate {
-                width: 50%;
+                width: 30%;
                 
             }
 
-            .orderInformation {
-                width: 20%;
-                margin-left: 30rem;
+            .buttoneOrderDish{
+                margin-left: -2rem;
             }
 
-            .orderInformation, .searchPlate, .svgsignOut {
-                visibility: visible;
+            .orderInformation {
+                width: 15%;
+                margin-left: 38rem;
             }
 
             .svgsignOut {
-                height: 1.5rem;
-                width: 1.5rem;
+                margin-left: 2rem; 
             }
+
+
         }
 
     }
@@ -104,17 +133,20 @@ export const Menu = styled.div`
             }
     }
 
-    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-        
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+        #buttonHidden,  #receipt {
+            display: none;
+        }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.XG}){
         
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
 
-        #buttonHidden,  #receipt {
-            display: none;
-        }
+
     }
 
 `;
@@ -179,6 +211,10 @@ export const MenuExpand = styled.div`
         #optionsMenu, #buttonExit, #buttonNewDishes {
             visibility: hidden;
         }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.XL}){
+
         
     }
 
@@ -195,14 +231,19 @@ export const Search = styled.div`
 
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
         width: 30rem;
+
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-        
-            background: transparent;
-            width: 90%;
+        background: transparent;
+        width: 50%;
 
-            margin-left: 20rem;
+        margin-left: 12rem;
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.XL}){
+            width: 90%;
+            margin-left: 18rem;
 
     }
 `;
