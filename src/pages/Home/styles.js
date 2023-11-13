@@ -63,7 +63,7 @@ export const Banner = styled.div`
     
     height: 110px;
 
-    margin-top: 8rem;
+    margin-top: 12rem;
     margin-bottom: 3rem;
     
     > img {
