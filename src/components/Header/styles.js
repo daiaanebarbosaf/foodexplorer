@@ -22,7 +22,7 @@ export const Container = styled.header`
             visibility: none;
         }
 
-        .orderInformation, .searchPlate, .svgsignOut {
+        .orderInformation, .svgsignOut {
             visibility: hidden;
         }
 
@@ -30,12 +30,15 @@ export const Container = styled.header`
 
         @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
 
-   
-
 
         }
 
         @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+            > nav {
+                z-index: 0;
+                background: transparent;
+            }
+
             #logoAdmin, #logoCustomer {
             
                 height: 20rem;
@@ -50,11 +53,12 @@ export const Container = styled.header`
 
             .searchPlate {
                 width: 50%;
-                text-align: center;
+                
             }
 
             .orderInformation {
                 width: 20%;
+                margin-left: 30rem;
             }
 
             .orderInformation, .searchPlate, .svgsignOut {
@@ -99,6 +103,7 @@ export const Menu = styled.div`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+ 
         #logoAdmin, #logoCustomer {
                 
                 height: 20rem;
@@ -107,6 +112,8 @@ export const Menu = styled.div`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        
+        
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -172,6 +179,16 @@ export const MenuExpand = styled.div`
         margin-bottom: 0.5rem;
     }
 
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        background: transparent;
+    
+
+        #optionsMenu, #buttonExit, #buttonNewDishes {
+            visibility: hidden;
+        }
+        
+    }
+
 `;
 
 export const Search = styled.div`
@@ -181,11 +198,21 @@ export const Search = styled.div`
 
     padding: 2rem;
 
-    z-index: 9999;  
+    
     background-color: ${({ theme }) => theme.COLORS.DARK_400};
 
-  @media (max-width: 700px){
-    margin-bottom: 1rem;
+  @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+    
+        background: transparent;
+        width: 90%;
+
+        margin-left: 20rem;
+        
+        #search {
+            visibility: visible;
+
+        }
+        
   }
 `;
 
@@ -218,6 +245,19 @@ export const MenuClose = styled.div`
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
         font-size: clamp(2vw, 2em, 10vw);     
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+
+        background: transparent;
+
+        #buttonClose, #menuClose {
+            visibility: hidden;
+        }
+
+        h1 {
+            visibility: hidden;
+        }
     }
         
 `;
