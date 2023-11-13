@@ -197,14 +197,14 @@ export const Search = styled.div`
         width: 30rem;
     }
 
-  @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-    
-        background: transparent;
-        width: 90%;
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        
+            background: transparent;
+            width: 90%;
 
-        margin-left: 20rem;
+            margin-left: 20rem;
 
-  }
+    }
 `;
 
 export const MenuClose = styled.div`
