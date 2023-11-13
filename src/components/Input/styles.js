@@ -42,7 +42,7 @@ export const Container = styled.div`
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
           > input {
-               width: 50%;
+               width: 90%;
                padding: 0rem;
           }
     }
