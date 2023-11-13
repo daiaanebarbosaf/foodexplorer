@@ -37,8 +37,6 @@ export function Home(){
 
     const [width, setWidth] = useState(0);
 
-    const swiperElRef1 = useRef(null);
-
     const navigate = useNavigate();
     const params = useParams();
 
@@ -59,6 +57,8 @@ export function Home(){
 
         fetchDishes();
     },[search]);
+
+    console.log(search)
 
     useEffect(() => {
         async function fetchDish(){
@@ -90,12 +90,14 @@ export function Home(){
         <Container>
             <main>
                 <Header>
-                    <Input
-                        icon={FiSearch} 
-                        id="searchPlate" 
-                        placeholder="Busque por pratos ou ingredientes" 
-                        onChange={(e) => setSearch(e.target.value)}
-                    />
+                    <div id="searchPlateHome">
+                        <Input
+                            icon={FiSearch} 
+                            id="searchPlate" 
+                            placeholder="Busque por pratos ou ingredientes" 
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                    </div>
                 </Header>
         
                 <Banner className="gradient-container">
