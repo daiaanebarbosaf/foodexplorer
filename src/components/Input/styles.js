@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
     width: 100%;
@@ -37,5 +38,12 @@ export const Container = styled.div`
     > svg {
          margin-left: 0.5rem;
          width: 1rem;
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+          > input {
+               width: 50%;
+               padding: 0rem;
+          }
     }
 `;
