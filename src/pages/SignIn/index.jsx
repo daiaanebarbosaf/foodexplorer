@@ -28,33 +28,35 @@ export function SignIn(){
                     <img src={logo} alt="Logo da Food Explorer" />
                 </header>
 
-                <p>Email</p>
-                <Input
-                    id="inputSignIn"
-                    type="text"
-                    placeholder="Exemplo: exemplo@exemplo.com.br"
-                    onChange={e => setEmail(e.target.value)}  
-                />
-                <p className="inputSignInP">Senha</p>
-                <Input
-                    id="inputSignIn"
-                    type="password"
-                    placeholder="No mínimo 6 caracteres" 
-                    onChange={e => setPassword(e.target.value)} 
-                />
+                <main>
+                    <h1>Faça login</h1>
+                    <p>Email</p>
+                    <Input
+                        id="inputSignIn"
+                        type="text"
+                        placeholder="Exemplo: exemplo@exemplo.com.br"
+                        onChange={e => setEmail(e.target.value)}  
+                    />
+                    <p className="inputSignInP">Senha</p>
+                    <Input
+                        id="inputSignIn"
+                        type="password"
+                        placeholder="No mínimo 6 caracteres" 
+                        onChange={e => setPassword(e.target.value)} 
+                    />
 
-                <Button 
-                    className="buttonEnter" 
-                    title="Entrar" 
-                    onClick={handleSignIn}
-                />
+                    <Button 
+                        className="buttonEnter" 
+                        title="Entrar" 
+                        onClick={handleSignIn}
+                    />
 
-                <footer>
-                    <Link to="/register">
-                        Criar uma conta                    
-                    </Link>
-                </footer>
-
+                    <footer>
+                        <Link to="/register">
+                            Criar uma conta                    
+                        </Link>
+                    </footer>
+                </main>
             </Form>
         </Container>
     );
