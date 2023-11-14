@@ -64,23 +64,29 @@ export function Details(){
           data &&
               <main>
                   <div className="dishDescription">
+                    <div className="col-a">
                       <img 
-                        src={`${api.defaults.baseURL}/files/${data.imgdish}`} 
-                        alt="Prato de Salada Ravanello" 
-                      />
-          
-                      <h1>
-                        {data.title}
-                      </h1>
-                                    
-                      <p >
-                        {data.description}
-                      </p>
+                          src={`${api.defaults.baseURL}/files/${data.imgdish}`} 
+                          alt="Prato de Salada Ravanello" 
+                          
+                        />
+                    </div>
+
+                      <div className="titleAndDescription col-b">
+                        <h1>
+                          {data.title}
+                        </h1>
+                                      
+                        <p >
+                          {data.description}
+                        </p>
+                      </div>
+
                     </div>
 
                     {
                       data.tags &&
-                      <div className="tags">
+                      <div className="tags col-b">
                         {
                           data.tags.map(tag => (
                             <Tag 
@@ -92,30 +98,33 @@ export function Details(){
                         }
                       </div>
                     }
-
+                  
+                  <div className="col-b">
                     {
-                      [USER_ROLE.ADMIN].includes(user.role) &&
-                      <Button
-                        className="buttonEditDish"
-                        title="Editar prato"
-                        onClick={handleEdit}
-                      />
-                    }  
+                        [USER_ROLE.ADMIN].includes(user.role) &&
+                        <Button
+                          className="buttonEditDish"
+                          title="Editar prato"
+                          onClick={handleEdit}
+                        />
+                      }  
 
-                    {
-                      [USER_ROLE.CUSTOMER].includes(user.role) &&
-                      <>
-                        <div className="orderInformation">
-                          <NumberOfDishes number="01"/>
-                            <Button
-                              className="buttoneOrderDish"
-                              title={`pedir ∙ R$ ${data.price}`}
-                              icon={PiReceipt}
-                              onClick={handleEdit}
-                            />
-                        </div>
-                      </>
-                    }                     
+                      {
+                        [USER_ROLE.CUSTOMER].includes(user.role) &&
+                        <>
+                          <div className="orderInformation">
+                            <NumberOfDishes number="01"/>
+                              <Button
+                                className="buttoneOrderDish"
+                                title={`pedir ∙ R$ ${data.price}`}
+                                icon={PiReceipt}
+                                onClick={handleEdit}
+                              />
+                          </div>
+                        </>
+                      }       
+                  </div>
+                                  
               </main>
         }
 
