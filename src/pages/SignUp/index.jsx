@@ -46,41 +46,44 @@ export function SignUp(){
                     <img src={logo} alt="Logo da Food Explorer" />
                 </header>
 
-                <p>Seu nome</p>
-                <Input
-                    className="inputSignUp"
-                    type="text"
-                    placeholder="Exemplo: Maria da Silva"
-                    onChange={e => setName(e.target.value)} 
-                />
+                <main>
+                    <h1>Crie sua conta</h1>
+                    <p>Seu nome</p>
+                    <Input
+                        className="inputSignUp"
+                        type="text"
+                        placeholder="Exemplo: Maria da Silva"
+                        onChange={e => setName(e.target.value)} 
+                    />
 
-                <p className="inputSignUpP">Email</p>
-                <Input
-                    className="inputSignUp"
-                    type="text"
-                    placeholder="Exemplo: exemplo@exemplo.com.br" 
-                    onChange={e => setEmail(e.target.value)} 
-                />
-                <p className="inputSignUpP">Senha</p>
-                <Input
-                    className="inputSignUp"
-                    type="password"
-                    placeholder="No mínimo 6 caracteres"
-                    onChange={e => setPassword(e.target.value)} 
-                   
-                />
+                    <p className="inputSignUpP">Email</p>
+                    <Input
+                        className="inputSignUp"
+                        type="text"
+                        placeholder="Exemplo: exemplo@exemplo.com.br" 
+                        onChange={e => setEmail(e.target.value)} 
+                    />
+                    <p className="inputSignUpP">Senha</p>
+                    <Input
+                        className="inputSignUp"
+                        type="password"
+                        placeholder="No mínimo 6 caracteres"
+                        onChange={e => setPassword(e.target.value)} 
+                    
+                    />
 
-                <Button 
-                    className="buttonCreateAccount"
-                    title="Criar conta" 
-                    onClick={handleSignUp}
-                />
+                    <Button 
+                        className="buttonCreateAccount"
+                        title="Criar conta" 
+                        onClick={handleSignUp}
+                    />
 
-                <footer>
-                    <Link to="/">
-                        Já tenho uma conta                   
-                    </Link>
-                </footer>
+                    <footer>
+                        <Link to="/">
+                            Já tenho uma conta                   
+                        </Link>
+                    </footer>
+                </main>
 
             </Form>
         </Container>
