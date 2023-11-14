@@ -227,8 +227,6 @@ export const Search = styled.div`
 
     padding: 2rem;
 
-    background-color: ${({ theme }) => theme.COLORS.DARK_400};
-
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
         width: 30rem;
 
