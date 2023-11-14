@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
     height: 100vh;
@@ -27,36 +28,102 @@ export const Form = styled.form`
 
     }
 
-    > p {
-        font-family: 'Roboto', sans-serif;
-        font-size: 0.8rem;
-        font-weight: 400;
-
-        color: ${({ theme }) => theme.COLORS.LIGHT_400};
-
-        margin-bottom: 0.3rem;
-    }
-
-    .inputSignUpP, .buttonCreateAccount {
-        margin-top: 1.5rem;
-    }
-
-    .inputSignUp::placeholder {
-        font-size: 0.7rem;
-        color: ${({ theme }) => theme.COLORS.LIGHT_500};
-    }
-
-    > footer {
-        display: flex;
-        justify-content: center;
-
-        > a {
-
-            margin-top: 1.5rem;
-            color: ${({ theme }) => theme.COLORS.LIGHT_100};
-
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
+    > main {
+        > h1 {
+            visibility: hidden;
         }
-    } 
+
+        > p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 400;
+
+            color: ${({ theme }) => theme.COLORS.LIGHT_400};
+
+            margin-bottom: 0.3rem;
+        }
+
+        .inputSignUpP, .buttonCreateAccount {
+            margin-top: 1.5rem;
+        }
+
+        .inputSignUp::placeholder {
+            font-size: 0.7rem;
+            color: ${({ theme }) => theme.COLORS.LIGHT_500};
+        }
+
+        > footer {
+            display: flex;
+            justify-content: center;
+
+            > a {
+
+                margin-top: 1.5rem;
+                color: ${({ theme }) => theme.COLORS.LIGHT_100};
+
+                font-family: 'Poppins', sans-serif;
+                font-weight: 500;
+            }
+        }
+        
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
+        > header {
+            > img {
+            width: clamp(15vw, 30em, 130vw);
+            }
+        }
+
+        > main {
+            > p {
+                font-size: 1rem;
+            }
+
+            .inputSignUp::placeholder {
+                font-size: 0.8rem;
+            }
+
+
+            .buttonCreateAccount {
+                font-size: 0.8rem;
+            }
+
+            > footer {
+                > a {
+                    font-size: 0.8rem;
+                }
+            }
+
+        }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        display: flex;
+        flex-direction: row;
+        gap: 15rem;
+
+        > main {
+            width: 25rem;
+            height: 32rem;
+
+            padding: 3rem;
+            border-radius: 16px;
+            background-color: ${({ theme }) => theme.COLORS.DARK_700};
+
+            
+            > h1 {
+                font-family: 'Poppins', sans-serif;
+                font-weight: 400;
+                font-size: 2rem;
+
+                text-align: center;
+
+                margin-bottom: 2rem;
+
+                visibility: visible;
+            }
+        }
+    }
+   
 `;
