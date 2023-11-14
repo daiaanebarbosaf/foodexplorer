@@ -79,15 +79,15 @@ export const Form = styled.form`
                 font-size: 1rem;
             }
 
-            .buttonEnter {
-                font-size: 0.8rem;
-            }
-
             .inputSignInP, .buttonEnter {
                 margin-top: 1.5rem; 
             }
 
             #inputSignIn::placeholder {
+                font-size: 0.8rem;
+            }
+
+            .buttonEnter {
                 font-size: 0.8rem;
             }
 
