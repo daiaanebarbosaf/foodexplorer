@@ -8,10 +8,38 @@ export const Container = styled.div`
     height: 100vh;
 
     display: grid;
-    grid-template-rows: 6rem auto;
+    grid-template-rows: 9.4rem auto;
     grid-template-areas: 
     "header"
     "content";
+
+    > main {
+        grid-area: content;
+
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        height: 100vh;
+        grid-template-rows: 5rem auto 7.7rem;
+
+        > main {
+
+            ::-webkit-scrollbar {
+                width: 0.8rem;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
+                border-radius: 0.8rem;
+            }
+            
+        }
+
+        .buttonsDetails {
+            justify-content: initial;
+            gap: 3.3rem;
+        }
+    }
 
 `;
 
@@ -23,15 +51,18 @@ export const Content = styled.div`
     justify-content: center;
     flex-direction: column;
 
-    gap: 2rem;
-    
+    margin-left: 2rem;
+    margin-right: 2rem;
+    gap: 1rem;
 
     .back {
+
+        z-index: 9999;
 
         display: flex;
         align-items: center;
 
-        margin: 2rem 15rem 0rem 1.5rem;
+        margin-right: 12rem;
 
         font-family: 'Poppins', sans-serif;
         font-size: clamp(0.8vw, 1.5em, 30vw);
@@ -45,35 +76,24 @@ export const Content = styled.div`
 
     }
 
-    .dishDescription {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 1rem;
-        
-        font-family: 'Poppins', sans-serif; 
-
-        color: ${({ theme }) => theme.COLORS.LIGHT_300};
-
-        .col-b {
-            > h1 {
-                font-size: clamp(0.8vw, 1.6em, 30vw);
-                font-weight: 500;
-            }
-
-            > p {
-                font-size: clamp(0.8vw, 1.1em, 30vw);
-                font-weight: 400;
-
-                padding: 0rem 3rem 0rem 3rem;
-            }
-        }
-
+    > main {
         > img {
-            width: clamp(3vw, 20em, 40vw);
+            width: 10rem;
         }
-        
+
+        .dishDescription {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            
+            font-family: 'Poppins', sans-serif; 
+
+            color: ${({ theme }) => theme.COLORS.LIGHT_300};
+            
+        }
     }
 
     .tags {
@@ -83,84 +103,82 @@ export const Content = styled.div`
         flex-wrap: wrap;
 
         gap: 1rem;
-
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
 
     }
 
     .orderInformation{
         display: flex;
         gap: 1rem;
+        
     }
 
     .buttonEditDish {
-        width: 80%;
-        margin: 2rem 15rem 2rem 1.5rem;
-    }
-
-    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
-        .buttonEditDish {
-            margin-left: 3rem;
-        }
+        padding-left: 5rem;
+        padding-right: 5rem;
+        
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-        .back {
-            margin-right: 70rem;
-        }
+
+        display: flex;
+        align-items: flex-start;
+
+        padding-inline: 5rem;
 
         > main {
+            display: flex;
+            flex-direction: row;
+            margin-top: 2rem;
+            gap: 2rem;
+
+            > img {
+                width: 15rem;
+            }
 
             .dishDescription {
-                display: grid;
-                grid-template-columns: 20rem 1fr;
-                grid-template-areas:
-                'A B';
-      
-                .col-a {
-                    grid-area: A;
-                    display: flex;
-                    justify-content: flex-start;
+                display: flex;
+                align-items: flex-start;
+                
+                
+                gap: 2rem;
+
+                text-align: left;
+
+                h1 {
+
+                    font-size: 2rem;
                 }
 
-                .col-b {
-                    grid-area: B;
+                p {
+                    font-size: 1.5rem;
+                }
+
+                .tags {
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                }
+                
+                .tagsAndButtons {
                     display: flex;
                     flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: flex-start;
+                    justify-items: flex-start;
+            
+                    gap: 1rem;
                 }
-
-                .titleAndDescription {
-                    display: flex;
-                    align-items: flex-start;
-                    justify-content: flex-start;
-
-                    > h1 {
-                        font-size: 2rem;
-                    }
-
-                    > p {
-                        font-size: 1rem;
-                        font-weight: 300;
-
-                        padding: 0rem;
-                    }
-                }
-
             }
 
-            .tags {
-                margin-top: -5rem;
-                margin-right: 4rem;
+            .buttoneOrderDish{
+                width: 10rem;
             }
+        
+        }
 
-            .buttonEditDish {
-                width: 15%;
-
-                margin-bottom: 6rem;
-                margin-left: 21rem;
-            }
+        .buttonEditDish {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        
         }
     }
+
 `;
