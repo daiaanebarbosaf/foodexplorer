@@ -47,7 +47,7 @@ export function Dishes({ data, dishId, imgdish, ...rest }){
             <Content {...rest}>
                 <img 
                     src={imgdish} 
-                    alt="Prato de Salada Ravanello" 
+                    alt={data.title}
                 />
 
                 <p>
