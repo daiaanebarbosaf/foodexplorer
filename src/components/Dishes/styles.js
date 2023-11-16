@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.section`
     display: flex;
@@ -34,7 +35,7 @@ export const Content = styled.section`
     gap: 0.5rem;
 
     > img {
-        width: clamp(3vw, 10em, 30vw);
+        width: 6rem;
         margin-top: -2rem;
     }
 
@@ -68,6 +69,10 @@ export const Content = styled.section`
         width: 130%;
         height: 1.8rem;
         margin-top: 1rem;
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+
     }
 
 `;
