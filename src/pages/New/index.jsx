@@ -128,7 +128,7 @@ export function New(){
                         <h1>Novo Prato</h1>
                     </header>
 
-                    <div>
+                    <div className="imgDishes">
                         <ImgDishes>
                             <p>Imagem do prato</p>
                             <label 
@@ -155,7 +155,7 @@ export function New(){
                         />
                     </div>
 
-                    <div>
+                    <div className="selectCategory">
                         <SelectCategory
                             onChange={e => setCategoty(e.target.value)} 
                         >
@@ -180,9 +180,8 @@ export function New(){
                             </div>
                         </SelectCategory>
                     </div>
-
                     
-                    <div>
+                    <div className="ingredients">
                         <p>Ingredientes</p>
 
                             <div className="tags">
@@ -206,7 +205,7 @@ export function New(){
                             </div>
                     </div>
 
-                    <div>
+                    <div className="price">
                         <p>Preço</p>
                         <Input 
                             placeholder="R$ 00,00"
@@ -214,7 +213,7 @@ export function New(){
                         />
                     </div>
 
-                    <div>
+                    <div className="description">
                         <p>Descrição</p>
                         <Textarea 
                             placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
