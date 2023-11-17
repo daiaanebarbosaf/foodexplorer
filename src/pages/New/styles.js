@@ -48,9 +48,14 @@ export const Container = styled.div`
                 margin-top: 10rem;
             }
         }
-
     }
 
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        > main {
+            max-width: 100%;
+            padding: 0rem;
+        }
+    }
 
 `;
 
@@ -106,6 +111,12 @@ export const Form = styled.form`
         margin-top: 6rem;
     }
 
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        width: 76rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
 `;
 
 export const ImgDishes = styled.div`
@@ -140,6 +151,10 @@ export const ImgDishes = styled.div`
             font-size: clamp(0.5vw, 1em, 30vw);
         }
     }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        
+    }
 `;
 
 export const SelectCategory = styled.div`
@@ -173,6 +188,11 @@ export const SelectCategory = styled.div`
 
         font-weight: 400;
         font-size: clamp(0.5vw, 1em, 30vw);
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
 `;
