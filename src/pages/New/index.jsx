@@ -113,17 +113,17 @@ export function New(){
     return (
         <Container>
             <Header/>
-            <Link 
-                className="back"
-            > 
-                <IoIosArrowBack/>
-                <ButtonText
-                    title="voltar"
-                    onClick={handleBack}
-                />
-            </Link>
-
+            
             <main>
+                <Link 
+                    className="back"
+                > 
+                    <IoIosArrowBack/>
+                    <ButtonText
+                        title="voltar"
+                        onClick={handleBack}
+                    />
+                </Link>
                 <Form>
                     <header>
                         <h1>Novo Prato</h1>
@@ -136,13 +136,9 @@ export function New(){
                         >
                             <FiUpload/>
                             <p>Selecione uma imagem</p>
-                            <img 
-                                src={imgdish}
-                                alt="Imagem do Parto" 
-                            />
 
                             <input 
-                                id="imgdish" 
+                                id="imgDishes" 
                                 type="file" 
                                 onChange={handleSelectedImage}
                             />
@@ -221,8 +217,6 @@ export function New(){
                 </Form>
             </main>
             <Footer/>
-        </Container>
-
-        
+        </Container>  
     );
 }
