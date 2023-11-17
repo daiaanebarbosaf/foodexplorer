@@ -55,7 +55,7 @@ export const Container = styled.div`
 
         &::placeholder {
             color: ${({ theme }) => theme.COLORS.LIGHT_100};
-            width: 10px;
+            
         }
 
 
