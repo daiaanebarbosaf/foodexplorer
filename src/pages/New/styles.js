@@ -81,9 +81,13 @@ export const Form = styled.form`
         }
     }
 
-    > p {
-        font-weight: 400;
-        font-size: clamp(0.5vw, 1em, 30vw);
+    > div {
+        > p {
+            font-weight: 400;
+            font-size: clamp(0.5vw, 1em, 30vw);
+            margin-bottom: 0.5rem;
+            
+        }
     }
 
     .tags {
@@ -114,7 +118,40 @@ export const Form = styled.form`
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
         width: 76rem;
         flex-direction: row;
+        align-items: center;
         flex-wrap: wrap;
+
+        > header {
+            width: 76rem;
+        }
+
+        .imgDishes{
+            width: 15rem;
+        }
+
+        .inputName {
+            width: 30rem;
+        }
+
+        .selectCategory {
+            width: 24rem;
+        }
+
+        .ingredients {
+            width: 50rem;
+        }
+
+        .price {
+            width: 20rem;
+        }
+
+        .description {
+            width: 71rem;
+        }
+
+        .buttonSave {
+            width: 15rem;
+        }
     }
 
 `;
