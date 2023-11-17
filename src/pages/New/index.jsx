@@ -113,7 +113,6 @@ export function New(){
     return (
         <Container>
             <Header/>
-            
             <main>
                 <Link 
                     className="back"
@@ -124,90 +123,105 @@ export function New(){
                         onClick={handleBack}
                     />
                 </Link>
-                <Form>
+                <Form >
                     <header>
                         <h1>Novo Prato</h1>
                     </header>
 
-                    <ImgDishes>
-                        <p>Imagem do prato</p>
-                        <label 
-                            htmlFor="imgDishes"
-                        >
-                            <FiUpload/>
-                            <p>Selecione uma imagem</p>
-
-                            <input 
-                                id="imgDishes" 
-                                type="file" 
-                                onChange={handleSelectedImage}
-                            />
-                        </label>
-                    </ImgDishes>
-
-                    <p>Nome</p>
-                    <Input 
-                        placeholder="Ex.: Salada Ceasar"
-                        onChange={e => setTitle(e.target.value)} 
-                    />
-
-                    <SelectCategory
-                        onChange={e => setCategoty(e.target.value)} 
-                    >
-                        <p>Categoria</p>
-                        <div className="input-select">
-                            <select 
+                    <div>
+                        <ImgDishes>
+                            <p>Imagem do prato</p>
+                            <label 
+                                htmlFor="imgDishes"
                             >
-                                <option value="">
-                                    Selecionar
-                                </option>
-                                <option value="meal">
-                                    Refeição
-                                </option>
-                                <option value="dessert">
-                                    Sobremesa
-                                </option>
-                                <option value="drink">
-                                    Bebida
-                                </option>
+                                <FiUpload/>
+                                <p>Selecione uma imagem</p>
 
-                            </select>
-                        </div>
-                    </SelectCategory>
-
-                    <p>Ingredientes</p>
-
-                    <div className="tags">
-                        {
-                            tags.map((tag, index) =>
-                                <Ingredients 
-                                    key={String(index)}
-                                    value={tag}
-                                    onClick={() => {handleRemoveTag(tag)}}
+                                <input 
+                                    id="imgDishes" 
+                                    type="file" 
+                                    onChange={handleSelectedImage}
                                 />
-                            )
-                        }
-                        
-                        <Ingredients 
-                            isNew 
-                            placeholder="Adicionar"
-                            onChange={e => setNewTag(e.target.value)}
-                            value={newTag}
-                            onClick={handleAddTag}
+                            </label>
+                        </ImgDishes>
+                    </div>
+
+
+                    <div className="inputName">
+                        <p>Nome</p>
+                        <Input 
+                            placeholder="Ex.: Salada Ceasar"
+                            onChange={e => setTitle(e.target.value)} 
                         />
                     </div>
 
-                    <p>Preço</p>
-                    <Input 
-                        placeholder="R$ 00,00"
-                        onChange={e => setPrice(e.target.value)}  
-                    />
+                    <div>
+                        <SelectCategory
+                            onChange={e => setCategoty(e.target.value)} 
+                        >
+                            <p>Categoria</p>
+                            <div className="input-select">
+                                <select 
+                                >
+                                    <option value="">
+                                        Selecionar
+                                    </option>
+                                    <option value="meal">
+                                        Refeição
+                                    </option>
+                                    <option value="dessert">
+                                        Sobremesa
+                                    </option>
+                                    <option value="drink">
+                                        Bebida
+                                    </option>
 
-                    <p>Descrição</p>
-                    <Textarea 
-                        placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
-                        onChange={e => setDescription(e.target.value)} 
-                    />
+                                </select>
+                            </div>
+                        </SelectCategory>
+                    </div>
+
+                    
+                    <div>
+                        <p>Ingredientes</p>
+
+                            <div className="tags">
+                                {
+                                    tags.map((tag, index) =>
+                                        <Ingredients 
+                                            key={String(index)}
+                                            value={tag}
+                                            onClick={() => {handleRemoveTag(tag)}}
+                                        />
+                                    )
+                                }
+                                
+                                <Ingredients 
+                                    isNew 
+                                    placeholder="Adicionar"
+                                    onChange={e => setNewTag(e.target.value)}
+                                    value={newTag}
+                                    onClick={handleAddTag}
+                                />
+                            </div>
+                    </div>
+
+                    <div>
+                        <p>Preço</p>
+                        <Input 
+                            placeholder="R$ 00,00"
+                            onChange={e => setPrice(e.target.value)}  
+                        />
+                    </div>
+
+                    <div>
+                        <p>Descrição</p>
+                        <Textarea 
+                            placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+                            onChange={e => setDescription(e.target.value)} 
+                        />
+                    
+                    </div>
                     
                     <Button 
                         className="buttonSave" 
