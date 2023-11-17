@@ -117,6 +117,8 @@ export const Form = styled.form`
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
         width: 76rem;
+        height: 70vh;
+
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
