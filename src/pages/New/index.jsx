@@ -87,7 +87,7 @@ export function New(){
                 fileUploadForm.append("dish_id", dish_id);
                 await api.patch("/dishes", fileUploadForm);
             }    
-                alert("Nota criada com sucesso!");
+                alert("Prato criado com sucesso!");
                 navigate("/");
 
             } catch (error) {
