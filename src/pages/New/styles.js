@@ -1,39 +1,60 @@
 import styled from 'styled-components';
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
 
-    display: grid;
-    grid-template-rows: 105px auto;
-    grid-template-areas: 
-    "header"
-    "content";
+    > main {
+        display: grid;
+        grid-template-rows: 5rem auto;
+        grid-template-areas: 
+        "header"
+        "content";
 
-    .back {
-
-        display: flex;
-        align-items: center;
-
-        margin: 2rem 0rem 0rem 1.5rem;
         
+        justify-content: center;
+        grid-area: content ;
+        
+        max-width: 20rem;
+        padding: 2rem;
 
-        font-family: 'Poppins', sans-serif;
-        font-size: clamp(0.8vw, 1.5em, 30vw);
-        font-weight: 500;
+        margin-bottom: 2rem;
 
-        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+        .back {
+            display: flex;
+            align-items: center;
+            margin-top: 8rem;
 
-        > svg {
-            font-size: clamp(0.8vw, 1.2em, 30vw);
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(0.8vw, 1.5em, 30vw);
+            font-weight: 500;
+
+            color: ${({ theme }) => theme.COLORS.LIGHT_300};
+
+            > svg {
+                font-size: clamp(0.8vw, 1.2em, 30vw);
+            }
+
+        }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
+        > main {
+            max-width: 70rem;
+            padding: 0rem;
+
+            .back {
+                margin-top: 10rem;
+            }
         }
 
     }
+
+
 `;
 
 export const Form = styled.form`
-    max-width: 80%;
-    margin: 2rem;
 
     display: flex;
     flex-direction: column;
@@ -42,18 +63,20 @@ export const Form = styled.form`
 
     font-family: 'Roboto', sans-serif;
 
+    margin-top: 4rem;
+
     > header {
+        margin-top: 2rem;
+
         > h1 {
             font-family: 'Poppins', sans-serif;
             font-size: clamp(1.5vw, 2em, 30vw);
             font-weight: 400;
-
-            margin-bottom: 1rem;
+           
         }
     }
 
     > p {
-
         font-weight: 400;
         font-size: clamp(0.5vw, 1em, 30vw);
     }
@@ -77,6 +100,12 @@ export const Form = styled.form`
     .buttonSave {
         background-color: ${({ theme }) => theme.COLORS.TOMATO_400};
     }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
+        width: 30rem;
+        margin-top: 6rem;
+    }
+
 `;
 
 export const ImgDishes = styled.div`
@@ -84,7 +113,6 @@ export const ImgDishes = styled.div`
     justify-content: flex-start;
     flex-wrap: wrap;
 
-    padding-top: 5rem;
     gap: 0.5rem;
 
     > label {
@@ -101,26 +129,15 @@ export const ImgDishes = styled.div`
         border-radius: 5px;
 
         background-color: ${({ theme }) => theme.COLORS.DARK_900};
-
-        > img {
-            margin-bottom: 12rem;
-            margin-left: -7rem;
-    
-            width: 6rem;
-            height: 6rem;
-
-            border-radius: 50%;
+        
+        > input {
+            display: none;
         }
-
+        
         > p {
 
             font-weight: 400;
             font-size: clamp(0.5vw, 1em, 30vw);
-        }
-
-
-        > input {
-           
         }
     }
 `;
