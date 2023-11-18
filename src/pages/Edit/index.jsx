@@ -71,7 +71,6 @@ export function Edit(){
       }
 
 
-
       useEffect(() => {
         async function fetchDish(){
           const { data } = await api.get(`/dishes/${params.id}`);
@@ -221,13 +220,12 @@ export function Edit(){
                             <div className="tags">
                             {
                                 data.tags &&
-                                <footer>
+                                <footer className="tagsEdit">
                                     {    
                                         data.tags.map((tag, index) => 
                                             <Ingredients
                                                 key={String(index)}
                                                 defaultValue={tag.name}
-                                                
                                                 onClick={() => handleRemoveTag(tag)}
                                             />
                                         )
@@ -239,7 +237,7 @@ export function Edit(){
                                 tags.map((tag, index) =>
                                     <Ingredients 
                                         key={String(index)}
-                                        value={tag}
+                                        defaultValue={tag}
                                         onClick={() => handleRemoveTag(tag)}
                                     />
                                 )
@@ -249,7 +247,7 @@ export function Edit(){
                                 isNew
                                 placeholder="Adicionar"
                                 onChange={e => setNewTag(e.target.value)}
-                                value={newTag}
+                                defaultValue={newTag}
                                 onClick={handleAddTag}
                                 
                             />
@@ -263,7 +261,6 @@ export function Edit(){
                                 placeholder="R$ 40,00"
                                 type="number" 
                                 defaultValue={data.price}
-                                value={data.price}
                                 onChange={e => setPrice(e.target.value)}
                             />
                         </div>
