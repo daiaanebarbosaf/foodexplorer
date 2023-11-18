@@ -62,7 +62,10 @@ export const Content = styled.section`
 
             > footer {
                 display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
                 gap: 0.5rem;
+                
             }
     
     .buttonInclude {
