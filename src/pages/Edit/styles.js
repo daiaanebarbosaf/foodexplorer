@@ -5,28 +5,34 @@ export const Container = styled.div`
     width: 100%;
     height: 100vh;
 
-    display: grid;
-    grid-template-rows: 5rem auto;
-    grid-template-areas: 
-    "header"
-    "content";
+    > main {
+        display: grid;
+        grid-template-rows: 5rem auto;
+        grid-template-areas: 
+        "header"
+        "content";
 
-    .back {
-
-        display: flex;
-        align-items: center;
-
-        margin: 2rem 0rem 0rem 1.5rem;
+        justify-content: center;
+        grid-area: content ;
         
+        max-width: 20rem;
+        padding: 2rem;
 
-        font-family: 'Poppins', sans-serif;
-        font-size: clamp(0.8vw, 1.5em, 30vw);
-        font-weight: 500;
+        .back {
+            display: flex;
+            align-items: center;
+            margin-top: 8rem;
 
-        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(0.8vw, 1.5em, 30vw);
+            font-weight: 500;
 
-        > svg {
-            font-size: clamp(0.8vw, 1.2em, 30vw);
+            color: ${({ theme }) => theme.COLORS.LIGHT_300};
+
+            > svg {
+                font-size: clamp(0.8vw, 1.2em, 30vw);
+            }
+
         }
 
     }
@@ -35,14 +41,13 @@ export const Container = styled.div`
         > main {
             max-width: 70rem;
             padding: 0rem;
-            display: flex;
 
             justify-content: center;
 
         }
         
         .back {
-            margin: 5rem 0rem 0rem 8rem;
+            margin-top: 10rem;
         }
     }
 
@@ -57,6 +62,7 @@ export const Container = styled.div`
 export const Form = styled.form`
     max-width: 80%;
     margin: 2rem;
+    margin-top: 5rem;
 
     display: flex;
     flex-direction: column;
@@ -75,10 +81,13 @@ export const Form = styled.form`
         }
     }
 
-    > p {
-
-        font-weight: 400;
-        font-size: clamp(0.5vw, 1em, 30vw);
+    > div {
+        > p {
+            font-weight: 400;
+            font-size: clamp(0.5vw, 1em, 30vw);
+            margin-bottom: 0.5rem;
+            
+        }
     }
 
     .tags {
@@ -121,14 +130,48 @@ export const Form = styled.form`
 
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
         width: 30rem;
-        margin-top: 6rem;
+        margin-top: 8rem;
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        width: 76rem;
+        height: 70vh;
+
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
 
         > header {
-               > h1 {
-                    margin-top: -4rem;
-                }
-                
-            }
+            width: 76rem;
+        }
+
+        .imgDishes{
+            width: 15rem;
+        }
+
+        .inputName {
+            width: 23rem;
+        }
+
+        .selectCategory {
+            width: 24rem;
+        }
+
+        .ingredients {
+            width: 43rem;
+        }
+
+        .price {
+            width: 20rem;
+        }
+
+        .description {
+            width: 71rem;
+        }
+
+        .buttons {
+            width: 15rem;
+        }
 
     }
 `;
@@ -137,7 +180,7 @@ export const ImgDishes = styled.div`
     position: relative;
 
     > p {
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
 
         font-weight: 400;
         font-size: clamp(0.5vw, 1em, 30vw);
@@ -190,7 +233,7 @@ export const SelectCategory = styled.div`
      }
     
     > p {
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
 
         font-weight: 400;
         font-size: clamp(0.5vw, 1em, 30vw);
