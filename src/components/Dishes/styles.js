@@ -15,7 +15,7 @@ export const Container = styled.section`
     padding: 1rem 2rem;
     margin-bottom: 2rem;
 
-    > a > svg {
+    > div > svg {
                 color: ${({ theme }) => theme.COLORS.LIGHT_300};
                 font-size: clamp(1vw, 3em, 30vw);
                 margin-left: 8rem;
