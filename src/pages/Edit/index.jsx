@@ -22,7 +22,7 @@ export function Edit(){
     const params = useParams();
     const navigate = useNavigate();
 
-    const [dish, setDish] = useState(null);
+    const [dish, setDishes] = useState(null);
     const [data, setData] = useState([]);
 
     const [imgdish, setImgdish ] = useState("");
@@ -206,7 +206,7 @@ export function Edit(){
                                         defaultValue={data.categoty}
                                         onChange={e => setCategoty(e.target.value)}
                                     >
-                                        <option value="">{data.categoty}</option>
+                                        <option value=""> {data.categoty}</option>
                                         <option value="meal">Refeição</option>
                                         <option value="dessert">Sobremesa</option>
                                         <option value="drink">Bebida</option>
