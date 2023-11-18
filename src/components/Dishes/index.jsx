@@ -11,6 +11,7 @@ import { AiOutlineHeart } from 'react-icons/ai'
 
 import { Tag } from '../../components/Tag';
 import { Button } from '../../components/Button';
+import { ButtonText } from '../../components/ButtonText';
 import { NumberOfDishes } from '../../components/NumberOfDishes';
 
 
@@ -22,27 +23,27 @@ export function Dishes({ data, dishId, imgdish, ...rest }){
 
       function handleEdit(dishId){
         navigate(`/edit/${dishId}`);
+        console.log(dishId)       
     }
 
     return(
         <Container>
             <a>
-                {
-                    [USER_ROLE.ADMIN].includes(user.role) &&
-                    <>
-                        <PiPencilSimpleBold
-                            onClick={() => handleEdit(dishId)}
-                        />
-                    </>                    
-                }
 
                 {
                     [USER_ROLE.CUSTOMER].includes(user.role) &&
                     <AiOutlineHeart/>
                 }
                 
-                
             </a>
+
+                <div>
+                <PiPencilSimpleBold
+                            onClick={() => handleEdit(dishId)}
+                        />
+                </div>
+
+           
             
             <Content {...rest}>
                 <img 
