@@ -62,6 +62,7 @@ export const Form = styled.form`
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     gap: 1rem;
 
@@ -150,9 +151,17 @@ export const Form = styled.form`
             width: 71rem;
         }
 
-        .buttonSave {
-            width: 15rem;
+        .button {
+            width: 93%;
+
+            display: flex;
+            justify-content: flex-end;
+
+            .buttonSave {
+                width: 15rem;
+             }
         }
+
     }
 
 `;
