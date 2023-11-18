@@ -222,11 +222,13 @@ export function New(){
                     
                     </div>
                     
-                    <Button 
-                        className="buttonSave" 
-                        title="Salvar alterações"
-                        onClick={handleNewDish}
-                    /> 
+                    <div className="button">
+                        <Button 
+                            className="buttonSave" 
+                            title="Salvar alterações"
+                            onClick={handleNewDish}
+                        /> 
+                    </div>
                 </Form>
             </main>
             <Footer/>
