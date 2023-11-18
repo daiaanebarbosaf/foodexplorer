@@ -157,67 +157,73 @@ export function Edit(){
     return (
         <Container>
             <Header/>
-            <Link 
-                className="back"
-            >
-                
-                <IoIosArrowBack/>
-                <ButtonText
-                    title="voltar"
-                    onClick={handleBack}
-                />
-            </Link>
+
                 <main>
+                    <Link 
+                        className="back"
+                    >
+                        
+                        <IoIosArrowBack/>
+                        <ButtonText
+                            title="voltar"
+                            onClick={handleBack}
+                        />
+                    </Link>
                     <Form>
                         <header>
                             <h1>Editar prato</h1>
                         </header>
 
-                        <ImgDishes>
-                            <p>Imagem do prato</p>
-                            <label 
-                                htmlFor="imgDishes"
-                            >
-                                <FiUpload/>
-                                <span>{fileName || "Selecione imagem"}</span>
-
-                                <input 
-                                    id="imgDishes" 
-                                    type="file"
-                                    onChange={handleImageChange}
-                                />
-                            </label>
-                        </ImgDishes>
-
-                        <p>Nome</p>
-                        <Input
-                            type="text"
-                            placeholder="Salada Ceasar"
-                            defaultValue={data.title} 
-                            value={data.title}
-                            onChange={e => setTitle(e.target.value)}
-                        />
-
-                        <SelectCategory
-                        >
-                            <p>Categoria</p>
-                            <div className="input-select">
-                                <select 
-                                    defaultValue={data.categoty}
-                                    onChange={e => setCategoty(e.target.value)}
+                        <div className="imgDishes">
+                            <ImgDishes>
+                                <p>Imagem do prato</p>
+                                <label 
+                                    htmlFor="imgDishes"
                                 >
-                                    <option value="">{data.categoty}</option>
-                                    <option value="meal">Refeição</option>
-                                    <option value="dessert">Sobremesa</option>
-                                    <option value="drink">Bebida</option>
-                                </select>
-                            </div>
-                        </SelectCategory>
+                                    <FiUpload/>
+                                    <span>{fileName || "Selecione imagem"}</span>
 
-                        <p>Ingredientes</p>
+                                    <input 
+                                        id="imgDishes" 
+                                        type="file"
+                                        onChange={handleImageChange}
+                                    />
+                                </label>
+                            </ImgDishes>
+                        </div>
 
-                        <div className="tags">
+                        <div className="inputName">
+                            <p>Nome</p>
+                            <Input
+                                type="text"
+                                placeholder="Salada Ceasar"
+                                defaultValue={data.title} 
+                                value={data.title}
+                                onChange={e => setTitle(e.target.value)}
+                            />  
+                        </div>
 
+                        <div className="selectCategory">
+                            <SelectCategory
+                            >
+                                <p>Categoria</p>
+                                <div className="input-select">
+                                    <select 
+                                        defaultValue={data.categoty}
+                                        onChange={e => setCategoty(e.target.value)}
+                                    >
+                                        <option value="">{data.categoty}</option>
+                                        <option value="meal">Refeição</option>
+                                        <option value="dessert">Sobremesa</option>
+                                        <option value="drink">Bebida</option>
+                                    </select>
+                                </div>
+                            </SelectCategory>
+                        </div>
+
+                        <div className="ingredients">
+                            <p>Ingredientes</p>
+                            <div className="tags">
                             {
                                 data.tags &&
                                 <footer>
@@ -254,21 +260,29 @@ export function Edit(){
                             />
                         </div>
 
-                        <p>Preço</p>
-                        <Input 
-                            placeholder="R$ 40,00"
-                            type="number" 
-                            defaultValue={data.price}
-                            value={data.price}
-                            onChange={e => setPrice(e.target.value)}
-                        />
+                        </div>
 
-                        <p>Descrição</p>
-                        <Textarea 
-                            placeholder="A Salada César é uma opção refrescante para o verão."
-                            defaultValue={data.description}
-                            onChange={e => setDescription(e.target.value)}
-                        />
+                        <div className="price">
+                            <p>Preço</p>
+                            <Input 
+                                placeholder="R$ 40,00"
+                                type="number" 
+                                defaultValue={data.price}
+                                value={data.price}
+                                onChange={e => setPrice(e.target.value)}
+                            />
+                        </div>
+
+                        <div className="description">
+                            <p>Descrição</p>
+                            <Textarea 
+                                placeholder="A Salada César é uma opção refrescante para o verão."
+                                defaultValue={data.description}
+                                onChange={e => setDescription(e.target.value)}
+                            />
+                        </div>
+
+
                         <div className="buttons">
                             <Button 
                                 className="buttonDelete" 
