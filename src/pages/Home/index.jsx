@@ -49,7 +49,7 @@ export function Home(){
     useEffect(() => {
         async function fetchDishes(){
             const { data } = await api.get(`/dishes?title=${search}`);
-            setDishes(data.filter((dish) => dish.categoty === "meal"))
+            setDishes(data.filter((dish) => dish.categoty === "meal" ))
             setDessert(data.filter((dessert) => dessert.categoty === "dessert"))
             setDrink(data.filter((drink) => drink.categoty === "drink"))
             
