@@ -84,24 +84,12 @@ export function Edit(){
         async function fetchDish(){
           const response = await api.get(`/dishes/${params.id}`);
           setData(response.data);
+          
         }
-    
         fetchDish();
       }, [params.id]);
 
-      useEffect(() => {
-        if (dish) {
-            setImgdishFile(dish.imgdish);
-            setImgdish(dish.image);
-            setTitle(dish.title);
-            setCategoty(dish.categoty);
-            setPrice(dish.price);
-            setDescription(dish.description);
-        
-            const allTags = dish.tags.map((tag) => tag.name);
-            setTags(allTags);
-        }
-      }, [dish]);
+ 
 
       async function handleUpdate(){
 
@@ -112,7 +100,7 @@ export function Edit(){
 
         const tagsNew = tags != data.tags ? tags : data.tags;
 
-        console.log(data.imgdish)
+        console.log(titleNew)
 
         const imgdishNew = imgdish != data.imgdish ? imgdish : data.imgdish;
        
@@ -131,11 +119,16 @@ export function Edit(){
                     price: priceNew,
                     description: descriptionNew,
                     tags: tagsNew,
+                    
                 });
 
                 fileUploadForm.append("dish_id", params.id);
                 await api.patch("/dishes", fileUploadForm);
                 
+            }
+
+            if(!categoty){
+                return alert("Escolha uma categoria")
             }
  
             await api.put(`/dishes/${params.id}`, {
@@ -148,7 +141,7 @@ export function Edit(){
             });
 
 
-            alert("Nota alterada com sucesso!");
+            alert("Prato alterado com sucesso!");
             navigate("/");
 
         } catch (error) {
@@ -201,6 +194,7 @@ export function Edit(){
                             type="text"
                             placeholder="Salada Ceasar"
                             defaultValue={data.title} 
+                            value={data.title}
                             onChange={e => setTitle(e.target.value)}
                         />
 
@@ -212,12 +206,10 @@ export function Edit(){
                                     defaultValue={data.categoty}
                                     onChange={e => setCategoty(e.target.value)}
                                 >
-                                    <option value="1">
-                                        Refeição
-                                    </option>
-                                    <option value="2">
-                                        Pratos Principais
-                                    </option>
+                                    <option value="">{data.categoty}</option>
+                                    <option value="meal">Refeição</option>
+                                    <option value="dessert">Sobremesa</option>
+                                    <option value="drink">Bebida</option>
                                 </select>
                             </div>
                         </SelectCategory>
@@ -233,7 +225,8 @@ export function Edit(){
                                         data.tags.map((tag, index) => 
                                             <Ingredients
                                                 key={String(index)}
-                                                value={tag.name}
+                                                defaultValue={tag.name}
+                                                
                                                 onClick={() => handleRemoveTag(tag)}
                                             />
                                         )
@@ -266,6 +259,7 @@ export function Edit(){
                             placeholder="R$ 40,00"
                             type="number" 
                             defaultValue={data.price}
+                            value={data.price}
                             onChange={e => setPrice(e.target.value)}
                         />
 
