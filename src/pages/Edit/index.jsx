@@ -14,7 +14,6 @@ import { Footer } from '../../components/Footer';
 import { Ingredients } from '../../components/Ingredients';
 import { Textarea } from '../../components/Textarea';
 import { Button } from '../../components/Button';
-import { Tag } from '../../components/Tag';
 
 import { IoIosArrowBack } from 'react-icons/io';
 import { FiUpload } from 'react-icons/fi';
@@ -32,7 +31,7 @@ export function Edit(){
     const [fileName, setFileName] = useState("");
 
     const [title, setTitle] = useState(data.title);
-    const [categoty, setCategoty] = useState("");
+    const [categoty, setCategoty] = useState(data.categoty);
   
     const [price, setPrice] = useState(data.price);
     const [description, setDescription] = useState(data.description);
@@ -71,21 +70,15 @@ export function Edit(){
         setFileName(file.name);
       }
 
-    useEffect(() => {
-        async function fetchTags(){
-          const response = await api.get("/tags");
-          setData(response.data);
-        }
-    
-        fetchTags();
-      }, [tags]);
+
 
       useEffect(() => {
         async function fetchDish(){
-          const response = await api.get(`/dishes/${params.id}`);
-          setData(response.data);
+          const { data } = await api.get(`/dishes/${params.id}`);
+          setData(data);
           
         }
+
         fetchDish();
       }, [params.id]);
 
@@ -138,9 +131,11 @@ export function Edit(){
                 price: priceNew,
                 description: descriptionNew,
                 tags: tagsNew,
+
+                
             });
 
-
+            console.log(titleNew)
             alert("Prato alterado com sucesso!");
             navigate("/");
 
