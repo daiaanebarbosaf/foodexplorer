@@ -55,13 +55,16 @@ export const Container = styled.div`
         > main {
             max-width: 100%;
             padding: 0rem;
+
+            .back {
+                margin-top: 10rem;
+            }
         }
     }
 `;
 
 export const Form = styled.form`
     max-width: 80%;
-    margin: 2rem;
     margin-top: 5rem;
 
     display: flex;
