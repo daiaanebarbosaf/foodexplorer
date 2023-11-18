@@ -180,8 +180,6 @@ export function Home(){
                             }
                         
                         </motion.div>
-                        
-
                     </motion.div>
 
                 </Section>
