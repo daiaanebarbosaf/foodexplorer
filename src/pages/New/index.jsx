@@ -167,13 +167,13 @@ export function New(){
                                         Selecionar
                                     </option>
                                     <option value="meal">
-                                        Refeição
+                                        Refeições
                                     </option>
                                     <option value="dessert">
-                                        Sobremesa
+                                        Sobremesas
                                     </option>
                                     <option value="drink">
-                                        Bebida
+                                        Bebidas
                                     </option>
 
                                 </select>
