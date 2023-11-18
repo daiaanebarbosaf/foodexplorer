@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
 
     display: grid;
-    grid-template-rows: 105px auto;
+    grid-template-rows: 5rem auto;
     grid-template-areas: 
     "header"
     "content";
@@ -28,6 +29,28 @@ export const Container = styled.div`
             font-size: clamp(0.8vw, 1.2em, 30vw);
         }
 
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
+        > main {
+            max-width: 70rem;
+            padding: 0rem;
+            display: flex;
+
+            justify-content: center;
+
+        }
+        
+        .back {
+            margin: 5rem 0rem 0rem 8rem;
+        }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        > main {
+            max-width: 100%;
+            padding: 0rem;
+        }
     }
 `;
 
@@ -96,7 +119,18 @@ export const Form = styled.form`
 
     }
 
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
+        width: 30rem;
+        margin-top: 6rem;
 
+        > header {
+               > h1 {
+                    margin-top: -4rem;
+                }
+                
+            }
+
+    }
 `;
 
 export const ImgDishes = styled.div`
