@@ -82,7 +82,7 @@ export function Home(){
     const carousel = useRef();
 
     useEffect(() => {
-        console.log(carousel.current?.scrollWidth, carousel.current?.offsetWidth)
+       
         setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
     }, [])
 
@@ -125,7 +125,7 @@ export function Home(){
                             <motion.div  
                             className="dishes"
                                 drag="x"
-                                dragConstraints={{right: 0, left: -width}}
+                                dragConstraints={{right: 0, left: -500}}
                                 initial={{ x: 100}}
                                 animate={{ x: 0}}
                                 transition={{duration: 0.8}}
@@ -153,45 +153,72 @@ export function Home(){
 
                 <Section title="Sobremesas">
 
-                <div className="dish"> 
-                    
-                    {!dessert ? <p>Sem resultados</p> : ""}                
-                    {
-                        dessert && dessert.map((dessert) => (
-                                <Dishes
-                                    key={String(dessert.id)}
-                                    imgdish={`${api.defaults.baseURL}/files/${dessert.imgdish}`}
-                                    data={dessert}
-                                    dishId={dessert.id}
-                                    onClick={() => handleDetails(dessert.id)} 
-                            />
-                            
-                        ))
-                    }
-                    
-                </div>
+                    <motion.div                         
+                            ref={carousel}
+                            className="carousel"
+                            whileTap={{cursor: "grabbing"}}> 
+                        <motion.div 
+                            className="dishes"
+                            drag="x"
+                            dragConstraints={{right: 0, left: -500}}
+                            initial={{ x: 100}}
+                            animate={{ x: 0}}
+                            transition={{duration: 0.8}}
+                        >
+                            {!dessert ? <p>Sem resultados</p> : ""}                
+                            {
+                                dessert && dessert.map((dessert) => (
+                                        <Dishes
+                                            key={String(dessert.id)}
+                                            imgdish={`${api.defaults.baseURL}/files/${dessert.imgdish}`}
+                                            data={dessert}
+                                            dishId={dessert.id}
+                                            onClick={() => handleDetails(dessert.id)} 
+                                    />
+                                    
+                                ))
+                            }
+                        
+                        </motion.div>
+                        
+
+                    </motion.div>
 
                 </Section>
 
-                <Section title="Bebidas">
+                <Section title="Bebidas">       
 
-                <div className="dish"> 
+                <motion.div 
+                    ref={carousel}
+                    className="carousel"
+                    whileTap={{cursor: "grabbing"}}
+                > 
+                    <motion.div 
+                        className="dishes"
+                        drag="x"
+                        dragConstraints={{right: 0, left: -500}}
+                        initial={{ x: 100}}
+                        animate={{ x: 0}}
+                        transition={{duration: 0.8}}
+                        >
+                            {!drink ? <p>Sem resultados</p> : ""}                
+                            {
+                                drink && drink.map((drink) => (
+                                        <Dishes
+                                            key={String(drink.id)}
+                                            imgdish={`${api.defaults.baseURL}/files/${drink.imgdish}`}
+                                            data={drink}
+                                            dishId={drink.id}
+                                            onClick={() => handleDetails(drink.id)} 
+                                    />
+                                    
+                                ))
+                            }
+                        </motion.div>
                     
-                    {!drink ? <p>Sem resultados</p> : ""}                
-                    {
-                        drink && drink.map((drink) => (
-                                <Dishes
-                                    key={String(drink.id)}
-                                    imgdish={`${api.defaults.baseURL}/files/${drink.imgdish}`}
-                                    data={drink}
-                                    dishId={drink.id}
-                                    onClick={() => handleDetails(drink.id)} 
-                            />
-                            
-                        ))
-                    }
                     
-                </div>
+                    
+                </motion.div>
 
                 </Section>
             </main>
