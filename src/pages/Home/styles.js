@@ -18,6 +18,7 @@ export const Container = styled.div`
             gap: 1rem;
 
             max-width: 50%;
+
         }
 
         .carousel {
