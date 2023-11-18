@@ -56,6 +56,8 @@ export const Container = styled.div`
             max-width: 100%;
             padding: 0rem;
 
+            margin-bottom: 2rem;
+
             .back {
                 margin-top: 10rem;
             }
@@ -64,6 +66,7 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
+    
     max-width: 80%;
     margin-top: 5rem;
 
@@ -91,28 +94,43 @@ export const Form = styled.form`
             margin-bottom: 0.5rem;
             
         }
+
+    }
+
+    .ingredients {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    
     }
 
     .tags {
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
 
         gap: 0.5rem;
    
-        height: 2.5rem;
+        height: 100%;
 
         padding-left: 0.5rem;
         padding-right: 0.5rem;
+       
         
         border-radius: 8px;
 
         background-color: ${({ theme }) => theme.COLORS.DARK_900};
 
         > footer {
-            width: 120px;
+            min-width: fit-content;
             display: flex;
+            gap: 0.3rem;
             justify-content: flex-start;
+
+            .tagsEdit {
+                width: 10px;
+            }
         }
     }
 
@@ -148,24 +166,33 @@ export const Form = styled.form`
             width: 76rem;
         }
 
+        .tags {
+            height: 2.5rem;
+            flex-direction: row;
+
+            > footer {
+                flex-wrap: nowrap;
+            }
+        }
+
         .imgDishes{
-            width: 15rem;
+            width: 15%;
         }
 
         .inputName {
-            width: 23rem;
+            width: 60%;
         }
 
         .selectCategory {
-            width: 24rem;
+            width: 20%;
         }
 
         .ingredients {
-            width: 43rem;
+            width: 70%;
         }
 
         .price {
-            width: 20rem;
+            width: 20%;
         }
 
         .description {
@@ -173,7 +200,17 @@ export const Form = styled.form`
         }
 
         .buttons {
-            width: 15rem;
+            width: 100%;
+            
+            justify-content: flex-end;
+
+            .buttonDelete {
+                width: 20%;
+            }
+
+            .buttonSave {
+                width: 20%;
+            }
         }
 
     }
