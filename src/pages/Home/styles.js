@@ -4,6 +4,8 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 export const Container = styled.div`
 
     > main {
+        width: 20rem;
+
         position: relative;
         padding-inline: 2.4rem;
 
@@ -17,7 +19,7 @@ export const Container = styled.div`
             align-items: flex-start;
             gap: 1rem;
 
-            max-width: 50%;
+            max-width: 17rem;
 
         }
 
