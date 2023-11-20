@@ -7,7 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { PiPencilSimpleBold } from 'react-icons/pi';
 import { IoIosArrowForward } from 'react-icons/io';
-import { AiOutlineHeart } from 'react-icons/ai'
+import { AiOutlineHeart } from 'react-icons/ai';
+
 
 import { Tag } from '../../components/Tag';
 import { Button } from '../../components/Button';
@@ -37,11 +38,16 @@ export function Dishes({ data, dishId, imgdish, ...rest }){
                 
             </a>
 
-                <div>
-                <PiPencilSimpleBold
-                            onClick={() => handleEdit(dishId)}
-                        />
-                </div>
+            <a>
+
+                {
+                    [USER_ROLE.ADMIN].includes(user.role) &&
+                    <PiPencilSimpleBold
+                        onClick={() => handleEdit(dishId)}
+                    />
+                }
+
+            </a>
 
            
             
@@ -51,9 +57,13 @@ export function Dishes({ data, dishId, imgdish, ...rest }){
                     alt={data.title}
                 />
 
-                <p className="title">
+                <p className="pTitle">
                     {data.title}
                     <IoIosArrowForward/>
+
+                </p>
+                <p className="pDescription">
+                    {data.description}
                 </p>
                 <p className="pPrice">
                     R$ {data.price}
