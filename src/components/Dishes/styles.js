@@ -13,14 +13,23 @@ export const Container = styled.section`
     background-color: ${({ theme }) => theme.COLORS.DARK_300};
     border-radius: 8px;
 
-    padding: 1rem 2rem;
+    width: 15rem;
+    height: 25rem;
+    padding: 1rem;
+
     margin-bottom: 2rem;
 
-    > div > svg {
+    > a > svg {
                 color: ${({ theme }) => theme.COLORS.LIGHT_300};
                 font-size: clamp(1vw, 3em, 30vw);
                 margin-left: 8rem;
             }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        width: 20rem;
+        
+        padding: 1rem;
+    }
 
 `;
 
@@ -53,6 +62,10 @@ export const Content = styled.section`
                 color: ${({ theme }) => theme.COLORS.LIGHT_300};
             }
 
+            .pDescription {
+                display: none;
+            }
+
             .pPrice {
                 font-family: 'Roboto', sans-serif;
                 font-size: clamp(0.8vw, 1.3em, 30vw);
@@ -69,16 +82,27 @@ export const Content = styled.section`
             }
     
     .buttonInclude {
-        width: 130%;
+        width: 70%;
         height: 1.8rem;
         margin-top: 1rem;
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
         
-        .title {
+        .pTitle {
             font-weight: bold;
             font-size: 1rem;
+        }
+
+        .pDescription {
+            display: unset;
+            font-size: 0.7rem;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .pPrice {
+            font-size: 2rem;
         }
     }
 
