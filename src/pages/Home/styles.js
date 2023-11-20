@@ -26,7 +26,11 @@ export const Container = styled.div`
             --swiper-navigation-bg: white;
             --swiper-pagination-color: white;
 
-            --swiper-pagination-bullet-inactive-color: #000;
+            --swiper-pagination-bullet-inactive-color: ${({ theme }) => theme.COLORS.LIGHT_300};
+        }
+
+        .dish {
+
         }
 
         .carousel {
