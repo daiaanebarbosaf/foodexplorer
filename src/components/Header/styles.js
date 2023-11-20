@@ -124,12 +124,20 @@ export const Menu = styled.div`
         left: 10rem;
     }
 
-    @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
- 
+    @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
         #logoAdmin, #logoCustomer {
                 
                 height: 20rem;
                 width: 20rem;
+            }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+ 
+        #logoAdmin, #logoCustomer {
+                margin-left: 5rem;
+                height: 25rem;
+                width: 25rem;
             }
     }
 
@@ -227,13 +235,17 @@ export const Search = styled.div`
 
     padding: 2rem;
 
-    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
-        width: 30rem;
+    @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
+        width: 25rem;
+    }
 
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
+        width: 45rem;
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-        background: transparent;
+        
+        background: none;
         width: 50%;
 
         margin-left: 12rem;
