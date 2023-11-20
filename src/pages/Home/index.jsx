@@ -92,7 +92,7 @@ export function Home(){
 
         function handleResize(){
             if(window.innerWidth > 720){
-                setSlidePerView(3)
+                setSlidePerView(2)
             } else {
                 setSlidePerView(1);
             } 
@@ -141,16 +141,17 @@ export function Home(){
                     <Swiper 
                         className="dishes"
                         slidesPerView={slidePerView}
-                        pagination={{clickable: true}}
-                        navigation
-                        
-                        >
+                        paginatison={{clickable: true}}
+        
+                        navigation                        
+                    >
                         {!dishes ? <p>Sem resultados</p> : ""} 
                         {
                             dishes && dishes.map((dish, categoty) => (
-                                <SwiperSlide >
+                                <SwiperSlide key={String(dish.id)} space-between="30">
                                     <Dishes
-                                        key={String(dish.id)}
+                                        className="dish"
+                                        
                                         imgdish={`${api.defaults.baseURL}/files/${dish.imgdish}`}
                                         data={dish}
                                         dishId={dish.id}
@@ -228,8 +229,6 @@ export function Home(){
                                 ))
                             }
                         </motion.div>
-                    
-                    
                     
                 </motion.div>
 
