@@ -11,6 +11,7 @@ export const Container = styled.section`
     gap: 1rem;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_300};
+    border-radius: 8px;
 
     padding: 1rem 2rem;
     margin-bottom: 2rem;
@@ -64,8 +65,7 @@ export const Content = styled.section`
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
-                gap: 0.5rem;
-                
+                gap: 0.5rem;                
             }
     
     .buttonInclude {
