@@ -51,7 +51,7 @@ export function Dishes({ data, dishId, imgdish, ...rest }){
                     alt={data.title}
                 />
 
-                <p>
+                <p className="title">
                     {data.title}
                     <IoIosArrowForward/>
                 </p>
