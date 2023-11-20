@@ -75,7 +75,11 @@ export const Content = styled.section`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-
+        
+        .title {
+            font-weight: bold;
+            font-size: 1rem;
+        }
     }
 
 `;
