@@ -92,7 +92,7 @@ export function Home(){
 
         function handleResize(){
             if(window.innerWidth > 720){
-                setSlidePerView(2)
+                setSlidePerView(3)
             } else {
                 setSlidePerView(1);
             } 
