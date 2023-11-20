@@ -23,6 +23,11 @@ import { Dishes } from '../../components/Dishes';
 import { ButtonText } from '../../components/ButtonText';
 
 import { register } from 'swiper/element/bundle';
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 register();
 
@@ -41,6 +46,8 @@ export function Home(){
     const params = useParams();
 
     const { user } = useAuth();
+
+    const [slidePerView, setSlidePerView] = useState();
 
     function handleDetails(id){
         navigate(`/details/${id}`);
@@ -82,8 +89,22 @@ export function Home(){
     const carousel = useRef();
 
     useEffect(() => {
-       
-        setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
+
+        function handleResize(){
+            if(window.innerWidth > 720){
+                setSlidePerView(3)
+            } else {
+                setSlidePerView(1);
+            } 
+        }
+
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+
+        return() => {
+            window.addEventListener("resize", handleResize);
+        }
     }, [])
 
     return(
@@ -117,37 +138,31 @@ export function Home(){
 
                 <Section title="Refeições">
 
-                    <motion.div 
-                            ref={carousel}
-                            className="carousel"
-                            whileTap={{cursor: "grabbing"}}
+                    <Swiper 
+                        className="dishes"
+                        slidesPerView={slidePerView}
+                        pagination={{clickable: true}}
+                        navigation
+                        
                         >
-                            <motion.div  
-                            className="dishes"
-                                drag="x"
-                                dragConstraints={{right: 0, left: -500}}
-                                initial={{ x: 100}}
-                                animate={{ x: 0}}
-                                transition={{duration: 0.8}}
-                            > 
-                    
-                                {!dishes ? <p>Sem resultados</p> : ""}                
-                                {
-                                    dishes && dishes.map((dish, categoty) => (
-                                        <Dishes
-                                            key={String(dish.id)}
-                                            imgdish={`${api.defaults.baseURL}/files/${dish.imgdish}`}
-                                            data={dish}
-                                            dishId={dish.id}
-                                            onClick={() => handleDetails(dish.id)} 
-                                            categoty={categoty}
-                                        />
-                                                                       
-                                    ))
-                                }
+                        {!dishes ? <p>Sem resultados</p> : ""} 
+                        {
+                            dishes && dishes.map((dish, categoty) => (
+                                <SwiperSlide >
+                                    <Dishes
+                                        key={String(dish.id)}
+                                        imgdish={`${api.defaults.baseURL}/files/${dish.imgdish}`}
+                                        data={dish}
+                                        dishId={dish.id}
+                                        onClick={() => handleDetails(dish.id)} 
+                                        categoty={categoty}
+                                    />                               
+                                
+                                </SwiperSlide>
+                            ))
+                        } 
 
-                            </motion.div >
-                    </motion.div>
+                    </Swiper>
                     
                 </Section>
 
