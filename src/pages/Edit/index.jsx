@@ -192,7 +192,6 @@ export function Edit(){
                                 type="text"
                                 placeholder="Salada Ceasar"
                                 defaultValue={data.title} 
-                                value={data.title}
                                 onChange={e => setTitle(e.target.value)}
                             />  
                         </div>
@@ -207,9 +206,9 @@ export function Edit(){
                                         onChange={e => setCategoty(e.target.value)}
                                     >
                                         <option value=""> {data.categoty}</option>
-                                        <option value="meal">Refeição</option>
-                                        <option value="dessert">Sobremesa</option>
-                                        <option value="drink">Bebida</option>
+                                        <option value="meal">Refeições</option>
+                                        <option value="dessert">Sobremesas</option>
+                                        <option value="drink">Bebidas</option>
                                     </select>
                                 </div>
                             </SelectCategory>
@@ -259,7 +258,7 @@ export function Edit(){
                             <p>Preço</p>
                             <Input 
                                 placeholder="R$ 40,00"
-                                type="number" 
+                                type="text" 
                                 defaultValue={data.price}
                                 onChange={e => setPrice(e.target.value)}
                             />
