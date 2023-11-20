@@ -17,6 +17,10 @@ export const Container = styled.div`
         .dishes {
             display: flex;
             align-items: flex-start;
+
+            /*border: solid 2rem ${({ theme }) => theme.COLORS.DARK_100};
+            border-left-color: linear-gradient(90deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%);
+            border-right-color: rgb(170, 50, 220, .6);*/
             
 
             max-width: 14rem;
@@ -32,7 +36,7 @@ export const Container = styled.div`
         }
 
         .dish {
-
+            
         }
 
         .carousel {
