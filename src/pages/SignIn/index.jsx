@@ -49,6 +49,7 @@ export function SignIn(){
                         className="buttonEnter" 
                         title="Entrar" 
                         onClick={handleSignIn}
+                        required
                     />
 
                     <footer>
