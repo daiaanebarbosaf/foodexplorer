@@ -20,7 +20,6 @@ export const Container = styled.div`
             
 
             max-width: 14rem;
-            
 
             --swiper-navigation-color: white;
             --swiper-navigation-size: 2rem;
@@ -52,8 +51,6 @@ export const Container = styled.div`
 
             .dishes {
                 max-width: 75rem;
-                gap: 2rem;
-                
             }
 
             #searchPlateHome {
