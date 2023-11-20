@@ -17,16 +17,19 @@ export const Container = styled.div`
         .dishes {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
+            
 
             max-width: 14rem;
+            
 
             --swiper-navigation-color: white;
             --swiper-navigation-size: 2rem;
             --swiper-navigation-bg: white;
             --swiper-pagination-color: white;
+            
 
             --swiper-pagination-bullet-inactive-color: ${({ theme }) => theme.COLORS.LIGHT_300};
+
         }
 
         .dish {
@@ -49,6 +52,8 @@ export const Container = styled.div`
 
             .dishes {
                 max-width: 75rem;
+                gap: 2rem;
+                
             }
 
             #searchPlateHome {
