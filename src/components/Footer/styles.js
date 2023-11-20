@@ -9,7 +9,7 @@ export const Container = styled.footer `
 
     padding-block: 2rem;
 
-    background-color: ${({ theme }) => theme.COLORS.DARK_1000};
+    background-color: ${({ theme }) => theme.COLORS.DARK_600};
     color: ${({ theme }) => theme.COLORS.LIGHT_200};
 
     > img {
@@ -20,6 +20,6 @@ export const Container = styled.footer `
     > p {
         font-family: 'DM Sans', sans-serif;
         font-weight: 100;
-        font-size: clamp(0.7rem, 0.5rem, 1vw);
+        font-size: 0.5rem ;
     }
 `;
