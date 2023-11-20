@@ -19,8 +19,14 @@ export const Container = styled.div`
             align-items: flex-start;
             gap: 1rem;
 
-            max-width: 17rem;
+            max-width: 14rem;
 
+            --swiper-navigation-color: white;
+            --swiper-navigation-size: 2rem;
+            --swiper-navigation-bg: white;
+            --swiper-pagination-color: white;
+
+            --swiper-pagination-bullet-inactive-color: #000;
         }
 
         .carousel {
@@ -28,8 +34,18 @@ export const Container = styled.div`
             overflow: hidden;
         }
 
+        @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
+            .dishes {
+                max-width: 24rem;
+            }
+        }
+
         @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
             padding-inline: 4rem;
+
+            .dishes {
+                max-width: 75rem;
+            }
 
             #searchPlateHome {
                 width: 55%;
@@ -89,8 +105,12 @@ export const Banner = styled.div`
         bottom: 15px;
     }
 
+    @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
+        width: 21rem;
+    }
+
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
-        width: 25rem;
+        width: 40.5rem;
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
