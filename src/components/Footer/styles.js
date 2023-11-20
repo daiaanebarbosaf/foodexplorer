@@ -6,6 +6,7 @@ export const Container = styled.footer `
 
     display: flex;
     align-items: center;
+    justify-content: center;
 
     padding-block: 2rem;
 
@@ -13,7 +14,7 @@ export const Container = styled.footer `
     color: ${({ theme }) => theme.COLORS.LIGHT_200};
 
     > img {
-        margin-left: 2rem;
+        
         width: clamp(15vw, 10em, 30vw);
     }
 
