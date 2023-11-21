@@ -16,6 +16,9 @@ export const Container = styled.div`
     > main {
         grid-area: content;
 
+        animation-name: downtop;
+        animation-duration: 900ms;
+
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
@@ -38,6 +41,19 @@ export const Container = styled.div`
         .buttonsDetails {
             justify-content: initial;
             gap: 3.3rem;
+        }
+    }
+
+    
+    @keyframes downtop {
+        0% {
+            opacity: 0;
+            transform: translateY(-50);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(15px);
         }
     }
 
