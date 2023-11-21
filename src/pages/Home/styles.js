@@ -4,26 +4,24 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 export const Container = styled.div`
 
     > main {
-        width: 20rem;
+        width: 100%;
 
         position: relative;
         padding-inline: 2.4rem;
 
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
+        align-items: center;
+        justify-content: center;
 
         .dishes {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
 
-            /*border: solid 2rem ${({ theme }) => theme.COLORS.DARK_100};
-            border-left-color: linear-gradient(90deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%);
-            border-right-color: rgb(170, 50, 220, .6);*/
-            
-
-            max-width: 14rem;
+            max-width: 15rem;
+            padding-left: 1.5rem;
 
             --swiper-navigation-color: white;
             --swiper-navigation-size: 2rem;
@@ -46,15 +44,20 @@ export const Container = styled.div`
 
         @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
             .dishes {
-                max-width: 24rem;
+                max-width: 16rem;
+            }
+        }
+
+        @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
+            .dishes {
+                max-width: 45rem;
             }
         }
 
         @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-            padding-inline: 4rem;
-
+              
             .dishes {
-                max-width: 75rem;
+                max-width: 65rem;
             }
 
             #searchPlateHome {
@@ -71,6 +74,10 @@ export const Container = styled.div`
                 margin-left: -1rem;
             }
         }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
+
     }
 
 `;
@@ -91,6 +98,11 @@ export const Profile = styled.div`
     }
 
     margin-bottom: 2rem;
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        
+
+    }
 `;
 
 export const Banner = styled.div`
