@@ -31,6 +31,9 @@ export const Container = styled.div`
 
             --swiper-pagination-bullet-inactive-color: ${({ theme }) => theme.COLORS.LIGHT_300};
 
+            animation-name: topdown;
+            animation-duration: 900ms;
+
         }
 
         .dish {
@@ -78,6 +81,18 @@ export const Container = styled.div`
 
     @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
 
+    }
+
+    @keyframes topdown {
+        0% {
+            opacity: 0;
+            transform: translateY(-35px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
 `;
