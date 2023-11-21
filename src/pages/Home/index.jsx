@@ -142,7 +142,8 @@ export function Home(){
                         pagination={{clickable: true}}
                         navigation 
                         
-                        data-swiper-parallax-x="-10"                       
+                        grab-cursor="true" 
+                        slides-per-view="auto"                     
                     >
                         {!dishes ? <p>Sem resultados</p> : ""} 
                         {
