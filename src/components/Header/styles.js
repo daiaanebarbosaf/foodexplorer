@@ -117,7 +117,8 @@ export const Menu = styled.div`
     }
 
     #logoAdmin, #logoCustomer {
-        width: clamp(5vw, 20em, 85vw);
+        height: 18rem;
+        width: 18rem;
     }
 
     #receipt {
@@ -229,8 +230,10 @@ export const MenuExpand = styled.div`
 `;
 
 export const Search = styled.div`
+    display: flex;
 
-    width: 20rem;
+    justify-content: center;
+
     height: 3rem;
 
     padding: 2rem;
