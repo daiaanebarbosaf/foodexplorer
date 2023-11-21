@@ -4,7 +4,7 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 export const Container = styled.section`
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 
     flex-direction: column;
 
@@ -13,8 +13,8 @@ export const Container = styled.section`
     background-color: ${({ theme }) => theme.COLORS.DARK_300};
     border-radius: 8px;
 
-    width: 15rem;
-    height: 25rem;
+    width: 13rem;
+    height: 20rem;
     padding: 1rem;
 
     margin-bottom: 2rem;
@@ -26,7 +26,8 @@ export const Container = styled.section`
             }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-        width: 20rem;
+        width: 18rem;
+        height: 22rem;
         
         padding: 1rem;
     }
@@ -95,7 +96,7 @@ export const Content = styled.section`
         }
 
         .pDescription {
-            display: unset;
+            display: flex;
             font-size: 0.7rem;
             text-align: center;
             font-weight: 400;
