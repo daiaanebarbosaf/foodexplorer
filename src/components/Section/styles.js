@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.section`
     
@@ -59,6 +60,12 @@ export const Container = styled.section`
 
                 color: ${({ theme }) => theme.COLORS.CAKE_200};
             }
+        }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        > h2 {
+            font-size: 2rem;
         }
     }
 
