@@ -1,9 +1,8 @@
 import { Container, Banner, BannerText, Profile } from './styles';
 
-import { motion } from 'framer-motion';
-
 import { useState, useEffect, useRef } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useMediaQuery } from "react-responsive";
 
 import { useAuth } from '../../hooks/auth';
 import { USER_ROLE } from '../../utils/roles';
@@ -47,24 +46,10 @@ export function Home(){
 
     const [slidePerView, setSlidePerView] = useState(3);
 
-    useEffect(() => {
+    const isDesktop = useMediaQuery({ minWidth: 1024 });
+    const isTablet = useMediaQuery({ maxWidth: 768 });
 
-        function handleResize(){
-            if(window.innerWidth < 768){
-                setSlidePerView(1)
-            } else {
-                setSlidePerView(3);
-            } 
-        }
 
-        handleResize();
-
-        window.addEventListener("resize", handleResize);
-
-        return() => {
-            window.addEventListener("resize", handleResize);
-        }
-    }, [])
 
     function handleDetails(id){
         navigate(`/details/${id}`);
@@ -103,8 +88,6 @@ export function Home(){
         fetchTags();
     }, []);
 
-    const carousel = useRef();
-
     return(
         <Container>
             <main>
@@ -136,14 +119,13 @@ export function Home(){
 
                 <Section title="Refeições">
 
-                    <Swiper 
+                    <Swiper
                         className="dishes"
-                        slidesPerView={slidePerView}
+                        slidesPerView={isDesktop ? 3 : 2 }
                         pagination={{clickable: true}}
-                        navigation 
-                        
-                        grab-cursor="true" 
-                        slides-per-view="auto"                     
+                        navigation={isDesktop ? true : false}
+                        grab-cursor="true"
+                                         
                     >
                         {!dishes ? <p>Sem resultados</p> : ""} 
                         {
@@ -174,9 +156,9 @@ export function Home(){
 
                     <Swiper                        
                         className="dishes "
-                        slidesPerView={slidePerView}
+                        slidesPerView={isDesktop ? 3 : 2 }
                         pagination={{clickable: true}}
-                        navigation
+                        navigation={isDesktop ? true : false}
                         
                     > 
                         {!dessert ? <p>Sem resultados</p> : ""} 
@@ -184,7 +166,7 @@ export function Home(){
                             dessert && dessert.map((dessert) => (
                                 <SwiperSlide key={String(dessert.id)}>
                                         <Dishes
-                                            
+                                            className="dish"
                                             imgdish={`${api.defaults.baseURL}/files/${dessert.imgdish}`}
                                             data={dessert}
                                             dishId={dessert.id}
@@ -203,9 +185,9 @@ export function Home(){
 
                     <Swiper
                         className="dishes "
-                        slidesPerView={slidePerView}
+                        slidesPerView={isDesktop ? 3 : 2 }
                         pagination={{clickable: true}}
-                        navigation
+                        navigation={isDesktop ? true : false}
                     >
                         
                         {!drink ? <p>Sem resultados</p> : ""}   
@@ -213,6 +195,7 @@ export function Home(){
                                 drink && drink.map((drink) => (
                                     <SwiperSlide>
                                         <Dishes
+                                            className="dish"
                                             key={String(drink.id)}
                                             imgdish={`${api.defaults.baseURL}/files/${drink.imgdish}`}
                                             data={drink}
