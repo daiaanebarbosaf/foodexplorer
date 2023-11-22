@@ -23,7 +23,12 @@ export const Container = styled.section`
                 color: ${({ theme }) => theme.COLORS.LIGHT_300};
                 font-size: clamp(1vw, 3em, 30vw);
                 margin-left: 8rem;
+                
             }
+
+    > a > svg:hover {
+        filter: brightness(0.5);
+    }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
         width: 18rem;
