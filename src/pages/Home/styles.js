@@ -11,8 +11,10 @@ export const Container = styled.div`
 
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
+
+        overflow-x: hidden;
 
         .dishes {
             display: flex;
@@ -20,8 +22,7 @@ export const Container = styled.div`
             justify-content: center;
             gap: 1rem;
 
-            max-width: 15rem;
-            padding-left: 1.5rem;
+            max-width: 28rem;
 
             --swiper-navigation-color: white;
             --swiper-navigation-size: 2rem;
@@ -31,31 +32,20 @@ export const Container = styled.div`
 
             --swiper-pagination-bullet-inactive-color: ${({ theme }) => theme.COLORS.LIGHT_300};
 
+            
+
             animation-name: topdown;
-            animation-duration: 900ms;
+            animation-duration: 700ms;
 
         }
 
-        .dish {
+        .dish:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
             
         }
 
-        .carousel {
-            cursor: grab;
-            overflow: hidden;
-        }
-
-        @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
-            .dishes {
-                max-width: 16rem;
-            }
-        }
-
-        @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
-            .dishes {
-                max-width: 45rem;
-            }
-        }
+  
 
         @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
               
@@ -80,18 +70,65 @@ export const Container = styled.div`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
+        > main {
+            #searchPlateHome {
+                width: 85%;
+                
+            }
+
+            .dishes {
+                max-width: 28rem;
+            }
+        }
+
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
+            > main {
+                align-items: center;
+
+                .dishes {
+                    max-width: 35rem;
+                }
+            }
+
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+            > main {
+                .dishes {
+                    max-width: 70rem;
+                    margin: 2rem;
+                }
+
+                .dishes::before{
+                    background-color: red;
+                }
+            }
 
     }
 
     @keyframes topdown {
         0% {
             opacity: 0;
-            transform: translateY(-35px);
+            transform: translateY(-15px);
         }
 
         100% {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+
+    @keyframes downtop {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(15px);
         }
     }
 
@@ -103,6 +140,8 @@ export const Profile = styled.div`
         flex-direction: column;
        
         width: 100%;
+
+        animation: downtop 700ms 350ms backwards;
         
         > span, p {
         font-family: 'Poppins', sans-serif;
@@ -114,8 +153,8 @@ export const Profile = styled.div`
 
     margin-bottom: 2rem;
 
-    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-        
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
+        align-items: center;
 
     }
 `;
@@ -132,6 +171,8 @@ export const Banner = styled.div`
 
     margin-top: 12rem;
     margin-bottom: 3rem;
+
+    animation: downtop 700ms 350ms backwards;
     
     > img {
         width: 160px;
@@ -143,7 +184,7 @@ export const Banner = styled.div`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
-        width: 21rem;
+        width: 22rem;
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
@@ -186,6 +227,7 @@ export const BannerText = styled.div`
 
     font-family: 'Poppins', sans-serif;
     color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    
 
     > h1 {
         font-weight: 600;
