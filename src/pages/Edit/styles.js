@@ -26,7 +26,10 @@ export const Container = styled.div`
         .back {
             display: flex;
             align-items: center;
-            margin-top: 8rem;
+            justify-content: flex-start;
+            margin-top: 10rem;
+            
+            width: 90%;
 
             font-family: 'Poppins', sans-serif;
             font-size: clamp(0.8vw, 1.5em, 30vw);
@@ -59,6 +62,7 @@ export const Container = styled.div`
             align-items: center;
 
             .back {
+                width: 80%;
                 margin-top: 15rem;
             }
         }
