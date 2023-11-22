@@ -233,23 +233,18 @@ export const Search = styled.div`
     display: flex;
 
     justify-content: center;
+    align-items: center;
 
     height: 3rem;
+    
 
-    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
-    @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
-        width: 25rem;
-    }
-
-    @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
-        width: 45rem;
-    }
-
+ 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
         
         background: none;
-        width: 50%;
 
         margin-left: 12rem;
     }
