@@ -1,11 +1,10 @@
 import { Container, Banner, BannerText, Profile } from './styles';
 
 import { useState, useEffect, useRef } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from "react-responsive";
 
 import { useAuth } from '../../hooks/auth';
-import { USER_ROLE } from '../../utils/roles';
 
 import { api } from '../../services/api';
 
@@ -19,7 +18,6 @@ import { Footer } from '../../components/Footer';
 import { Section } from '../../components/Section';
 import { Input } from '../../components/Input';
 import { Dishes } from '../../components/Dishes';
-import { ButtonText } from '../../components/ButtonText';
 
 import { register } from 'swiper/element/bundle';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,13 +42,8 @@ export function Home(){
 
     const { user } = useAuth();
 
-    const [slidePerView, setSlidePerView] = useState(3);
-
     const isDesktop = useMediaQuery({ minWidth: 1024 });
-    const isTablet = useMediaQuery({ maxWidth: 768 });
-
-
-
+ 
     function handleDetails(id){
         navigate(`/details/${id}`);
     }
