@@ -23,9 +23,7 @@ export const Container = styled.div`
     }
 
     > main {
-        grid-area: content;
-        height: 100%;
-        
+        grid-area: content;        
         animation-name: downtop;
         animation-duration: 900ms;
     }
