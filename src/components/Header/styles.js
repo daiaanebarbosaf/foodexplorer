@@ -117,8 +117,8 @@ export const Menu = styled.div`
     }
 
     #logoAdmin, #logoCustomer {
-        height: 18rem;
-        width: 18rem;
+        height: 16rem;
+        width: 16rem;
     }
 
     #receipt {
@@ -154,7 +154,6 @@ export const Menu = styled.div`
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
-
 
     }
 
