@@ -14,6 +14,7 @@ export const Container = styled.footer `
         padding-block: 1rem;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_200};
+        background-color: ${({ theme }) => theme.COLORS.DARK_600}
 
         > img {
             width: clamp(15vw, 10em, 30vw);
