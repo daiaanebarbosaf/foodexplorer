@@ -5,6 +5,10 @@ export const Container = styled.div`
     width: 100%;
     height: 100vh;
 
+    #search{
+        display: none;
+    }
+
     > main {
         display: grid;
         grid-template-rows: 5rem auto;
@@ -37,6 +41,14 @@ export const Container = styled.div`
 
     }
 
+    @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
+        > main {
+            max-width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
         > main {
             max-width: 70rem;
@@ -44,10 +56,9 @@ export const Container = styled.div`
 
             justify-content: center;
 
-        }
-        
-        .back {
-            margin-top: 10rem;
+            .back {
+                margin-top: 15rem;
+            }
         }
     }
 
