@@ -124,7 +124,7 @@ export const Container = styled.div`
                 .dishes::after {
                     content: "";
                     position: absolute;
-                    z-index: 2;
+                    z-index: 1;
                     
                     right: 0rem;     
                       
