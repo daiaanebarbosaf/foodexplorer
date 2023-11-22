@@ -15,12 +15,13 @@ export const Container = styled.div`
         grid-template-areas: 
         "header"
         "content";
-
-        justify-content: center;
+        
+        align-items: center;
+        justify-items: center;
         grid-area: content ;
         
         max-width: 20rem;
-        padding: 2rem;
+        padding-inline: 2.4rem;
 
         .back {
             display: flex;
@@ -55,6 +56,7 @@ export const Container = styled.div`
             padding: 0rem;
 
             justify-content: center;
+            align-items: center;
 
             .back {
                 margin-top: 15rem;
@@ -161,7 +163,7 @@ export const Form = styled.form`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
-        width: 30rem;
+        
         margin-top: 8rem;
     }
 
