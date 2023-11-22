@@ -2,6 +2,13 @@ import styled from 'styled-components';
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.section`
+        
+        > main {
+            position: relative;
+            
+        }
+
+
     
     > h2 {
         font-family: 'Poppins', sans-serif;
@@ -69,4 +76,8 @@ export const Container = styled.section`
         }
     }
 
+`;
+
+export const Content = styled.div`
+ 
 `;
