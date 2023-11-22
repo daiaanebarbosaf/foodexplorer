@@ -1,26 +1,36 @@
 import styled from 'styled-components';
-
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.footer `
-    width: 100%;
+    grid-area: footer;
+    
+    > main {
+        width: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding-block: 2rem;
-
-    background-color: ${({ theme }) => theme.COLORS.DARK_600};
-    color: ${({ theme }) => theme.COLORS.LIGHT_200};
-
-    > img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         
-        width: clamp(15vw, 10em, 30vw);
+        padding-block: 1rem;
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_200};
+
+        > img {
+            width: clamp(15vw, 10em, 30vw);
+        }
+
+        > p {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 100;
+            font-size: 0.5rem ;
+        }
     }
 
-    > p {
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 100;
-        font-size: 0.5rem ;
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        > main {
+            justify-content: space-between;
+            padding-inline: 5rem;
+        }
+
     }
 `;
