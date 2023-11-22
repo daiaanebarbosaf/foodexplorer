@@ -3,8 +3,8 @@ import { Container } from "./styles";
 export function Section({ title, children }){
     return (
         <Container>
-            <h2>{title}</h2>
-            <main>{children}</main>
+            <h2>{title}</h2>     
+                {children}
         </Container>
     );
 }
