@@ -24,6 +24,7 @@ export const Container = styled.section`
                 font-size: clamp(1vw, 3em, 30vw);
                 margin-left: 8rem;
                 
+                
             }
 
     > a > svg:hover {
