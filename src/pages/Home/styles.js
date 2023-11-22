@@ -113,15 +113,29 @@ export const Container = styled.div`
                     z-index: 2;
                     
                     left: 0rem;     
-                    right: 0rem;     
+                      
                     
                     top: 0px;
                     bottom: 0px;
-                    background: linear-gradient(90deg, rgba(6,6,6,1) 15%, rgba(6,6,6,0.21612394957983194) 100%, rgba(149,104,104,0.7287289915966386) 100%);
-                    width: 18rem;
-                    
+                    background:  linear-gradient(90deg, rgba(6,6,6,0.8379726890756303) 15%, rgba(6,6,6,0.21612394957983194) 100%, rgba(149,104,104,0.7287289915966386) 100%);
+                    width: 10rem;                    
                 }
-            
+
+                .dishes::after {
+                    content: "";
+                    position: absolute;
+                    z-index: 2;
+                    
+                    right: 0rem;     
+                      
+                    top: 0px;
+                    bottom: 0px;
+                    
+                    
+                    background: linear-gradient(251deg, rgba(6,6,6,0.5102415966386555) 15%, rgba(6,6,6,0.21612394957983194) 100%, rgba(149,104,104,0.7287289915966386) 100%);
+                    width: 20rem;                    
+                }
+          
             }
 
     }
