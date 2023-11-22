@@ -291,7 +291,5 @@ export function Edit(){
 
             <Footer/>
         </Container>
-
-        
     );
 }
