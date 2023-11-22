@@ -46,6 +46,14 @@ export const Container = styled.div`
         }
     }
 
+    @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
+        > main {
+            max-width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
         > main {
             max-width: 70rem;
