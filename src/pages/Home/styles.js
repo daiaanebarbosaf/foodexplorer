@@ -28,11 +28,8 @@ export const Container = styled.div`
             --swiper-navigation-size: 2rem;
             --swiper-navigation-bg: white;
             --swiper-pagination-color: white;
-            
 
             --swiper-pagination-bullet-inactive-color: ${({ theme }) => theme.COLORS.LIGHT_300};
-
-            
 
             animation-name: topdown;
             animation-duration: 700ms;
@@ -52,6 +49,7 @@ export const Container = styled.div`
             .dishes {
                 max-width: 65rem;
             }
+
 
             #searchPlateHome {
                 width: 55%;
@@ -99,11 +97,31 @@ export const Container = styled.div`
                 .dishes {
                     max-width: 70rem;
                     margin: 2rem;
+                    position: relative;
+                    backdrop-filter: blur(10px);
+                    
                 }
 
-                .dishes::before{
-                    background-color: red;
+                .dish {
+                    z-index: 1;
                 }
+
+                .dishes::before {
+                    content: "";
+                    
+                    position: absolute;
+                    z-index: 2;
+                    
+                    left: 0rem;     
+                    right: 0rem;     
+                    
+                    top: 0px;
+                    bottom: 0px;
+                    background: linear-gradient(90deg, rgba(6,6,6,1) 15%, rgba(6,6,6,0.21612394957983194) 100%, rgba(149,104,104,0.7287289915966386) 100%);
+                    width: 18rem;
+                    
+                }
+            
             }
 
     }
