@@ -5,7 +5,12 @@ export const Container = styled.div`
     width: 100%;
     height: 100vh;
 
+    #search{
+            display: none;
+        }
+
     > main {
+        
         display: grid;
         grid-template-rows: 5rem auto;
         grid-template-areas: 
@@ -13,17 +18,20 @@ export const Container = styled.div`
         "content";
         
         justify-content: center;
+        align-items: center;
         grid-area: content ;
         
         max-width: 20rem;
-        padding: 2rem;
+        padding-inline: 2.4rem;
 
         margin-bottom: 2rem;
+        overflow-x: hidden;
 
         .back {
+            
             display: flex;
             align-items: center;
-            margin-top: 8rem;
+            margin-top: 15rem;
 
             font-family: 'Poppins', sans-serif;
             font-size: clamp(0.8vw, 1.5em, 30vw);
@@ -43,19 +51,18 @@ export const Container = styled.div`
             max-width: 70rem;
             padding: 0rem;
 
-            .back {
-                margin-top: 10rem;
-            }
         }
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
         > main {
             max-width: 100%;
-            padding: 0rem;
+            
+            .back {
+                padding-inline: 2.4rem;
+            }
         }
     }
-
 `;
 
 export const Form = styled.form`
@@ -68,7 +75,7 @@ export const Form = styled.form`
 
     font-family: 'Roboto', sans-serif;
 
-    margin-top: 4rem;
+    margin-top: 5rem;
 
     > header {
         margin-top: 2rem;
@@ -125,6 +132,7 @@ export const Form = styled.form`
 
         > header {
             width: 76rem;
+            padding-inline: 2.4rem;
         }
 
         .imgDishes{
