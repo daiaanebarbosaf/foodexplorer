@@ -23,6 +23,8 @@ export const Container = styled.div`
         max-width: 20rem;
         padding-inline: 2.4rem;
 
+        margin-bottom: 1rem;
+
         .back {
             display: flex;
             align-items: center;
@@ -76,7 +78,7 @@ export const Container = styled.div`
             margin-bottom: 2rem;
 
             .back {
-                margin-top: 10rem;
+                margin-top: 15rem;
             }
         }
     }
@@ -89,7 +91,7 @@ export const Form = styled.form`
 
     display: flex;
     flex-direction: column;
-
+    
     gap: 1rem;
 
     font-family: 'Roboto', sans-serif;
@@ -172,11 +174,15 @@ export const Form = styled.form`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-        width: 76rem;
+        width: 90rem;
         height: 70vh;
 
         flex-direction: row;
         align-items: center;
+        justify-content: space-between;
+
+        gap: 0rem;
+        
         flex-wrap: wrap;
 
         > header {
@@ -193,7 +199,7 @@ export const Form = styled.form`
         }
 
         .imgDishes{
-            width: 15%;
+            width: 17%;
         }
 
         .inputName {
@@ -201,11 +207,11 @@ export const Form = styled.form`
         }
 
         .selectCategory {
-            width: 20%;
+            width: 21%;
         }
 
         .ingredients {
-            width: 70%;
+            width: 79%;
         }
 
         .price {
