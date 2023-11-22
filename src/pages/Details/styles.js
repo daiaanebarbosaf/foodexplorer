@@ -4,21 +4,30 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 export const Container = styled.div`
     background-image: ${({ theme }) => theme.COLORS.GRADIENT["100"]};
 
+    #search{
+        display: none;
+    }
+
     width: 100%;
-    height: 100vh;
+    height: 95vh;
 
     display: grid;
-    grid-template-rows: 9.4rem auto;
+    grid-template-rows: 5rem auto 2rem;
     grid-template-areas: 
     "header"
-    "content";
+    "content"
+    "footer";
+
+    .back {
+        margin-top: -5rem;
+    }
 
     > main {
         grid-area: content;
-
+        height: 100%;
+        
         animation-name: downtop;
         animation-duration: 900ms;
-
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
@@ -72,8 +81,6 @@ export const Content = styled.div`
     gap: 1rem;
 
     .back {
-
-        z-index: 9999;
 
         display: flex;
         align-items: center;
