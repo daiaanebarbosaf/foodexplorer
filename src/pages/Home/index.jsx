@@ -1,6 +1,6 @@
 import { Container, Banner, BannerText, Profile } from './styles';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from "react-responsive";
 
