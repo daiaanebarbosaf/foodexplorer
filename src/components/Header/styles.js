@@ -108,7 +108,7 @@ export const Menu = styled.div`
 
     height: 6rem;
 
-    #logoAdmin, #logoCustomer, #buttonHidden {
+    #buttonHidden {
         height: 1.5rem;
     }
 
@@ -117,8 +117,8 @@ export const Menu = styled.div`
     }
 
     #logoAdmin, #logoCustomer {
-        height: 16rem;
-        width: 16rem;
+        height: 12rem;
+        width: 12rem;
     }
 
     #receipt {
@@ -128,8 +128,8 @@ export const Menu = styled.div`
     @media (min-width: ${DEVICE_BREAKPOINTS.SM}){
         #logoAdmin, #logoCustomer {
                 
-                height: 20rem;
-                width: 20rem;
+                height: 18.5rem;
+                width: 18.5rem;
             }
     }
 
@@ -137,9 +137,14 @@ export const Menu = styled.div`
  
         #logoAdmin, #logoCustomer {
                 margin-left: 5rem;
-                height: 25rem;
+                height: 30rem;
                 width: 25rem;
-            }
+        }
+
+        #receipt {
+            margin-left: 7.5rem;
+        }
+
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
@@ -234,25 +239,21 @@ export const Search = styled.div`
     justify-content: center;
     align-items: center;
 
+    background: none;
+
     height: 3rem;
-    
 
     margin-top: 2rem;
     margin-bottom: 2rem;
 
  
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        width: 60%;
         
-        background: none;
-
-        margin-left: 12rem;
+        margin-top: -1.5rem;
+        margin-left: 14rem;
     }
 
-    @media (min-width: ${DEVICE_BREAKPOINTS.XL}){
-            width: 90%;
-            margin-left: 18rem;
-
-    }
 `;
 
 export const MenuClose = styled.div`
