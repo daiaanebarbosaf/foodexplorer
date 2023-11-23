@@ -2,17 +2,21 @@ import styled from 'styled-components';
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
+  
+    width: 100%;
+    height: 50%;
+
+    overflow-y: hidden;
+    
     background-image: ${({ theme }) => theme.COLORS.GRADIENT["100"]};
 
     #search{
         display: none;
     }
 
-    width: 100%;
-    height: 95vh;
 
     display: grid;
-    grid-template-rows: 5rem auto 2rem;
+    grid-template-rows: 5rem auto;
     grid-template-areas: 
     "header"
     "content"
@@ -22,26 +26,13 @@ export const Container = styled.div`
         margin-top: -5rem;
     }
 
-    > main {
-        grid-area: content;        
-        animation-name: downtop;
-        animation-duration: 900ms;
-    }
-
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
         height: 100vh;
-        grid-template-rows: 5rem auto 7.7rem;
+        grid-template-rows: 5rem auto 3rem;
 
         > main {
-
-            ::-webkit-scrollbar {
-                width: 0.8rem;
-            }
-
-            ::-webkit-scrollbar-thumb {
-                background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
-                border-radius: 0.8rem;
-            }
+            
+ 
             
         }
 
@@ -74,6 +65,8 @@ export const Content = styled.div`
     justify-content: center;
     flex-direction: column;
 
+    
+
     margin-left: 2rem;
     margin-right: 2rem;
     gap: 1rem;
@@ -84,6 +77,7 @@ export const Content = styled.div`
         align-items: center;
 
         margin-right: 12rem;
+        margin-top: 3rem;
 
         font-family: 'Poppins', sans-serif;
         font-size: clamp(0.8vw, 1.5em, 30vw);
@@ -98,6 +92,23 @@ export const Content = styled.div`
     }
 
     > main {
+        grid-area: content;
+
+        animation-name: downtop;
+        animation-duration: 900ms;
+
+        margin-bottom: 1rem;
+        margin-top: 3rem;
+
+        ::-webkit-scrollbar {
+                width: 0.8rem;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
+                border-radius: 0.8rem;
+            }
+
         > img {
             width: 10rem;
         }
@@ -108,7 +119,6 @@ export const Content = styled.div`
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            margin-bottom: 1rem;
             
             font-family: 'Poppins', sans-serif; 
 
@@ -123,8 +133,9 @@ export const Content = styled.div`
         justify-content: center;
         flex-wrap: wrap;
 
-        gap: 1rem;
         margin-bottom: 1rem;
+
+        gap: 1rem;
 
     }
 
@@ -141,16 +152,24 @@ export const Content = styled.div`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        
 
         display: flex;
         align-items: flex-start;
+        justify-content: center;
 
         padding-inline: 5rem;
+
+        .back {
+            margin-top: -5em;
+            font-size: 1rem;            
+
+        }
 
         > main {
             display: flex;
             flex-direction: row;
-            margin-top: 2rem;
+            
             gap: 2rem;
 
             > img {
