@@ -116,8 +116,8 @@ export const Container = styled.div`
                       
                     
                     top: 0px;
-                    bottom: 0px;
-                    background:  linear-gradient(90deg, rgba(6,6,6,0.8379726890756303) 15%, rgba(6,6,6,0.21612394957983194) 100%, rgba(149,104,104,0.7287289915966386) 100%);
+                    bottom: 30px;
+                    background:  linear-gradient(90deg, rgba(6,6,6,0.8379726890756303) 15%, rgba(6,6,6,0.21612394957983194) 100%, rgba(0,0,0,1) 100%);
                     width: 10rem;                    
                 }
 
@@ -129,11 +129,10 @@ export const Container = styled.div`
                     right: 0rem;     
                       
                     top: 0px;
-                    bottom: 0px;
+                    bottom: 30px; 
                     
-                    
-                    background: linear-gradient(251deg, rgba(6,6,6,0.5102415966386555) 15%, rgba(6,6,6,0.21612394957983194) 100%, rgba(149,104,104,0.7287289915966386) 100%);
-                    width: 20rem;                    
+                    background: linear-gradient(270deg, rgba(0,0,0,0.5830707282913166) 15%, rgba(0,0,0,0.21612394957983194) 100%, rgba(0,0,0,1) 100%);
+                    width: 10rem;                    
                 }
           
             }
