@@ -31,6 +31,15 @@ export const Container = styled.section`
         filter: brightness(0.5);
     }
 
+    .favorite {
+        margin-left: 8rem;
+    }
+
+    .favorite:hover {
+        transform: scale(1.1);
+        opacity: 0.9;    
+    }
+
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
         width: 18rem;
         height: 25rem;

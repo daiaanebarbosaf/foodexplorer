@@ -4,15 +4,18 @@ import { useAuth } from '../../hooks/auth';
 import { USER_ROLE } from '../../utils/roles'
 
 import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 
 import { PiPencilSimpleBold } from 'react-icons/pi';
 import { IoIosArrowForward } from 'react-icons/io';
 import { AiOutlineHeart } from 'react-icons/ai';
+import { IoHeart } from "react-icons/io5";
+
+
 
 
 import { Tag } from '../../components/Tag';
 import { Button } from '../../components/Button';
-import { ButtonText } from '../../components/ButtonText';
 import { NumberOfDishes } from '../../components/NumberOfDishes';
 
 
@@ -27,20 +30,44 @@ export function Dishes({ data, dishId, imgdish, ...rest }){
         console.log(dishId)       
     }
 
+
+    const [iconColor, setIconColor] = useState('white');
+    const [currentIcon, setCurrentIcon] = useState(<AiOutlineHeart />);
+    
+    
+    const handleIconClick = () => {
+        const newColor = iconColor === 'white' ? '#750310' : 'white';       
+
+        const newIcon = currentIcon.type === AiOutlineHeart ? <IoHeart /> : <AiOutlineHeart />;
+
+        setIconColor(newColor);
+        setCurrentIcon(newIcon);
+    }
+
     return(
         <Container>
             <a>
 
                 {
                     [USER_ROLE.CUSTOMER].includes(user.role) &&
-                    <AiOutlineHeart/>
+                    <div className="favorite">
+                        {
+                            currentIcon && React.cloneElement(currentIcon, {
+                                size: 30,
+                                color: iconColor,
+                                onClick: handleIconClick,
+                            })
+                        }
+                    </div>
+
+                    
                 }
                 
             </a>
 
             <a>
 
-                {
+                { 
                     [USER_ROLE.ADMIN].includes(user.role) &&
                     <PiPencilSimpleBold
                         onClick={() => handleEdit(dishId)}
