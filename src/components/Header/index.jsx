@@ -5,12 +5,14 @@ import { USER_ROLE } from '../../utils/roles';
 
 
 import { useState, useEffect } from 'react';
+import { useMediaQuery } from "react-responsive";
 
 import { api } from '../../services/api';
 
 import { Link, useNavigate } from 'react-router-dom';
 
 import logoAdmin from '../../assets/logo-admin.svg';
+import logoAdminLG from '../../assets/logo-admin-lg.svg'
 
 import logoCustomer from '../../assets/logo-customer.svg';
 
@@ -28,6 +30,8 @@ export function Header({children}){
 
     const [tags, setTags] = useState([]);
 
+    const isDesktop = useMediaQuery({ minWidth: 1024 });
+
     function expandMenu(){
         
         var menuExpand = document.getElementById('buttonHidden');
@@ -37,14 +41,20 @@ export function Header({children}){
         var menu = document.getElementById('menu');
         var menuClose = document.getElementById('menuClose');
         var search = document.getElementById('search');
-              
-        menuExpand.classList.add('hide');
-        adminLogo.classList.add('hide');
 
-        search.classList.remove('hide');
-        menuClose.classList.remove('hide');
-        menu.classList.remove('hide');
-       
+        if(!isDesktop){
+            adminLogo.classList.add('hide');
+
+            menuExpand.classList.add('hide');
+        
+
+            search.classList.remove('hide');
+            menuClose.classList.remove('hide');
+            menu.classList.remove('hide');
+        } else {
+
+        }
+           
     }
 
     
@@ -61,14 +71,12 @@ export function Header({children}){
         var menuExpand = document.getElementById('buttonHidden');
         var adminLogo = document.getElementById('logoAdmin');
 
-        var search = document.getElementById('search');
         var menuClose = document.getElementById('menuClose');
         var menu = document.getElementById('menu');   
         
  
         menuClose.classList.add('hide');
         menu.classList.add('hide');
-        search.classList.add('hide');
 
         menuExpand.classList.remove('hide');
         adminLogo.classList.remove('hide');
@@ -94,7 +102,7 @@ export function Header({children}){
 
                     {
                         [USER_ROLE.ADMIN].includes(user.role) &&
-                        <img className="soon" id="logoAdmin" src={logoAdmin} onClick={handleHome} alt="SoonFood Explorer" />
+                        <img className="soon" id="logoAdmin" src={isDesktop ? logoAdminLG : logoAdmin} onClick={handleHome} alt="SoonFood Explorer" />
                     }
 
                     {
