@@ -65,8 +65,6 @@ export const Content = styled.div`
     justify-content: center;
     flex-direction: column;
 
-    
-
     margin-left: 2rem;
     margin-right: 2rem;
     gap: 1rem;
@@ -98,7 +96,7 @@ export const Content = styled.div`
         animation-duration: 900ms;
 
         margin-bottom: 1rem;
-        margin-top: 3rem;
+        
 
         ::-webkit-scrollbar {
                 width: 0.8rem;
@@ -123,8 +121,15 @@ export const Content = styled.div`
             font-family: 'Poppins', sans-serif; 
 
             color: ${({ theme }) => theme.COLORS.LIGHT_300};
-            
+
+            .buttoneOrderDish{
+                
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
         }
+            
     }
 
     .tags {
@@ -144,6 +149,7 @@ export const Content = styled.div`
         gap: 1rem;
         
     }
+
 
     .buttonEditDish {
         padding-left: 5rem;
@@ -169,6 +175,7 @@ export const Content = styled.div`
         > main {
             display: flex;
             flex-direction: row;
+            margin-top: 3rem;
             
             gap: 2rem;
 

@@ -33,7 +33,7 @@ export const Container = styled.section`
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
         width: 18rem;
-        height: 22rem;
+        height: 25rem;
         
         padding: 1rem;
     }
