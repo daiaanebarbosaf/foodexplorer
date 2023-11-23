@@ -76,6 +76,7 @@ export function SignUp(){
                         className="buttonCreateAccount"
                         title="Criar conta" 
                         onClick={handleSignUp}
+                        required
                     />
 
                     <footer>
