@@ -35,7 +35,8 @@ export function SignIn(){
                         id="inputSignIn"
                         type="text"
                         placeholder="Exemplo: exemplo@exemplo.com.br"
-                        onChange={e => setEmail(e.target.value)}  
+                        onChange={e => setEmail(e.target.value)} 
+                        
                     />
                     <p className="inputSignInP">Senha</p>
                     <Input
@@ -43,6 +44,7 @@ export function SignIn(){
                         type="password"
                         placeholder="No mínimo 6 caracteres" 
                         onChange={e => setPassword(e.target.value)} 
+                        
                     />
 
                     <Button 
