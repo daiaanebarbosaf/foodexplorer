@@ -4,9 +4,10 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 export const Container = styled.div`
   
     width: 100%;
-    height: 50%;
+    height: 100vh;
 
     overflow-y: hidden;
+    overflow-x: hidden;
     
     background-image: ${({ theme }) => theme.COLORS.GRADIENT["100"]};
 
@@ -30,11 +31,6 @@ export const Container = styled.div`
         height: 100vh;
         grid-template-rows: 5rem auto 3rem;
 
-        > main {
-            
- 
-            
-        }
 
         .buttonsDetails {
             justify-content: initial;
@@ -75,7 +71,8 @@ export const Content = styled.div`
         align-items: center;
 
         margin-right: 12rem;
-        margin-top: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
 
         font-family: 'Poppins', sans-serif;
         font-size: clamp(0.8vw, 1.5em, 30vw);
@@ -95,7 +92,7 @@ export const Content = styled.div`
         animation-name: downtop;
         animation-duration: 900ms;
 
-        margin-bottom: 1rem;
+        margin-bottom: 5rem;
         
 
         ::-webkit-scrollbar {
