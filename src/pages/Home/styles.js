@@ -17,6 +17,8 @@ export const Container = styled.div`
         overflow-x: hidden;
 
         .dishes {
+            width: 150%;
+
             display: flex;
             align-items: center;
             justify-content: center;
