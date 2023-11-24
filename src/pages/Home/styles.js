@@ -15,9 +15,9 @@ export const Container = styled.div`
         justify-content: center;
 
         overflow-x: hidden;
+          
 
         .dishes {
-            width: 150%;
 
             display: flex;
             align-items: center;
@@ -43,8 +43,6 @@ export const Container = styled.div`
             opacity: 0.9;
             
         }
-
-  
 
         @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
               
