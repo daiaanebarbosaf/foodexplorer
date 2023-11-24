@@ -14,11 +14,13 @@ import { api } from '../../services/api';
 import { ButtonText } from '../../components/ButtonText';
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
+import { Input } from '../../components/Input';
 import { Footer } from '../../components/Footer';
 import { Tag } from '../../components/Tag';
 import { NumberOfDishes } from '../../components/NumberOfDishes';
 
 import { IoIosArrowBack } from 'react-icons/io';
+import { FiSearch } from 'react-icons/fi';
 
 export function Details(){
   const { user } = useAuth();
@@ -50,7 +52,16 @@ export function Details(){
 
   return(
     <Container>
-      <Header />
+      <Header>
+        <div id="searchPlateHome">
+            <Input
+                icon={FiSearch} 
+                id="searchPlate" 
+                placeholder="Busque por pratos ou ingredientes" 
+                onChange={(e) => setSearch(e.target.value)}
+            />
+        </div>
+      </Header>
 
       <Content>
         <a className="back">
