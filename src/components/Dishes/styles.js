@@ -7,6 +7,7 @@ export const Container = styled.section`
     justify-content: center;
 
     flex-direction: column;
+    
 
     gap: 1rem;
 
@@ -32,7 +33,7 @@ export const Container = styled.section`
     }
 
     .favorite {
-        margin-left: 8rem;
+        margin-left: 12rem;
     }
 
     .favorite:hover {
@@ -50,6 +51,7 @@ export const Container = styled.section`
 `;
 
 export const Content = styled.section`
+
 
     display: flex;
     align-items: center;
