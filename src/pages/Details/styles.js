@@ -11,11 +11,6 @@ export const Container = styled.div`
     
     background-image: ${({ theme }) => theme.COLORS.GRADIENT["100"]};
 
-    #search{
-        display: none;
-    }
-
-
     display: grid;
     grid-template-rows: 5rem auto;
     grid-template-areas: 
@@ -23,13 +18,20 @@ export const Container = styled.div`
     "content"
     "footer";
 
-    .back {
-        margin-top: -5rem;
+    #searchPlateHome {
+        display: none;
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
         height: 100vh;
         grid-template-rows: 5rem auto 3rem;
+        
+        #searchPlateHome {
+            display: inline;
+                width: 85%;
+                margin-top: -6rem;
+                
+            }
 
 
         .buttonsDetails {
@@ -71,8 +73,8 @@ export const Content = styled.div`
         align-items: center;
 
         margin-right: 12rem;
-        margin-top: 2rem;
-        margin-bottom: 3rem;
+        margin-top: 3rem;
+        
 
         font-family: 'Poppins', sans-serif;
         font-size: clamp(0.8vw, 1.5em, 30vw);
@@ -147,7 +149,6 @@ export const Content = styled.div`
         
     }
 
-
     .buttonEditDish {
         padding-left: 5rem;
         padding-right: 5rem;
@@ -164,7 +165,6 @@ export const Content = styled.div`
         padding-inline: 5rem;
 
         .back {
-            margin-top: -5em;
             font-size: 1rem;            
 
         }
