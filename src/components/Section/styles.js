@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.section`
-
-     
-
+  
+   width: 100%;
+ 
     
     > h2 {
         font-family: 'Poppins', sans-serif;
@@ -67,6 +67,7 @@ export const Container = styled.section`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        
         > h2 {
             font-size: 2rem;
         }
