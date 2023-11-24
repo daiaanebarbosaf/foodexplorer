@@ -9,6 +9,7 @@ export const Container = styled.header`
         z-index: 9999;
         top: 0;
         left: 50%;
+        
 
         width: 100%;
 
@@ -107,6 +108,7 @@ export const Menu = styled.div`
     align-items: center;
 
     height: 6rem;
+    
 
     #buttonHidden {
         height: 1.5rem;
@@ -165,10 +167,12 @@ export const Menu = styled.div`
 `;
 
 export const MenuExpand = styled.div`
- 
+
+
     display: flex;
     align-items: center;
     flex-direction: column;
+    
 
     z-index: 9999;  
 
@@ -180,6 +184,7 @@ export const MenuExpand = styled.div`
     padding: 2rem;
     
     background-color: ${({ theme }) => theme.COLORS.DARK_400};
+    
 
     #optionsMenu {    
 
@@ -199,6 +204,7 @@ export const MenuExpand = styled.div`
             border-bottom: 1px solid ${({ theme }) => theme.COLORS.LIGHT_500};
             width: 48%;
         }
+
 
         @media (max-width: 700px){
             > a {
@@ -234,8 +240,9 @@ export const MenuExpand = styled.div`
 `;
 
 export const Search = styled.div`
-    display: flex;
 
+    display: flex;
+    
     justify-content: center;
     align-items: center;
 
@@ -245,6 +252,7 @@ export const Search = styled.div`
 
     margin-top: 2rem;
     margin-bottom: 2rem;
+    
 
  
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
