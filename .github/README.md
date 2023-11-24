@@ -10,6 +10,8 @@
   <a href="#pages">Páginas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#features">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#technologies">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#usage">Utilização</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#users">Personas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#license">Licença</a>
 </p>
 
@@ -66,6 +68,57 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - Styled Components
 - Swiper
 - ViteJS
+
+<h2 id="usage">💡 Utilização</h2>
+
+A aplicação Food Explorer está disponível para uso [aqui](https://foodexplorerdai.netlify.app).
+
+Você também pode executá-la em sua máquina localmente. Certifique-se de ter o ``Node.js`` e o ``npm`` instalados antes de prosseguir com as etapas abaixo:
+
+1. Clone o projeto:
+
+```
+$ git clone https://github.com/daiaanebarbosaf/foodexplorer
+```
+
+2. Acesse a pasta do projeto:
+
+```
+$ cd foodexplorer
+```
+
+3. Instale as dependências:
+
+```
+$ npm install
+```
+
+4. Inicie o servidor:
+
+```
+$ npm run dev
+```
+
+⚠️ **Importante**: Este projeto utiliza uma hospedagem gratuita para o back-end, portanto, pode haver atrasos no tempo de resposta do servidor.
+
+<h2 id="users">👩🏾‍💻 Personas</h2>
+
+O Food Explorer possui duas personas principais: o admin e o usuário comum. Você pode criar um novo usuário ou testar a aplicação usando os usuários já cadastrados:
+
+Admin:
+
+- E-mail: admin@email.com
+- Senha: 
+
+O admin tem acesso privilegiado e pode gerenciar o cardápio, adicionando, editando e removendo pratos, além de executar outras tarefas administrativas.
+
+Usuário:
+
+- E-mail: user@email.com
+- Senha: 
+
+O usuário tem acesso restrito às funcionalidades da aplicação, podendo visualizar o cardápio, filtrar pratos, ver detalhes de pratos específicos, favoritar pratos e adicionar pratos ao carrinho.
+
 
 <h2 id="license">📝 Licença</h2>
 
