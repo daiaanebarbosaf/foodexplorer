@@ -12,6 +12,7 @@
   <a href="#technologies">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#usage">Utilização</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#users">Personas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#consideration">Considerações Finais</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#license">Licença</a>
 </p>
 
@@ -118,6 +119,10 @@ Usuário:
 - Senha: 
 
 O usuário tem acesso restrito às funcionalidades da aplicação, podendo visualizar o cardápio, filtrar pratos, ver detalhes de pratos específicos, favoritar pratos e adicionar pratos ao carrinho.
+
+<h2 id="#consideration">Considerações Finais</h2>
+É com muito orgulho que apresento para você meu primeiro projeto com React!!!<br>
+Foi muito desafiador... com esse projeto apresendi muito mais do que qualquer linguagem pode traduzir, espero que goste do que vê aqui.
 
 
 <h2 id="license">📝 Licença</h2>
