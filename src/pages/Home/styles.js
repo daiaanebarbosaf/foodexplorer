@@ -25,6 +25,7 @@ export const Container = styled.div`
             gap: 1rem;
 
             max-width: 28rem;
+            
 
             --swiper-navigation-color: white;
             --swiper-navigation-size: 2rem;
@@ -95,11 +96,10 @@ export const Container = styled.div`
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
             > main {
                 .dishes {
-                    max-width: 70rem;
+                    max-width: 75rem;
                     margin: 2rem;
                     position: relative;
-                    backdrop-filter: blur(10px);
-                    
+                                      
                 }
 
                 .dish {
@@ -223,7 +223,7 @@ export const Banner = styled.div`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-        width: 43rem;
+        width: 52rem;
         
     }
 
