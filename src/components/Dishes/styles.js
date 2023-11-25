@@ -33,7 +33,7 @@ export const Container = styled.section`
     }
 
     .favorite {
-        margin-left: 12rem;
+        margin-left: 9rem;
     }
 
     .favorite:hover {
