@@ -3,8 +3,12 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.section`
   
-   width: 100%;
- 
+   width: 95%;
+   display: flex;
+   justify-content: center;
+   
+   flex-direction: column;
+
     
     > h2 {
         font-family: 'Poppins', sans-serif;
@@ -16,6 +20,7 @@ export const Container = styled.section`
     }
 
     > ul {
+        padding-inline: 3rem;
         
         display: flex;
         gap: 1rem;        
@@ -67,14 +72,11 @@ export const Container = styled.section`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
+        margin-left: 2rem;
         
         > h2 {
             font-size: 2rem;
         }
     }
 
-`;
-
-export const Content = styled.div`
- 
 `;
