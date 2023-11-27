@@ -3,7 +3,6 @@
   Food Explorer
 </h1>
 
-> Cardápio digital para um restaurante
 
 <p align="center">
   <a href="#project">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -48,10 +47,7 @@ A aplicação apresenta as seguintes funcionalidades:
 - Mostrar pratos cadastrados
 - Filtrar pratos
 - Mostrar detalhes do prato
-- Favoritar prato
 - Remover prato dos favoritos
-- Mostrar favoritos
-- Adicionar prato ao carrinho
 - Editar prato
 - Excluir prato
 - Logout
@@ -122,7 +118,7 @@ O usuário tem acesso restrito às funcionalidades da aplicação, podendo visua
 
 <h2 id="#consideration">Considerações Finais</h2>
 É com muito orgulho que apresento para você meu primeiro projeto com React!!!<br>
-Foi muito desafiador... com esse projeto apresendi muito mais do que qualquer linguagem pode traduzir, espero que goste do que vê aqui.
+Foi muito desafiador... com esse projeto apresendi muito mais do que qualquer linguagem pode traduzir, espero que goste do que vê aqui e aceito sugestões e feedbacks, pois a graça é seguir evoluindo!
 
 
 <h2 id="license">📝 Licença</h2>
