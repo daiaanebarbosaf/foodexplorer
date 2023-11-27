@@ -11,13 +11,9 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { IoHeart } from "react-icons/io5";
 
-
-
-
 import { Tag } from '../../components/Tag';
 import { Button } from '../../components/Button';
 import { NumberOfDishes } from '../../components/NumberOfDishes';
-
 
 export function Dishes({ data, dishId, imgdish, ...rest }){
 
@@ -29,7 +25,6 @@ export function Dishes({ data, dishId, imgdish, ...rest }){
         navigate(`/edit/${dishId}`);
         console.log(dishId)       
     }
-
 
     const [iconColor, setIconColor] = useState('white');
     const [currentIcon, setCurrentIcon] = useState(<AiOutlineHeart />);
