@@ -1,6 +1,6 @@
 import { Container, Banner, BannerText, Profile } from './styles';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from "react-responsive";
 
@@ -35,7 +35,7 @@ export function Home(){
     const [tags, setTags] = useState([]);
     const [dishes, setDishes] = useState([]);
     const [dessert, setDessert] = useState([]);
-    const [drink, setDrink] = useState([]);
+    const [drink, setDrink] = useState([]);    
 
     const navigate = useNavigate();
     const params = useParams();
@@ -106,8 +106,7 @@ export function Home(){
                 </Banner>
                 
                 <Profile>
-                    <span>Olá, <strong>{user.name}</strong> </span>
-                    <p>Perfil de {user.role} </p>
+                    <span>Olá, <strong>{user.name}</strong>! </span>
                 </Profile>
 
                 <Section title="Refeições">
