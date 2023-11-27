@@ -55,7 +55,12 @@ export function Edit(){
     }
 
     function handleAddTag(){
-        setTags(prevState => [...prevState, newTag]);
+        if(newTag === ""){
+            alert("Insira conteúdo na tag, você não pode deixar o campo está vazio");
+          } else {
+            setTags(prevState => [...prevState, newTag]); 
+          }
+    
         setNewTag("");
     }
 
@@ -81,8 +86,6 @@ export function Edit(){
         fetchDish();
       }, [params.id]);
 
- 
-
       async function handleUpdate(){
 
         const titleNew = title != data.title ? title : data.title;
@@ -97,8 +100,6 @@ export function Edit(){
         const imgdishNew = imgdish != data.imgdish ? imgdish : data.imgdish;
        
         try {
-
-            //console.log(imgdishNew)
 
             if(imgdishNew) {
 
