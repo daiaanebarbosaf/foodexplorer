@@ -53,14 +53,7 @@ export function Details(){
   return(
     <Container>
       <Header>
-        <div id="searchPlateHome">
-            <Input
-                icon={FiSearch} 
-                id="searchPlate" 
-                placeholder="Busque por pratos ou ingredientes" 
-                onChange={(e) => setSearch(e.target.value)}
-            />
-        </div>
+
       </Header>
 
       <Content>
