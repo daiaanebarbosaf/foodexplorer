@@ -8,7 +8,6 @@ export const Container = styled.section`
 
     flex-direction: column;
     
-
     gap: 1rem;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_300};
