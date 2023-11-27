@@ -114,8 +114,8 @@ export const Menu = styled.div`
     }
 
     #logoAdmin, #logoCustomer {
-        height: 12rem;
-        width: 12rem;
+        height: 15rem;
+        width: 15rem;
     }
 
     #receipt {
@@ -206,6 +206,12 @@ export const MenuExpand = styled.div`
         @media (max-width: 700px){
             > a {
                 width: 46%;
+
+            }
+
+            > a:hover {
+                transform: scale(1.1);
+                opacity: 0.9;
             }
         }
         
@@ -244,16 +250,17 @@ export const Search = styled.div`
 
     height: 3rem;
 
-    margin-top: 2rem;
+    padding-top: 1rem;
     margin-bottom: 2rem;
-    
 
+    background-color: ${({ theme }) => theme.COLORS.DARK_400};
  
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
-        width: 45%;
+        background-color: transparent;
+        width: 55%;
         
-        margin-top: -1.5rem;
-        margin-left: 19rem;
+        margin-top: -2rem;
+        margin-left: 17rem;
     }
 
 `;
