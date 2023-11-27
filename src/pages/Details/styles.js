@@ -18,7 +18,7 @@ export const Container = styled.div`
     "content"
     "footer";
 
-    #searchPlateHome {
+    #searchPlateHome, #searchPlate {
         display: none;
     }
 
@@ -26,13 +26,7 @@ export const Container = styled.div`
         height: 100vh;
         grid-template-rows: 5rem auto 3rem;
         
-        #searchPlateHome {
-            display: inline;
-                width: 85%;
-                margin-top: -6rem;
-                
-            }
-
+  
 
         .buttonsDetails {
             justify-content: initial;
@@ -74,6 +68,7 @@ export const Content = styled.div`
 
         margin-right: 12rem;
         margin-top: 3rem;
+        z-index: 9999;
         
 
         font-family: 'Poppins', sans-serif;
@@ -214,6 +209,16 @@ export const Content = styled.div`
 
             .buttoneOrderDish{
                 width: 10rem;
+            }
+
+            .buttoneOrderDish:hover {
+                transform: scale(1.1);
+                opacity: 0.9;
+            }
+
+            .buttonEditDish:hover{
+                transform: scale(1.1);
+                opacity: 0.9;
             }
         
         }
