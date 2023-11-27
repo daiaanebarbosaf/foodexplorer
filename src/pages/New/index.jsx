@@ -45,7 +45,13 @@ export function New(){
     }
 
     function handleAddTag(){
-        setTags(prevState => [...prevState, newTag]);
+
+        if(newTag === ""){
+            alert("Insira conteúdo na tag, você não pode deixar o campo está vazio");
+          } else {
+            setTags(prevState => [...prevState, newTag]); 
+          }
+    
         setNewTag("");
     }
 
@@ -68,7 +74,6 @@ export function New(){
         if (newTag){
             return alert("Você deixou um ingrediente sem salvar.");
         }
-
 
         try {
 
