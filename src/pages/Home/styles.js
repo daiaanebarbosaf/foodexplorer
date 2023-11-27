@@ -11,12 +11,15 @@ export const Container = styled.div`
 
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
 
         overflow-x: hidden;
-          
 
+        #searchPlateHome {
+            width: 75%;
+        }
+          
         .dishes {
 
             display: flex;
@@ -54,13 +57,14 @@ export const Container = styled.div`
 
             #searchPlateHome {
                 width: 55%;
-                margin-top: -6rem;
+                margin-top: -7rem;
                 margin-left: -4rem;
             }
         }
 
         @media (min-width: ${DEVICE_BREAKPOINTS.XL}){
             #searchPlateHome {
+      
                 width: 58%;
                 margin-top: -6rem;
                 margin-left: -1rem;
@@ -85,6 +89,11 @@ export const Container = styled.div`
     @media (min-width: ${DEVICE_BREAKPOINTS.MD}){
             > main {
                 align-items: center;
+
+                #searchPlate {
+                    display: flex;
+                    text-align: center;
+                }
 
                 .dishes {
                     max-width: 35rem;
@@ -196,7 +205,7 @@ export const Banner = styled.div`
 
     background: linear-gradient(to bottom, #091E26, #00131C);
 
-    width: 16rem;
+    width: 90%;
     
     height: 110px;
 
