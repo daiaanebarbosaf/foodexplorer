@@ -1,8 +1,6 @@
 import { Container, Form, ImgDishes, SelectCategory } from './styles';
 
-import { useState, useEffect } from 'react';
-
-import { useAuth } from '../../hooks/auth';
+import React, { useState, useEffect } from 'react';
 
 import { Link, useParams, useNavigate  } from 'react-router-dom';
 import { api } from '../../services/api';
@@ -39,7 +37,22 @@ export function Edit(){
     const [tags, setTags] = useState([]);
     const [newTag, setNewTag] = useState("");
 
+    let displayName = data.categoty;
 
+
+    if(displayName == "meal"){
+        displayName = "Refeição"
+    }
+
+    if(displayName == "dessert"){
+        displayName = "Sobremesas"
+    }
+
+    if(displayName == "drink"){
+        displayName = "Bebidas"
+    }
+
+   
     function handleBack(){
         navigate(-1);
     }
@@ -201,17 +214,17 @@ export function Edit(){
                             <SelectCategory
                             >
                                 <p>Categoria</p>
-                                <div className="input-select">
+                                <label className="input-select" htmlFor="categoty">
                                     <select 
-                                        defaultValue={data.categoty}
+                                        defaultValue={categoty}
                                         onChange={e => setCategoty(e.target.value)}
                                     >
-                                        <option value=""> {data.categoty}</option>
+                                        <option value="">{displayName}</option>
                                         <option value="meal">Refeições</option>
                                         <option value="dessert">Sobremesas</option>
                                         <option value="drink">Bebidas</option>
                                     </select>
-                                </div>
+                                </label>
                             </SelectCategory>
                         </div>
 
