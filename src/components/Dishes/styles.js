@@ -23,8 +23,8 @@ export const Container = styled.section`
                 color: ${({ theme }) => theme.COLORS.LIGHT_300};
                 font-size: clamp(1vw, 3em, 30vw);
                 margin-left: 8rem;
-                
-                
+                margin-bottom: 1rem;
+                               
             }
 
     > a > svg:hover {
@@ -32,6 +32,7 @@ export const Container = styled.section`
     }
 
     .favorite {
+        margin-top: 1rem;
         margin-left: 9rem;
     }
 
