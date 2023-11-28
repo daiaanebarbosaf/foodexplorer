@@ -66,6 +66,7 @@ export function Dishes({ data, dishId, imgdish, ...rest }){
                     [USER_ROLE.ADMIN].includes(user.role) &&
                     <PiPencilSimpleBold
                         onClick={() => handleEdit(dishId)}
+                        
                     />
                 }
 
