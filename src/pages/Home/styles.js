@@ -22,14 +22,13 @@ export const Container = styled.div`
           
         .dishes {
 
+            width: 140%;
+    
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1rem;
-
-            max-width: 28rem;
             
-
             --swiper-navigation-color: white;
             --swiper-navigation-size: 2rem;
             --swiper-navigation-bg: white;
