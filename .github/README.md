@@ -3,7 +3,6 @@
   Food Explorer
 </h1>
 
-> Cardápio digital para um restaurante
 
 <p align="center">
   <a href="#project">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -48,10 +47,7 @@ A aplicação apresenta as seguintes funcionalidades:
 - Mostrar pratos cadastrados
 - Filtrar pratos
 - Mostrar detalhes do prato
-- Favoritar prato
 - Remover prato dos favoritos
-- Mostrar favoritos
-- Adicionar prato ao carrinho
 - Editar prato
 - Excluir prato
 - Logout
@@ -108,30 +104,29 @@ O Food Explorer possui duas personas principais: o admin e o usuário comum. Voc
 
 Admin:
 
-- E-mail: administrator@email.com
-- Senha: 123456
+- E-mail: admin@email.com
+- Senha: 
 
 O admin tem acesso privilegiado e pode gerenciar o cardápio, adicionando, editando e removendo pratos, além de executar outras tarefas administrativas.
 
 Usuário:
 
 - E-mail: user@email.com
-- Senha: 123456
+- Senha: 
 
 O usuário tem acesso restrito às funcionalidades da aplicação, podendo visualizar o cardápio, filtrar pratos, ver detalhes de pratos específicos, favoritar pratos e adicionar pratos ao carrinho.
 
-<h2 id="#consideration">🥰 Considerações Finais</h2>
+<h2 id="#consideration">Considerações Finais</h2>
+É com muito orgulho que apresento para você meu primeiro projeto com React!!!<br>
+Foi muito desafiador... com esse projeto apresendi muito mais do que qualquer linguagem pode traduzir, espero que goste do que vê aqui e aceito sugestões e feedbacks, pois a graça é seguir evoluindo!
 
-Com imensa satisfação, compartilho com você o meu primeiro projeto Full Stack em JavaScript, utilizando as tecnologias React e Node!<br>
-Esta jornada foi extremamente desafiadora, proporcionando um aprendizado que vai além do que qualquer linguagem pode traduzir.<br> 
-Espero que aprecie o que foi desenvolvido aqui.<br>
-Estou aberta a sugestões e feedbacks, pois a verdadeira beleza está na constante evolução!
 
 <h2 id="license">📝 Licença</h2>
 
 Este projeto está sob a licença MIT.
 
 ---
+
 
 <div style="display: flex;">
   <a href="https://www.linkedin.com/in/daiaanebarbosaf/" target="_blank">
