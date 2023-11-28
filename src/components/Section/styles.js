@@ -3,11 +3,12 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.section`
   
-   width: 95%;
+   width: 100%;
    display: flex;
    justify-content: center;
    
    flex-direction: column;
+   
 
     
     > h2 {
@@ -20,6 +21,7 @@ export const Container = styled.section`
     }
 
     > ul {
+        
         padding-inline: 3rem;
         
         display: flex;
@@ -30,6 +32,7 @@ export const Container = styled.section`
         list-style: none;
 
         > li {
+            
             
             display: flex;
             align-items: center;
