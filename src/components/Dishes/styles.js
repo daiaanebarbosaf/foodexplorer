@@ -22,9 +22,7 @@ export const Container = styled.section`
     > a > svg {
                 color: ${({ theme }) => theme.COLORS.LIGHT_300};
                 font-size: clamp(1vw, 3em, 30vw);
-                margin-left: 8rem;
-                margin-bottom: 1rem;
-                               
+                              
             }
 
     > a > svg:hover {
@@ -39,6 +37,12 @@ export const Container = styled.section`
     .favorite:hover {
         transform: scale(1.1);
         opacity: 0.9;    
+    }
+
+    .edit {
+        margin-left: 8rem;
+        margin-bottom: 1rem;
+        margin-top: -2rem;
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}){
