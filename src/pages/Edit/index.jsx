@@ -41,7 +41,7 @@ export function Edit(){
 
 
     if(displayName == "meal"){
-        displayName = "Refeição"
+        displayName = "Refeições"
     }
 
     if(displayName == "dessert"){
@@ -73,8 +73,7 @@ export function Edit(){
           } else {
             setTags(prevState => [...prevState, newTag]); 
           }
-    
-        setNewTag("");
+          setNewTag("");
     }
 
     function handleRemoveTag(deleted){
@@ -238,8 +237,8 @@ export function Edit(){
                                         data.tags.map((tag, index) => 
                                             <Ingredients
                                                 key={String(index)}
-                                                defaultValue={tag.name}
-                                                onClick={() => handleRemoveTag(tag)}
+                                                value={tag.name}
+                                                onClick={() => handleRemoveTag(tag.name)}
                                             />
                                         )
                                     }
@@ -250,7 +249,7 @@ export function Edit(){
                                 tags.map((tag, index) =>
                                     <Ingredients 
                                         key={String(index)}
-                                        defaultValue={tag}
+                                        value={tag}
                                         onClick={() => handleRemoveTag(tag)}
                                     />
                                 )
@@ -260,7 +259,7 @@ export function Edit(){
                                 isNew
                                 placeholder="Adicionar"
                                 onChange={e => setNewTag(e.target.value)}
-                                defaultValue={newTag}
+                                value={newTag}
                                 onClick={handleAddTag}
                                 
                             />
