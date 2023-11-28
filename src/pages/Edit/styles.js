@@ -5,6 +5,7 @@ export const Container = styled.div`
     width: 100%;
     height: 100vh;
 
+
     #search{
         display: none;
     }
@@ -18,6 +19,7 @@ export const Container = styled.div`
         
         align-items: center;
         justify-items: center;
+
         grid-area: content ;
         
         max-width: 20rem;
