@@ -60,7 +60,7 @@ export function Dishes({ data, dishId, imgdish, ...rest }){
                 
             </a>
 
-            <a>
+            <a className="edit">
 
                 { 
                     [USER_ROLE.ADMIN].includes(user.role) &&
