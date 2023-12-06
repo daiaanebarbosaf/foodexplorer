@@ -33,7 +33,6 @@ A aplicação conta com as seguintes páginas:
 - Detalhes do prato
 - Novo prato
 - Editar prato
-- Favoritos
 
 !["Página home"](home.jpg)
 
