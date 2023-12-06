@@ -21,7 +21,8 @@
 
 <h2 id="project">📁 Projeto</h2>
 
-O projeto Food Explorer é o desafio final do programa Explorer da Rocketseat. Trata-se de uma aplicação de cardápio digital para um restaurante.
+O projeto Food Explorer é o Front-end do desafio final do programa Explorer da Rocketseat. Trata-se de uma aplicação de cardápio digital para um restaurante. Já o back-end, responsável pela API, está disponível [aqui](https://github.com/daiaanebarbosaf/api-food-explorer).
+
 
 <h2 id="pages">📃 Páginas</h2>
 
